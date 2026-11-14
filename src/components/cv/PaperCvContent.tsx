@@ -25,26 +25,36 @@ export function PaperCvContent() {
             <p className="text-base sm:text-lg font-bold uppercase tracking-wider text-zinc-800 mb-3.5">
               {personal.role}
             </p>
-            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-1.5 text-xs text-zinc-700">
-              <span className="flex items-center gap-1.5">
-                <Mail className="w-3.5 h-3.5 text-zinc-900" />
-                {personal.email}
-              </span>
-              <span className="flex items-center gap-1.5">
-                <Phone className="w-3.5 h-3.5 text-zinc-900" />
-                {personal.phone}
-              </span>
+            <div className="flex flex-wrap items-center justify-center gap-x-5 gap-y-2 text-xs sm:text-[13px] text-zinc-900 font-medium">
+              <a
+                href={`mailto:${personal.email}`}
+                className="flex items-center gap-1.5 hover:text-rose-600 transition-colors font-semibold underline decoration-zinc-300 hover:decoration-rose-500 underline-offset-2"
+                title={`Gửi email đến ${personal.email}`}
+              >
+                <Mail className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
+                <span>{personal.email}</span>
+              </a>
+              {personal.phone && (
+                <a
+                  href={`tel:${personal.phone.replace(/\s+/g, "")}`}
+                  className="flex items-center gap-1.5 hover:text-rose-600 transition-colors font-semibold"
+                  title={`Gọi ${personal.phone}`}
+                >
+                  <Phone className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
+                  <span>{personal.phone}</span>
+                </a>
+              )}
               <a
                 href={personal.social.github || "https://github.com/quangsang28102"}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="flex items-center gap-1.5 hover:text-rose-600 transition-colors"
+                className="flex items-center gap-1.5 hover:text-rose-600 transition-colors font-semibold underline decoration-zinc-300 hover:decoration-rose-500 underline-offset-2"
               >
-                <GithubIcon className="w-3.5 h-3.5 text-zinc-900" />
+                <GithubIcon className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
                 quangsang28102
               </a>
-              <span className="flex items-center gap-1.5">
-                <MapPin className="w-3.5 h-3.5 text-zinc-900" />
+              <span className="flex items-center gap-1.5 text-zinc-800">
+                <MapPin className="w-3.5 h-3.5 text-zinc-900 shrink-0" />
                 {personal.location}
               </span>
             </div>
@@ -52,10 +62,10 @@ export function PaperCvContent() {
 
           {/* Section: TÓM TẮT / SUMMARY */}
           <div className="mt-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-2.5">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-2.5">
               {isEn ? "PROFESSIONAL SUMMARY" : "TÓM TẮT"}
             </h2>
-            <p className="text-xs sm:text-[13px] text-zinc-800 leading-relaxed text-justify">
+            <p className="text-[13px] sm:text-[13.5px] text-zinc-900 font-medium leading-relaxed text-justify">
               {isEn
                 ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in slicing complex W3C-compliant responsive layouts from Photoshop, Illustrator, Adobe XD, and Figma into HTML5/CSS3 and JavaScript/jQuery. Experienced in developing and converting static HTML into WordPress Custom Themes. Proactively integrates AI tools (Claude, ChatGPT, Copilot) into daily workflows to optimize speed and precision."
                 : "Lập trình viên Frontend có hơn 2 năm kinh nghiệm thực tế xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp chuẩn W3C & Responsive từ Photoshop, Illustrator, Adobe XD, Figma sang HTML5/CSS3 và JavaScript/jQuery. Có kinh nghiệm xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh. Chủ động ứng dụng các công cụ AI (Claude, ChatGPT, Copilot) vào quy trình code để tối ưu hóa tiến độ và chất lượng sản phẩm."}
@@ -64,35 +74,35 @@ export function PaperCvContent() {
 
           {/* Section: HỌC VẤN / EDUCATION */}
           <div className="mt-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-3">
               {isEn ? "EDUCATION" : "HỌC VẤN"}
             </h2>
             <div className="space-y-3">
               {education.map((edu) => (
-                <div key={edu.id} className="text-xs sm:text-[13px]">
+                <div key={edu.id} className="text-xs sm:text-[13.5px]">
                   <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                    <span>{edu.institution}</span>
-                    <span className="font-normal text-zinc-600 font-mono text-xs">
+                    <span className="text-[13.5px] sm:text-[14px] font-bold">{edu.institution}</span>
+                    <span className="font-semibold text-zinc-700 font-mono text-xs">
                       {edu.startDate} – {edu.endDate}
                     </span>
                   </div>
-                  <div className="flex justify-between items-baseline text-zinc-800 italic">
+                  <div className="flex justify-between items-baseline text-zinc-900 font-medium italic">
                     <span>{edu.major}</span>
-                    <span className="font-semibold text-zinc-950 not-italic text-xs">
+                    <span className="font-bold text-zinc-950 not-italic text-xs sm:text-[13px]">
                       {edu.score}
                     </span>
                   </div>
                 </div>
               ))}
-              <div className="text-xs sm:text-[13px] pt-1">
+              <div className="text-xs sm:text-[13.5px] pt-1">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span>{isEn ? "Enterprise Internship – Fresher" : "Thực tập doanh nghiệp – Fresher"}</span>
-                  <span className="font-normal text-zinc-600 font-mono text-xs">
+                  <span className="text-[13.5px] sm:text-[14px] font-bold">{isEn ? "Enterprise Internship – Fresher" : "Thực tập doanh nghiệp – Fresher"}</span>
+                  <span className="font-semibold text-zinc-700 font-mono text-xs">
                     01/2024 – 07/2024
                   </span>
                 </div>
-                <div className="text-zinc-800 italic mb-1">Quốc Bảo Software</div>
-                <ul className="list-disc list-inside text-xs text-zinc-700 pl-1 space-y-0.5">
+                <div className="text-zinc-900 font-semibold italic mb-1">Quốc Bảo Software</div>
+                <ul className="list-disc list-inside text-xs sm:text-[13px] text-zinc-900 pl-1 space-y-0.5 font-medium">
                   <li>{isEn ? "Gathered and analyzed client requirements" : "Thu thập thông tin nhu cầu khách hàng"}</li>
                   <li>{isEn ? "Designed modern UI/UX for web and applications" : "Thiết kế UI/UX ứng dụng & website"}</li>
                   <li>{isEn ? "Developed responsive frontend websites" : "Lập trình giao diện Website"}</li>
@@ -103,24 +113,24 @@ export function PaperCvContent() {
 
           {/* Section: KỸ NĂNG / SKILLS */}
           <div className="mt-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-2.5">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-2.5">
               {isEn ? "TECHNICAL SKILLS" : "KỸ NĂNG"}
             </h2>
-            <div className="space-y-1.5 text-xs sm:text-[13px] text-zinc-800">
+            <div className="space-y-1.5 text-xs sm:text-[13.5px] text-zinc-900 font-medium leading-relaxed">
               <p>
-                <strong className="text-zinc-950 font-semibold">Frontend &amp; UI:</strong>{" "}
+                <strong className="text-zinc-950 font-bold">Frontend &amp; UI:</strong>{" "}
                 HTML5 (W3C Standard), CSS3, JavaScript (ES6+), jQuery, WordPress (Custom Themes &amp; Child Themes), Responsive Web Design, Tailwind CSS, ReactJS, Next.js
               </p>
               <p>
-                <strong className="text-zinc-950 font-semibold">Design Tools:</strong>{" "}
+                <strong className="text-zinc-950 font-bold">Design Tools:</strong>{" "}
                 Figma, Adobe Photoshop, Adobe XD, Adobe Illustrator ({isEn ? "Layout slicing, asset export, UI/UX" : "Cắt layout, trích xuất assets, thiết kế UI/UX"})
               </p>
               <p>
-                <strong className="text-zinc-950 font-semibold">{isEn ? "AI & Optimization:" : "Ứng dụng AI & Tối ưu:"}</strong>{" "}
+                <strong className="text-zinc-950 font-bold">{isEn ? "AI & Optimization:" : "Ứng dụng AI & Tối ưu:"}</strong>{" "}
                 Claude, ChatGPT, GitHub Copilot, Core Web Vitals, Google PageSpeed, Cross-Browser Compatibility
               </p>
               <p>
-                <strong className="text-zinc-950 font-semibold">{isEn ? "Backend & Version Control:" : "Backend & Quản lý mã nguồn:"}</strong>{" "}
+                <strong className="text-zinc-950 font-bold">{isEn ? "Backend & Version Control:" : "Backend & Quản lý mã nguồn:"}</strong>{" "}
                 Node.js, Express.js, RESTful APIs, Git, GitHub, Postman
               </p>
             </div>
@@ -128,22 +138,22 @@ export function PaperCvContent() {
 
           {/* Section: KINH NGHIỆM LÀM VIỆC / WORK EXPERIENCE */}
           <div className="mt-6">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-3">
               {isEn ? "WORK EXPERIENCE" : "KINH NGHIỆM LÀM VIỆC"}
             </h2>
             <div className="space-y-4">
               {experiences.slice(0, 2).map((exp) => (
-                <div key={exp.id} className="text-xs sm:text-[13px]">
+                <div key={exp.id} className="text-xs sm:text-[13.5px]">
                   <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                    <span>{exp.organization}</span>
-                    <span className="font-normal text-zinc-600 font-mono text-xs">
+                    <span className="text-[13.5px] sm:text-[14.5px] font-bold">{exp.organization}</span>
+                    <span className="font-semibold text-zinc-700 font-mono text-xs">
                       {exp.startDate} – {exp.endDate || (isEn ? "Present" : "Hiện tại")}
                     </span>
                   </div>
-                  <div className="font-medium text-zinc-800 italic mb-1.5">
+                  <div className="font-semibold text-zinc-900 italic mb-1.5">
                     {exp.role}
                   </div>
-                  <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 space-y-1 text-justify">
+                  <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 space-y-1 font-medium text-justify leading-relaxed">
                     {exp.achievements.map((item, idx) => (
                       <li key={idx} className="leading-relaxed">
                         {item}
@@ -170,35 +180,41 @@ export function PaperCvContent() {
             <span className="font-extrabold uppercase text-xs sm:text-sm tracking-tight text-zinc-950">
               {personal.fullName} — {isEn ? "CURRICULUM VITAE" : "HỒ SƠ NĂNG LỰC"}
             </span>
-            <span className="text-xs text-zinc-500 font-mono">{personal.email}</span>
+            <a
+              href={`mailto:${personal.email}`}
+              className="text-xs sm:text-[13px] text-zinc-900 hover:text-rose-600 font-mono font-semibold underline decoration-zinc-300 hover:decoration-rose-500 transition-colors"
+              title={`Gửi email đến ${personal.email}`}
+            >
+              {personal.email}
+            </a>
           </div>
 
           {/* Section: DỰ ÁN CÁ NHÂN & THỰC TẾ */}
           <div>
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-4">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-4">
               {isEn ? "PERSONAL PROJECTS" : "DỰ ÁN CÁ NHÂN"}
             </h2>
 
-            <div className="space-y-3.5">
+            <div className="space-y-4">
               {/* Dự án 1: BITCO TUY NEN */}
-              <div className="text-xs sm:text-[12.5px]">
+              <div className="text-xs sm:text-[13.5px]">
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-950 font-bold">
+                    <span className="text-sm sm:text-[14.5px] text-zinc-950 font-bold">
                       {isEn ? "BITCO Tuy Nen Brick Corporation | Building Materials" : "Công ty Cổ phần Gạch Tuy Nen Bình Định - BITCO"}
                     </span>
                     <a
                       href="https://tuynen.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                      className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-300 hover:border-rose-400 font-bold"
                     >
                       tuynen.vercel.app ↗
                     </a>
                   </div>
-                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">HTML5 (W3C) • Modular CSS3 • jQuery • Parallax</span>
+                  <span className="text-[11px] font-mono text-zinc-700 font-semibold">HTML5 (W3C) • Modular CSS3 • jQuery • Parallax</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 mt-1 space-y-1 font-medium text-justify leading-relaxed">
                   <li>
                     {isEn
                       ? "Slices pixel-perfect responsive layouts from design files into clean HTML5/CSS3 and JavaScript/jQuery with 100% W3C Validation compliance."
@@ -213,24 +229,24 @@ export function PaperCvContent() {
               </div>
 
               {/* Dự án 2: HPO PORTAL & WORDPRESS CUSTOM CMS */}
-              <div className="text-xs sm:text-[12.5px]">
+              <div className="text-xs sm:text-[13.5px]">
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-950 font-bold">
+                    <span className="text-sm sm:text-[14.5px] text-zinc-950 font-bold">
                       {isEn ? "HPO – Vocational Driving Education Center" : "HPO – Trung Tâm Giáo Dục Nghề Nghiệp Ô Tô Hiệp Phát"}
                     </span>
                     <a
                       href="https://hpo-edu-v2.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                      className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-300 hover:border-rose-400 font-bold"
                     >
                       hpo-edu-v2.vercel.app ↗
                     </a>
                   </div>
-                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
+                  <span className="text-[11px] font-mono text-zinc-700 font-semibold">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 mt-1 space-y-1 font-medium text-justify leading-relaxed">
                   <li>
                     {isEn
                       ? "Converted static HTML sources into a customized WordPress administration theme, structuring clean template code for course and fee management."
@@ -245,24 +261,24 @@ export function PaperCvContent() {
               </div>
 
               {/* Dự án 3: FOOTBALL PAY */}
-              <div className="text-xs sm:text-[12.5px]">
+              <div className="text-xs sm:text-[13.5px]">
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-950 font-bold">
+                    <span className="text-sm sm:text-[14.5px] text-zinc-950 font-bold">
                       Football Payment Manager
                     </span>
                     <a
                       href="https://football-pay.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                      className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-300 hover:border-rose-400 font-bold"
                     >
                       football-pay.vercel.app ↗
                     </a>
                   </div>
-                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">Next.js • React 19 • Google Sheets API • VietQR</span>
+                  <span className="text-[11px] font-mono text-zinc-700 font-semibold">Next.js • React 19 • Google Sheets API • VietQR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 mt-1 space-y-1 font-medium text-justify leading-relaxed">
                   <li>
                     {isEn
                       ? "Designed automated match scheduling, per-person expense splitting, dynamic VietQR payment code generation, and bidirectional Google Sheets API sync."
@@ -277,27 +293,27 @@ export function PaperCvContent() {
               </div>
 
               {/* Dự án 4: AVATAR 3D THREE.JS STUDIO */}
-              <div className="text-xs sm:text-[12.5px]">
+              <div className="text-xs sm:text-[13.5px]">
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-950 font-bold">
+                    <span className="text-sm sm:text-[14.5px] text-zinc-950 font-bold">
                       {isEn ? "AVATAR COLLECTION (Three.js Low-Poly)" : "AVATAR COLLECTION (Three.js Low-Poly)"}
                     </span>
-                    <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-300 font-semibold">
+                    <span className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-300 font-bold">
                       {isEn ? "In Progress" : "Đang phát triển"}
                     </span>
                     <a
                       href="https://avatar-three-rouge.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                      className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-300 hover:border-rose-400 font-bold"
                     >
                       avatar-three-rouge.vercel.app ↗
                     </a>
                   </div>
-                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">Three.js • WebGL • BufferGeometry • glTF/OBJ</span>
+                  <span className="text-[11px] font-mono text-zinc-700 font-semibold">Three.js • WebGL • BufferGeometry • glTF/OBJ</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 mt-1 space-y-1 font-medium text-justify leading-relaxed">
                   <li>
                     {isEn
                       ? "Constructed procedural 3D Werewolf game character geometries entirely in code via Three.js BufferGeometry (<250KB payload) with 360° orbital camera manipulation."
@@ -312,27 +328,27 @@ export function PaperCvContent() {
               </div>
 
               {/* Dự án 5: NIGHT HOWLER */}
-              <div className="text-xs sm:text-[12.5px]">
+              <div className="text-xs sm:text-[13.5px]">
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
-                    <span className="text-sm text-zinc-950 font-bold">
+                    <span className="text-sm sm:text-[14.5px] text-zinc-950 font-bold">
                       {isEn ? "NIGHT HOWLER — 3D MULTIPLAYER WEREWOLF ARENA" : "NIGHT HOWLER — ĐẤU TRƯỜNG MA SÓI 3D & VOICE CHAT"}
                     </span>
-                    <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-300 font-semibold">
+                    <span className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-amber-50 text-amber-700 border border-amber-300 font-bold">
                       {isEn ? "In Progress" : "Đang phát triển"}
                     </span>
                     <a
                       href="https://github.com/quangsang28102/NightHowler"
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                      className="text-[10px] sm:text-[10.5px] font-mono px-2 py-0.5 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-300 hover:border-rose-400 font-bold"
                     >
                       github.com/quangsang28102/NightHowler ↗
                     </a>
                   </div>
-                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">React 19 • Three.js • Colyseus • LiveKit Spatial Audio</span>
+                  <span className="text-[11px] font-mono text-zinc-700 font-semibold">React 19 • Three.js • Colyseus • LiveKit Spatial Audio</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs sm:text-[13px] text-zinc-900 ml-4 mt-1 space-y-1 font-medium text-justify leading-relaxed">
                   <li>
                     {isEn
                       ? "Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js, Colyseus WebSockets state sync, and LiveKit spatial audio voice chat."
@@ -350,11 +366,11 @@ export function PaperCvContent() {
 
           {/* Section: NGOẠI NGỮ / LANGUAGES */}
           <div className="mt-8">
-            <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
+            <h2 className="text-sm sm:text-[15px] font-extrabold uppercase tracking-wider text-zinc-950 pb-1 border-b-2 border-zinc-900 mb-3">
               {isEn ? "LANGUAGES" : "NGOẠI NGỮ"}
             </h2>
-            <p className="text-xs sm:text-[13px] text-zinc-800">
-              <strong className="text-zinc-950 font-semibold">{isEn ? "English:" : "Tiếng Anh:"}</strong>{" "}
+            <p className="text-xs sm:text-[13.5px] text-zinc-900 font-medium leading-relaxed">
+              <strong className="text-zinc-950 font-bold">{isEn ? "English:" : "Tiếng Anh:"}</strong>{" "}
               {isEn
                 ? "TOEIC 590 — Proficient in reading specialized technical documentation and communicating effectively in technology workplaces."
                 : "TOEIC 590 — Có khả năng đọc hiểu tài liệu kỹ thuật chuyên ngành và giao tiếp cơ bản trong môi trường làm việc công nghệ."}
