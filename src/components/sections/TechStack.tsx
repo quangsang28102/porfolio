@@ -14,13 +14,20 @@ export function TechStack() {
   const { skills } = currentData;
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | "All">("All");
 
+  // Chỉ hiển thị các mục (category) thực tế có kỹ năng, không để mục trống
+  const availableCategories = (
+    [
+      { label: "Frontend", value: "Frontend" as const },
+      { label: "Backend", value: "Backend" as const },
+      { label: "DevOps & Tools", value: "DevOps & Tools" as const },
+      { label: "Languages", value: "Languages" as const },
+      { label: "Database", value: "Database" as const },
+    ] as const
+  ).filter((cat) => skills.some((s) => s.category === cat.value));
+
   const categories: { label: string; value: SkillCategory | "All" }[] = [
     { label: t("skills.all"), value: "All" },
-    { label: "Frontend", value: "Frontend" },
-    { label: "Backend", value: "Backend" },
-    { label: "Languages", value: "Languages" },
-    { label: "Database", value: "Database" },
-    { label: "DevOps & Tools", value: "DevOps & Tools" },
+    ...availableCategories,
   ];
 
   const filteredSkills =
@@ -76,11 +83,10 @@ export function TechStack() {
               <button
                 key={cat.value}
                 onClick={() => setSelectedCategory(cat.value)}
-                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer flex items-center gap-2 ${
-                  isActive
+                className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer flex items-center gap-2 ${isActive
                     ? "bg-rose-600 text-white shadow-md shadow-rose-950/20 border border-rose-500 font-semibold"
                     : "bg-white dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800 shadow-sm"
-                }`}
+                  }`}
               >
                 {cat.value !== "All" && getCategoryIcon(cat.value)}
                 <span>{cat.label}</span>

@@ -102,27 +102,33 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
             </p>
 
             {/* Problem & Solution */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
-              <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80">
-                <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold mb-2 text-sm">
-                  <AlertCircle className="w-4 h-4" />
-                  <span>{t("proj.problem")}</span>
-                </div>
-                <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                  {project.problem}
-                </p>
-              </div>
+            {(project.problem || project.solution) && (
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
+                {project.problem && (
+                  <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80">
+                    <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-semibold mb-2 text-sm">
+                      <AlertCircle className="w-4 h-4" />
+                      <span>{t("proj.problem")}</span>
+                    </div>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                      {project.problem}
+                    </p>
+                  </div>
+                )}
 
-              <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80">
-                <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold mb-2 text-sm">
-                  <Sparkles className="w-4 h-4" />
-                  <span>{t("proj.solution")}</span>
-                </div>
-                <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed">
-                  {project.solution}
-                </p>
+                {project.solution && (
+                  <div className="p-4 rounded-xl bg-zinc-50 dark:bg-zinc-900/60 border border-zinc-200 dark:border-zinc-800/80">
+                    <div className="flex items-center gap-2 text-emerald-600 dark:text-emerald-400 font-semibold mb-2 text-sm">
+                      <Sparkles className="w-4 h-4" />
+                      <span>{t("proj.solution")}</span>
+                    </div>
+                    <p className="text-zinc-600 dark:text-zinc-400 text-xs sm:text-sm leading-relaxed">
+                      {project.solution}
+                    </p>
+                  </div>
+                )}
               </div>
-            </div>
+            )}
 
             {/* Key Features */}
             {project.features && project.features.length > 0 && (

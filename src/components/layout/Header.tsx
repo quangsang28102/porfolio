@@ -60,20 +60,21 @@ export function Header() {
           : "bg-transparent py-4 sm:py-5"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-4">
-        {/* Logo — Single line, no break */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
+        {/* Logo — Responsive, never overflows on small screens */}
         <a
           href="#"
-          className="group flex items-center gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight shrink-0 whitespace-nowrap"
+          className="group flex items-center gap-2 sm:gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight min-w-0 shrink"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600 transition-all duration-300 shadow-sm">
+          <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600 transition-all duration-300 shadow-sm shrink-0">
             &lt;/&gt;
           </span>
-          <div className="flex items-baseline gap-1.5">
-            <span className="group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
-              {personal.fullName}
+          <div className="flex items-baseline gap-1.5 min-w-0 truncate">
+            <span className="group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors truncate">
+              <span className="sm:hidden font-bold">Quang Sáng</span>
+              <span className="hidden sm:inline">{personal.fullName}</span>
             </span>
-            <span className="text-[10px] font-mono font-semibold text-rose-500 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 hidden xl:inline-block">
+            <span className="text-[10px] font-mono font-semibold text-rose-500 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 hidden xl:inline-block shrink-0">
               DEV
             </span>
           </div>
@@ -107,7 +108,7 @@ export function Header() {
         </nav>
 
         {/* Right Utility Cluster: Language, Theme, CV, Contact */}
-        <div className="flex items-center gap-2 shrink-0">
+        <div className="flex items-center gap-1.5 sm:gap-2 shrink-0">
           {/* Language Switcher Pill */}
           <div className="flex items-center p-0.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono font-semibold">
             <button
@@ -148,40 +149,40 @@ export function Header() {
             )}
           </button>
 
-          {/* GitHub Profile Link */}
+          {/* GitHub Profile Link — Visible on sm+ screens */}
           <a
             href="https://github.com/quangsang28102"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="GitHub Profile @quangsang28102"
             title="GitHub: https://github.com/quangsang28102"
-            className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-sm"
+            className="hidden sm:inline-flex p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-sm"
           >
             <GithubIcon className="w-3.5 h-3.5" />
           </a>
 
-          {/* View Paper CV Link */}
+          {/* View Paper CV Link — Visible on md+ screens */}
           <Link
             href="/cv"
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white text-xs font-medium whitespace-nowrap transition-all shadow-sm"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white text-xs font-medium whitespace-nowrap transition-all shadow-sm"
           >
             <FileText className="w-3.5 h-3.5 text-rose-500 shrink-0" />
             <span>{t("nav.viewCv")}</span>
           </Link>
 
-          {/* Design System Link */}
+          {/* Design System Link — Visible on 2xl or in drawer */}
           <Link
             href="/design-system"
-            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white text-xs font-medium whitespace-nowrap transition-all shadow-sm"
+            className="hidden 2xl:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white text-xs font-medium whitespace-nowrap transition-all shadow-sm"
           >
             <Palette className="w-3.5 h-3.5 text-rose-500 shrink-0" />
             <span>{t("nav.designSystem")}</span>
           </Link>
 
-          {/* Contact CTA Button */}
+          {/* Contact CTA Button — Visible on sm+ screens */}
           <a
             href="#contact"
-            className="inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-[0_0_15px_rgba(225,29,72,0.35)] hover:shadow-[0_0_22px_rgba(225,29,72,0.6)] transition-all whitespace-nowrap shrink-0"
+            className="hidden sm:inline-flex items-center gap-1.5 px-3.5 sm:px-4 py-1.5 rounded-full bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-[0_0_15px_rgba(225,29,72,0.35)] hover:shadow-[0_0_22px_rgba(225,29,72,0.6)] transition-all whitespace-nowrap shrink-0"
           >
             <Send className="w-3.5 h-3.5 shrink-0" />
             <span>{t("nav.contactCta")}</span>
@@ -193,7 +194,7 @@ export function Header() {
             aria-label="Chuyển đổi menu di động"
             className="xl:hidden p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white transition-colors cursor-pointer"
           >
-            {mobileMenuOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
+            {mobileMenuOpen ? <X className="w-4 h-4 text-rose-500" /> : <Menu className="w-4 h-4" />}
           </button>
         </div>
       </div>
@@ -206,7 +207,7 @@ export function Header() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.2 }}
-            className="xl:hidden bg-white/95 dark:bg-zinc-950/95 border-b border-zinc-200 dark:border-zinc-800 px-6 py-5 overflow-hidden backdrop-blur-2xl shadow-2xl"
+            className="xl:hidden bg-white/95 dark:bg-zinc-950/95 border-b border-zinc-200 dark:border-zinc-800 px-6 py-5 max-h-[calc(100dvh-65px)] overflow-y-auto backdrop-blur-2xl shadow-2xl"
           >
             <div className="flex flex-col gap-2">
               {navItems.map((item) => (

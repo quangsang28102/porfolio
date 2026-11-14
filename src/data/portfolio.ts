@@ -56,6 +56,11 @@ export const portfolioDataVi: PortfolioData = {
     { name: "ReactJS & Next.js", category: "Frontend", featured: true },
     { name: "Three.js / WebGL", category: "Frontend", featured: false },
 
+    // Backend & APIs
+    { name: "Node.js", category: "Backend", featured: true },
+    { name: "Express.js", category: "Backend", featured: false },
+    { name: "RESTful APIs", category: "Backend", featured: true },
+
     // Design & UI/UX Tools
     { name: "Figma", category: "DevOps & Tools", featured: true },
     { name: "Adobe Photoshop", category: "DevOps & Tools", featured: true },
@@ -67,7 +72,7 @@ export const portfolioDataVi: PortfolioData = {
     { name: "Git & GitHub", category: "DevOps & Tools", featured: true },
     { name: "SEO & Core Web Vitals", category: "DevOps & Tools", featured: true },
     { name: "Cross-Browser Testing", category: "DevOps & Tools", featured: false },
-    { name: "Postman & RESTful APIs", category: "DevOps & Tools", featured: false },
+    { name: "Postman", category: "DevOps & Tools", featured: false },
   ],
   experiences: [
     {
@@ -340,6 +345,11 @@ export const portfolioDataEn: PortfolioData = {
     { name: "ReactJS & Next.js", category: "Frontend", featured: true },
     { name: "Three.js / WebGL", category: "Frontend", featured: false },
 
+    // Backend & APIs
+    { name: "Node.js", category: "Backend", featured: true },
+    { name: "Express.js", category: "Backend", featured: false },
+    { name: "RESTful APIs", category: "Backend", featured: true },
+
     // Design & UI/UX Tools
     { name: "Figma", category: "DevOps & Tools", featured: true },
     { name: "Adobe Photoshop", category: "DevOps & Tools", featured: true },
@@ -351,7 +361,7 @@ export const portfolioDataEn: PortfolioData = {
     { name: "Git & GitHub", category: "DevOps & Tools", featured: true },
     { name: "SEO & Core Web Vitals", category: "DevOps & Tools", featured: true },
     { name: "Cross-Browser Testing", category: "DevOps & Tools", featured: false },
-    { name: "Postman & RESTful APIs", category: "DevOps & Tools", featured: false },
+    { name: "Postman", category: "DevOps & Tools", featured: false },
   ],
   experiences: [
     {

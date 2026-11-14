@@ -18,7 +18,9 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
-  const categories = ["All", "Fullstack", "Web", "3D & WebGL"];
+  // Chỉ hiển thị các danh mục dự án thực tế có dữ liệu
+  const availableProjectCategories = Array.from(new Set(projects.map((p) => p.category)));
+  const categories = ["All", ...availableProjectCategories];
 
   const filteredProjects =
     activeFilter === "All"
@@ -111,11 +113,11 @@ export function Projects() {
                         target="_blank"
                         rel="noopener noreferrer"
                         onClick={(e) => e.stopPropagation()}
-                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all shadow-sm"
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all shadow-sm max-w-full truncate"
                         title={project.demoUrl}
                       >
-                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                        <span>{project.demoUrl.replace("https://", "").replace(/\/$/, "")} ↗</span>
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse shrink-0" />
+                        <span className="truncate">{project.demoUrl.replace("https://", "").replace(/\/$/, "")} ↗</span>
                       </a>
                     )}
                   </div>
