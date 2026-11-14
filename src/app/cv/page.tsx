@@ -2,12 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import Image from "next/image";
 import {
   Printer,
   ArrowLeft,
   FileText,
-  Image as ImageIcon,
+  Download,
   ZoomIn,
   ZoomOut,
   RotateCcw,
@@ -21,7 +20,6 @@ import { useTheme } from "@/context/ThemeContext";
 import { useLanguage } from "@/context/LanguageContext";
 
 export default function CvPage() {
-  const [viewMode, setViewMode] = useState<"digital" | "scan">("digital");
   const [zoomLevel, setZoomLevel] = useState<number>(100);
   const [copied, setCopied] = useState(false);
 
@@ -59,42 +57,25 @@ export default function CvPage() {
       {/* Top Floating Control Bar */}
       <header className="sticky top-0 z-50 bg-white/90 dark:bg-zinc-900/90 backdrop-blur-md border-b border-zinc-200 dark:border-zinc-800 px-4 py-3 print:hidden shadow-sm">
         <div className="max-w-6xl mx-auto flex flex-wrap items-center justify-between gap-3">
-          {/* Back button */}
-          <Link
-            href="/"
-            className="flex items-center gap-2 text-xs sm:text-sm font-medium text-zinc-700 dark:text-zinc-300 hover:text-rose-600 dark:hover:text-white transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4 text-rose-500" />
-            <span>{t("cv.back")}</span>
-          </Link>
+          {/* Back button & Badge */}
+          <div className="flex items-center gap-3">
+            <Link
+              href="/"
+              className="flex items-center gap-2 text-xs sm:text-sm font-semibold text-zinc-700 dark:text-zinc-300 hover:text-rose-600 dark:hover:text-white transition-colors"
+            >
+              <ArrowLeft className="w-4 h-4 text-rose-500" />
+              <span>{t("cv.back")}</span>
+            </Link>
 
-          {/* Mode Switcher */}
-          <div className="flex items-center p-1 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-xs">
-            <button
-              onClick={() => setViewMode("digital")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                viewMode === "digital"
-                  ? "bg-rose-600 text-white shadow-sm font-semibold"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200"
-              }`}
-            >
-              <FileText className="w-3.5 h-3.5" />
-              <span>{t("cv.digitalMode")}</span>
-            </button>
-            <button
-              onClick={() => setViewMode("scan")}
-              className={`flex items-center gap-1.5 px-3 py-1.5 rounded-lg font-medium transition-all cursor-pointer ${
-                viewMode === "scan"
-                  ? "bg-rose-600 text-white shadow-sm font-semibold"
-                  : "text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200"
-              }`}
-            >
-              <ImageIcon className="w-3.5 h-3.5" />
-              <span>{t("cv.scanMode")}</span>
-            </button>
+            <span className="hidden sm:inline-block w-px h-4 bg-zinc-300 dark:bg-zinc-700" />
+
+            <div className="hidden sm:flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-500 dark:text-zinc-400">
+              <FileText className="w-3.5 h-3.5 text-rose-500" />
+              <span>{language === "en" ? "A4 Standard Digital CV" : "CV Chuẩn In A4 Quốc Tế"}</span>
+            </div>
           </div>
 
-          {/* Language, Theme, Zoom & Print Actions */}
+          {/* Controls: Language, Theme, Zoom, Share, Download & Print */}
           <div className="flex items-center gap-2">
             {/* Language switch */}
             <div className="flex items-center p-0.5 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono font-semibold">
@@ -102,8 +83,8 @@ export default function CvPage() {
                 onClick={() => setLanguage("vi")}
                 className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${
                   language === "vi"
-                    ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm"
-                    : "text-zinc-500 dark:text-zinc-400"
+                    ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm font-bold"
+                    : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                 }`}
               >
                 VI
@@ -112,8 +93,8 @@ export default function CvPage() {
                 onClick={() => setLanguage("en")}
                 className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${
                   language === "en"
-                    ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm"
-                    : "text-zinc-500 dark:text-zinc-400"
+                    ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm font-bold"
+                    : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
                 }`}
               >
                 EN
@@ -134,7 +115,7 @@ export default function CvPage() {
             </button>
 
             {/* Zoom controls (desktop only) */}
-            <div className="hidden sm:flex items-center gap-1 bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-1 text-zinc-600 dark:text-zinc-400">
+            <div className="hidden lg:flex items-center gap-1 bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 rounded-lg p-1 text-zinc-600 dark:text-zinc-400">
               <button
                 onClick={handleZoomOut}
                 disabled={zoomLevel <= 70}
@@ -144,7 +125,7 @@ export default function CvPage() {
               >
                 <ZoomOut className="w-3.5 h-3.5" />
               </button>
-              <span className="text-[11px] font-mono px-1 w-10 text-center">
+              <span className="text-[11px] font-mono px-1 w-10 text-center font-semibold">
                 {zoomLevel}%
               </span>
               <button
@@ -188,16 +169,28 @@ export default function CvPage() {
             {/* Print / Save PDF Button */}
             <button
               onClick={handlePrint}
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-md shadow-rose-950/30 transition-all cursor-pointer"
+              className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-100 dark:bg-zinc-800 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-800 dark:text-zinc-200 border border-zinc-300 dark:border-zinc-700 text-xs font-medium transition-all cursor-pointer whitespace-nowrap"
+              title={language === "en" ? "Print or Save as PDF" : "In hoặc Lưu PDF"}
             >
               <Printer className="w-3.5 h-3.5" />
               <span>{t("cv.printPdf")}</span>
             </button>
+
+            {/* Download CV PDF Button */}
+            <a
+              href="/files/Nguyen_Do_Quang_Sang_CV.pdf"
+              download="Nguyen_Do_Quang_Sang_CV.pdf"
+              className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-md shadow-rose-950/30 hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-95"
+              title={language === "en" ? "Download CV PDF" : "Tải xuống file CV PDF"}
+            >
+              <Download className="w-3.5 h-3.5" />
+              <span>{t("cv.download")}</span>
+            </a>
           </div>
         </div>
       </header>
 
-      {/* Main CV View Area */}
+      {/* Main CV View Area — Digital A4 Paper Layout */}
       <main className="flex-1 py-8 px-4 sm:px-6 overflow-x-auto flex justify-center bg-zinc-200/50 dark:bg-zinc-900/40 print:bg-white print:p-0">
         <div
           style={{
@@ -205,48 +198,9 @@ export default function CvPage() {
             transformOrigin: "top center",
             transition: "transform 0.15s ease",
           }}
-          className="w-full max-w-[850px]"
+          className="w-full max-w-[850px] print:shadow-none"
         >
-          {viewMode === "digital" ? (
-            /* Mode 1: Digital A4 Paper Layout */
-            <div className="print:shadow-none">
-              <PaperCvContent />
-            </div>
-          ) : (
-            /* Mode 2: Scan Images of original CV */
-            <div className="space-y-8 max-w-[820px] mx-auto print:hidden">
-              <div className="rounded-xl overflow-hidden shadow-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-                <div className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-600 dark:text-zinc-400 flex justify-between">
-                  <span>{t("cv.page1Notice")}</span>
-                  <span>cv-page-1.jpg</span>
-                </div>
-                <div className="relative w-full aspect-[1/1.414]">
-                  <Image
-                    src="/images/cv-page-1.jpg"
-                    alt="CV Nguyễn Đỗ Quang Sáng - Trang 1"
-                    fill
-                    className="object-contain bg-zinc-50 dark:bg-zinc-900"
-                    priority
-                  />
-                </div>
-              </div>
-
-              <div className="rounded-xl overflow-hidden shadow-xl border border-zinc-200 dark:border-zinc-800 bg-white dark:bg-zinc-950">
-                <div className="px-4 py-2 bg-zinc-100 dark:bg-zinc-900 border-b border-zinc-200 dark:border-zinc-800 text-xs font-mono text-zinc-600 dark:text-zinc-400 flex justify-between">
-                  <span>{t("cv.page2Notice")}</span>
-                  <span>cv-page-2.png</span>
-                </div>
-                <div className="relative w-full aspect-[1/1.414]">
-                  <Image
-                    src="/images/cv-page-2.png"
-                    alt="CV Nguyễn Đỗ Quang Sáng - Trang 2"
-                    fill
-                    className="object-contain bg-zinc-50 dark:bg-zinc-900"
-                  />
-                </div>
-              </div>
-            </div>
-          )}
+          <PaperCvContent />
         </div>
       </main>
 

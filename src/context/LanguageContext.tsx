@@ -98,14 +98,12 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CV Page
     "cv.back": "Về Portfolio",
-    "cv.digitalMode": "Bản in A4 Kỹ Thuật Số",
-    "cv.scanMode": "Bản scan ảnh gốc (2 Trang)",
+    "cv.download": "Tải xuống CV",
+    "cv.downloadPdf": "Tải xuống PDF",
     "cv.shareLink": "Chia sẻ link",
     "cv.copied": "Đã sao chép!",
     "cv.printPdf": "In / Lưu PDF",
-    "cv.tip": "Mẹo: Nhấn nút \"In / Lưu PDF\" hoặc phím tắt Ctrl + P để xuất CV ra file PDF A4 chuẩn quốc tế.",
-    "cv.page1Notice": "Trang 1: Thông tin cá nhân, Học vấn, Kỹ năng, Kinh nghiệm",
-    "cv.page2Notice": "Trang 2: Dự án cá nhân, Ngoại ngữ TOEIC",
+    "cv.tip": "Mẹo: Nhấn nút \"Tải xuống CV\" hoặc \"In / Lưu PDF\" (Ctrl + P) để xuất CV ra file PDF A4 chuẩn quốc tế.",
     "cv.page": "Trang",
   },
   en: {
@@ -194,14 +192,12 @@ const translations: Record<Language, Record<string, string>> = {
 
     // CV Page
     "cv.back": "Back to Portfolio",
-    "cv.digitalMode": "Digital A4 Print Format",
-    "cv.scanMode": "Original Scan (2 Pages)",
+    "cv.download": "Download CV",
+    "cv.downloadPdf": "Download PDF",
     "cv.shareLink": "Share Link",
     "cv.copied": "Copied!",
     "cv.printPdf": "Print / Save PDF",
-    "cv.tip": "Tip: Click \"Print / Save PDF\" or press Ctrl + P to export clean international standard A4 PDF.",
-    "cv.page1Notice": "Page 1: Personal Info, Education, Skills, Work Experience",
-    "cv.page2Notice": "Page 2: Key Projects, TOEIC Language Credential",
+    "cv.tip": "Tip: Click \"Download CV\" or \"Print / Save PDF\" (Ctrl + P) to export clean international standard A4 PDF.",
     "cv.page": "Page",
   },
 };

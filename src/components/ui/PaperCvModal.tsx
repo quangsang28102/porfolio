@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { X, Printer, ExternalLink, FileText } from "lucide-react";
+import { X, Printer, ExternalLink, FileText, Download } from "lucide-react";
 import Link from "next/link";
 import { PaperCvContent } from "@/components/cv/PaperCvContent";
 import { useLanguage } from "@/context/LanguageContext";
@@ -71,9 +71,18 @@ export function PaperCvModal({ isOpen, onClose }: PaperCvModalProps) {
                   <span>{language === "en" ? "Full Screen" : "Mở toàn màn hình"}</span>
                 </Link>
 
+                <a
+                  href="/files/Nguyen_Do_Quang_Sang_CV.pdf"
+                  download="Nguyen_Do_Quang_Sang_CV.pdf"
+                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-xs font-semibold text-white transition-colors cursor-pointer"
+                >
+                  <Download className="w-3.5 h-3.5" />
+                  <span>{t("cv.download")}</span>
+                </a>
+
                 <button
                   onClick={() => window.print()}
-                  className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-xs font-semibold text-white transition-colors cursor-pointer"
+                  className="hidden sm:flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-zinc-200/80 dark:bg-zinc-800 hover:bg-zinc-300 dark:hover:bg-zinc-700 text-xs font-medium text-zinc-800 dark:text-zinc-200 transition-colors cursor-pointer"
                 >
                   <Printer className="w-3.5 h-3.5" />
                   <span>{t("cv.printPdf")}</span>
