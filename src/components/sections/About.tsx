@@ -4,7 +4,7 @@ import React from "react";
 import { portfolioData } from "@/data/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
-import { Layout, Server, ShieldCheck, MapPin, CheckCircle } from "lucide-react";
+import { Layout, Server, ShieldCheck, MapPin, CheckCircle, Sparkles } from "lucide-react";
 
 export function About() {
   const { personal } = portfolioData;
@@ -15,6 +15,8 @@ export function About() {
         return <Layout className="w-6 h-6 text-rose-500" />;
       case "Server":
         return <Server className="w-6 h-6 text-rose-500" />;
+      case "Sparkles":
+        return <Sparkles className="w-6 h-6 text-rose-500" />;
       case "ShieldCheck":
         return <ShieldCheck className="w-6 h-6 text-rose-500" />;
       default:

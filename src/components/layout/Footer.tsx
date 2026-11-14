@@ -17,7 +17,7 @@ export function Footer() {
             <span className="text-white font-semibold">{personal.fullName}</span>
           </div>
           <p className="text-xs text-zinc-500 font-mono">
-            {personal.role} • Next.js & NestJS Ecosystem
+            {personal.role} • Next.js, React &amp; Three.js
           </p>
         </div>
 

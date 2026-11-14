@@ -205,16 +205,16 @@ export function Hero() {
                   <span className="text-zinc-500">primaryStack:</span> &#91;
                 </p>
                 <p className="pl-8 text-rose-300">
-                  &quot;Next.js 15 (App Router)&quot;,
+                  &quot;React &amp; Next.js (App Router)&quot;,
                 </p>
                 <p className="pl-8 text-rose-300">
-                  &quot;NestJS (Microservices)&quot;,
+                  &quot;Three.js / WebGL (3D Web)&quot;,
                 </p>
                 <p className="pl-8 text-rose-300">
                   &quot;TypeScript &amp; Tailwind CSS&quot;,
                 </p>
                 <p className="pl-8 text-rose-300">
-                  &quot;PostgreSQL &amp; Redis&quot;
+                  &quot;Node.js &amp; WebSockets (Colyseus)&quot;
                 </p>
                 <p className="pl-4">&#93;,</p>
                 <p className="pl-4">
