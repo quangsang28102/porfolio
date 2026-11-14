@@ -185,10 +185,10 @@ export function PaperCvContent() {
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
-                      {isEn ? "BITCO TUY NEN — W3C ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN (CHUẨN W3C)"}
+                      {isEn ? "BITCO Tuy Nen Brick Corporation | Building Materials" : "Công ty Cổ phần Gạch Tuy Nen Bình Định - BITCO"}
                     </span>
                     <a
-                      href="https://tuynen.vercel.app"
+                      href="https://tuynen.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
@@ -217,10 +217,10 @@ export function PaperCvContent() {
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
-                      {isEn ? "HPO DRIVER PORTAL & CUSTOM WORDPRESS THEME" : "CỔNG THÔNG TIN & THEME WORDPRESS (HPO PORTAL v2)"}
+                      {isEn ? "HPO – Vocational Driving Education Center" : "HPO – Trung Tâm Giáo Dục Nghề Nghiệp Ô Tô Hiệp Phát"}
                     </span>
                     <a
-                      href="https://hpo-edu-v2.vercel.app"
+                      href="https://hpo-edu-v2.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
@@ -249,10 +249,10 @@ export function PaperCvContent() {
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
-                      {isEn ? "FOOTBALL PAY — MATCH & EXPENSE SETTLEMENT" : "FOOTBALL PAY — QUẢN LÝ ĐỘI BÓNG & QUYẾT TOÁN VIETQR"}
+                      Football Payment Manager
                     </span>
                     <a
-                      href="https://football-pay.vercel.app"
+                      href="https://football-pay.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
@@ -281,10 +281,10 @@ export function PaperCvContent() {
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
-                      {isEn ? "AVATAR — PROCEDURAL 3D THREE.JS STUDIO" : "AVATAR — TẠO HÌNH NHÂN VẬT 3D PROCEDURAL (THREE.JS)"}
+                      {isEn ? "3D Chibi Girl Model — Three.js Low-Poly Stylized" : "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly)"}
                     </span>
                     <a
-                      href="https://avatar-three-rouge.vercel.app"
+                      href="https://avatar-three-rouge.vercel.app/"
                       target="_blank"
                       rel="noopener noreferrer"
                       className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"

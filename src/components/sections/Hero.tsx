@@ -122,27 +122,25 @@ export function Hero() {
             {/* Social quick links */}
             <motion.div
               variants={itemVariants}
-              className="flex items-center gap-4 text-xs font-mono text-zinc-500"
+              className="flex flex-wrap items-center gap-3 text-xs font-mono text-zinc-500"
             >
               <span>{t("hero.connect")}</span>
-              <div className="flex items-center gap-3 text-zinc-600 dark:text-zinc-400">
-                {personal.social.github && (
-                  <a
-                    href={personal.social.github}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
-                    aria-label="GitHub"
-                  >
-                    <GithubIcon className="w-4 h-4" />
-                  </a>
-                )}
+              <a
+                href={personal.social.github || "https://github.com/quangsang28102"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-200 hover:text-rose-600 dark:hover:text-rose-400 hover:border-rose-500/40 transition-all font-semibold shadow-sm"
+              >
+                <GithubIcon className="w-3.5 h-3.5" />
+                <span>quangsang28102</span>
+              </a>
+              <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
                 {personal.social.linkedin && (
                   <a
                     href={personal.social.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
+                    className="p-1.5 rounded-lg hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
                     aria-label="LinkedIn"
                   >
                     <LinkedinIcon className="w-4 h-4" />
@@ -151,7 +149,7 @@ export function Hero() {
                 {personal.email && (
                   <a
                     href={`mailto:${personal.email}`}
-                    className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
+                    className="p-1.5 rounded-lg hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="w-4 h-4" />
@@ -202,6 +200,33 @@ export function Hero() {
                   <span className="text-zinc-500">role:</span>{" "}
                   <span className="text-emerald-600 dark:text-emerald-300">&quot;{personal.role}&quot;</span>,
                 </p>
+                <p className="pl-4">
+                  <span className="text-zinc-500">github:</span>{" "}
+                  <a
+                    href="https://github.com/quangsang28102"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-rose-500 hover:underline"
+                  >
+                    &quot;quangsang28102&quot;
+                  </a>,
+                </p>
+                <p className="pl-4">
+                  <span className="text-zinc-500">liveDeployments:</span> &#91;
+                </p>
+                <p className="pl-8 text-emerald-500 dark:text-emerald-400">
+                  &quot;football-pay.vercel.app&quot;,
+                </p>
+                <p className="pl-8 text-emerald-500 dark:text-emerald-400">
+                  &quot;avatar-three-rouge.vercel.app&quot;,
+                </p>
+                <p className="pl-8 text-emerald-500 dark:text-emerald-400">
+                  &quot;hpo-edu-v2.vercel.app&quot;,
+                </p>
+                <p className="pl-8 text-emerald-500 dark:text-emerald-400">
+                  &quot;tuynen.vercel.app&quot;
+                </p>
+                <p className="pl-4">&#93;,</p>
                 <p className="pl-4">
                   <span className="text-zinc-500">primaryStack:</span> &#91;
                 </p>

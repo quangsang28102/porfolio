@@ -233,7 +233,8 @@ export default function DesignSystemPage() {
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-6 border-t border-zinc-200 dark:border-zinc-800/80 font-mono text-xs">
               <div>
                 <span className="text-zinc-400 block mb-1">Tác giả &amp; Kỹ sư:</span>
-                <strong className="text-zinc-950 dark:text-white font-semibold">Nguyễn Đỗ Quang Sáng</strong>
+                <strong className="text-zinc-950 dark:text-white font-semibold">Nguyễn Đỗ Quang Sáng</strong>{" "}
+                (<a href="https://github.com/quangsang28102" target="_blank" rel="noopener noreferrer" className="text-rose-500 hover:underline">@quangsang28102</a>)
               </div>
               <div>
                 <span className="text-zinc-400 block mb-1">Cảm hứng cốt lõi:</span>
@@ -698,19 +699,24 @@ export default function DesignSystemPage() {
           </p>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {/* Live Card Example */}
+            {/* 1. Football Payment Manager */}
             <div className="group rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-all duration-300 hover:border-rose-500/50 hover:shadow-2xl hover:shadow-rose-950/20 hover:-translate-y-2 relative overflow-hidden">
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
                   Fullstack / App Router
                 </span>
-                <span className="text-[11px] font-mono text-emerald-500 flex items-center gap-1">
+                <a
+                  href="https://football-pay.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-mono text-emerald-500 hover:underline flex items-center gap-1 font-semibold"
+                >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                  football-pay.vercel.app
-                </span>
+                  football-pay.vercel.app ↗
+                </a>
               </div>
               <h3 className="text-xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
-                Football Pay — Quản Lý Lịch Đá &amp; Quyết Toán VietQR
+                Football Payment Manager
               </h3>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                 Tự động tính tiền sân bãi, nước uống, sinh mã VietQR động theo từng người và đồng bộ hai chiều với Google Sheets API.
@@ -728,19 +734,24 @@ export default function DesignSystemPage() {
               </div>
             </div>
 
-            {/* Live 3D WebGL Card Example */}
+            {/* 2. 3D Chibi Girl Model */}
             <div className="group rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-all duration-300 hover:border-rose-500/50 hover:shadow-2xl hover:shadow-rose-950/20 hover:-translate-y-2 relative overflow-hidden">
               <div className="flex items-center justify-between mb-4">
                 <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
                   3D &amp; WebGL
                 </span>
-                <span className="text-[11px] font-mono text-emerald-500 flex items-center gap-1">
+                <a
+                  href="https://avatar-three-rouge.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-mono text-emerald-500 hover:underline flex items-center gap-1 font-semibold"
+                >
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
-                  avatar-three-rouge.vercel.app
-                </span>
+                  avatar-three-rouge.vercel.app ↗
+                </a>
               </div>
               <h3 className="text-xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
-                AVATAR — Studio Tạo Hình Nhân Vật 3D Thủ Tục
+                Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)
               </h3>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                 Khởi tạo mô hình 3D thủ tục bằng toán học &amp; BufferGeometry siêu nhẹ (&lt;250KB), xoay 360° và xuất file .GLB/.OBJ.
@@ -754,6 +765,76 @@ export default function DesignSystemPage() {
                 </span>
                 <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
                   BufferGeometry
+                </span>
+              </div>
+            </div>
+
+            {/* 3. HPO Auto */}
+            <div className="group rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-all duration-300 hover:border-rose-500/50 hover:shadow-2xl hover:shadow-rose-950/20 hover:-translate-y-2 relative overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
+                  WordPress &amp; CMS
+                </span>
+                <a
+                  href="https://hpo-edu-v2.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-mono text-emerald-500 hover:underline flex items-center gap-1 font-semibold"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                  hpo-edu-v2.vercel.app ↗
+                </a>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
+                HPO – Trung Tâm Giáo Dục Nghề Nghiệp Ô Tô Hiệp Phát
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Chuyển đổi giao diện tĩnh sang Custom Theme WordPress, tối ưu hóa điểm Core Web Vitals và tra cứu thông tin học viên bằng mã QR.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  WordPress
+                </span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  PHP
+                </span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  Dynamic QR
+                </span>
+              </div>
+            </div>
+
+            {/* 4. BITCO Tuy Nen */}
+            <div className="group rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-all duration-300 hover:border-rose-500/50 hover:shadow-2xl hover:shadow-rose-950/20 hover:-translate-y-2 relative overflow-hidden">
+              <div className="flex items-center justify-between mb-4">
+                <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
+                  W3C Slicing / Web
+                </span>
+                <a
+                  href="https://tuynen.vercel.app/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[11px] font-mono text-emerald-500 hover:underline flex items-center gap-1 font-semibold"
+                >
+                  <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping" />
+                  tuynen.vercel.app ↗
+                </a>
+              </div>
+              <h3 className="text-xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
+                Công ty Cổ phần Gạch Tuy Nen Bình Định - BITCO | Vật Liệu Xây Dựng Hàng Đầu
+              </h3>
+              <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
+                Cắt layout pixel-perfect từ Photoshop sang HTML5/CSS3 chuẩn W3C Validation, kết hợp hiệu ứng Parallax mượt mà.
+              </p>
+              <div className="flex flex-wrap gap-2 pt-4 border-t border-zinc-100 dark:border-zinc-800">
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  HTML5 (W3C)
+                </span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  Modular CSS3
+                </span>
+                <span className="px-2 py-0.5 rounded text-[10px] font-mono bg-zinc-100 dark:bg-zinc-800 text-zinc-600 dark:text-zinc-300">
+                  jQuery Parallax
                 </span>
               </div>
             </div>
@@ -847,3 +928,4 @@ export default function DesignSystemPage() {
     </div>
   );
 }
+

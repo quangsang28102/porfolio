@@ -6,6 +6,7 @@ import { getPortfolioData } from "@/data/portfolio";
 import { useTheme } from "@/context/ThemeContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { Menu, X, FileText, Send, Sun, Moon, Palette } from "lucide-react";
+import { GithubIcon } from "@/components/ui/Icons";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
@@ -147,6 +148,18 @@ export function Header() {
             )}
           </button>
 
+          {/* GitHub Profile Link */}
+          <a
+            href="https://github.com/quangsang28102"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub Profile @quangsang28102"
+            title="GitHub: https://github.com/quangsang28102"
+            className="p-2 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-rose-600 dark:hover:text-rose-400 hover:border-zinc-300 dark:hover:border-zinc-700 transition-all cursor-pointer shadow-sm"
+          >
+            <GithubIcon className="w-3.5 h-3.5" />
+          </a>
+
           {/* View Paper CV Link */}
           <Link
             href="/cv"
@@ -210,31 +223,42 @@ export function Header() {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row gap-2">
-                <Link
-                  href="/design-system"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold"
-                >
-                  <Palette className="w-3.5 h-3.5 text-rose-500" />
-                  <span>{t("nav.designSystem")}</span>
-                </Link>
-                <Link
-                  href="/cv"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold"
-                >
-                  <FileText className="w-3.5 h-3.5 text-rose-500" />
-                  <span>{t("nav.viewCv")}</span>
-                </Link>
+              <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex flex-col gap-2">
                 <a
-                  href="#contact"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-rose-600 text-white text-xs font-semibold"
+                  href="https://github.com/quangsang28102"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold hover:text-rose-500"
                 >
-                  <Send className="w-3.5 h-3.5" />
-                  <span>{t("nav.contactCta")}</span>
+                  <GithubIcon className="w-3.5 h-3.5" />
+                  <span>GitHub @quangsang28102</span>
                 </a>
+                <div className="flex flex-col sm:flex-row gap-2">
+                  <Link
+                    href="/design-system"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold"
+                  >
+                    <Palette className="w-3.5 h-3.5 text-rose-500" />
+                    <span>{t("nav.designSystem")}</span>
+                  </Link>
+                  <Link
+                    href="/cv"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold"
+                  >
+                    <FileText className="w-3.5 h-3.5 text-rose-500" />
+                    <span>{t("nav.viewCv")}</span>
+                  </Link>
+                  <a
+                    href="#contact"
+                    onClick={() => setMobileMenuOpen(false)}
+                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-rose-600 text-white text-xs font-semibold"
+                  >
+                    <Send className="w-3.5 h-3.5" />
+                    <span>{t("nav.contactCta")}</span>
+                  </a>
+                </div>
               </div>
             </div>
           </motion.div>

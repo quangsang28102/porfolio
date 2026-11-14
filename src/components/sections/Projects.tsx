@@ -87,14 +87,30 @@ export function Projects() {
                     </div>
                   )}
 
-                  {/* Category and Role */}
-                  <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
-                      {project.category}
-                    </span>
-                    <span className="text-xs font-mono text-zinc-500">
-                      • {project.role}
-                    </span>
+                  {/* Category, Live Demo Badge, and Role */}
+                  <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
+                    <div className="flex items-center gap-2">
+                      <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
+                        {project.category}
+                      </span>
+                      <span className="text-xs font-mono text-zinc-500 hidden sm:inline">
+                        • {project.role}
+                      </span>
+                    </div>
+
+                    {project.demoUrl && (
+                      <a
+                        href={project.demoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        onClick={(e) => e.stopPropagation()}
+                        className="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[11px] font-mono font-semibold bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 border border-emerald-500/30 hover:bg-emerald-500/25 transition-all shadow-sm"
+                        title={project.demoUrl}
+                      >
+                        <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
+                        <span>{project.demoUrl.replace("https://", "").replace(/\/$/, "")} ↗</span>
+                      </a>
+                    )}
                   </div>
 
                   {/* Title & Arrow */}
@@ -131,31 +147,33 @@ export function Projects() {
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-zinc-200 dark:border-zinc-800/60 text-xs font-mono">
+                  <div className="flex flex-wrap items-center justify-between gap-3 pt-4 border-t border-zinc-200 dark:border-zinc-800/60 text-xs font-mono">
                     <span className="text-rose-600 dark:text-rose-400 flex items-center gap-1 group-hover:underline">
                       {t("proj.viewDetail")}
                     </span>
-                    <div className="flex items-center gap-2 text-zinc-500 dark:text-zinc-400" onClick={(e) => e.stopPropagation()}>
-                      {project.githubUrl && (
-                        <a
-                          href={project.githubUrl}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="hover:text-zinc-950 dark:hover:text-white transition-colors p-1"
-                          aria-label="GitHub Repository"
-                        >
-                          <GithubIcon className="w-4 h-4" />
-                        </a>
-                      )}
+                    <div className="flex items-center gap-2" onClick={(e) => e.stopPropagation()}>
                       {project.demoUrl && (
                         <a
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-zinc-950 dark:hover:text-white transition-colors p-1"
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl bg-emerald-600 hover:bg-emerald-500 text-white font-semibold transition-all shadow-sm shadow-emerald-950/20 hover:scale-105"
                           aria-label="Demo Trực Tiếp"
                         >
-                          <ExternalLink className="w-4 h-4" />
+                          <ExternalLink className="w-3.5 h-3.5" />
+                          <span>Live Demo</span>
+                        </a>
+                      )}
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-zinc-100 dark:bg-zinc-800/90 hover:bg-zinc-200 dark:hover:bg-zinc-700 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white border border-zinc-200 dark:border-zinc-700/80 transition-all"
+                          aria-label="GitHub Repository"
+                        >
+                          <GithubIcon className="w-3.5 h-3.5" />
+                          <span>GitHub</span>
                         </a>
                       )}
                     </div>

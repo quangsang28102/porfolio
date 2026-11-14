@@ -126,7 +126,7 @@ export const portfolioDataVi: PortfolioData = {
   projects: [
     {
       id: "proj-1",
-      title: "BITCO Tuy Nen — Website Doanh Nghiệp Vật Liệu Xây Dựng",
+      title: "Công ty Cổ phần Gạch Tuy Nen Bình Định - BITCO | Vật Liệu Xây Dựng Hàng Đầu",
       category: "Web",
       featured: true,
       summary:
@@ -147,13 +147,13 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://tuynen.vercel.app",
+      demoUrl: "https://tuynen.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/tuynen",
       results: "Website tải dưới 1.5 giây, đạt 95+ điểm Google PageSpeed trên thiết bị di động và đáp ứng 100% chuẩn W3C.",
     },
     {
       id: "proj-2",
-      title: "Cổng Thông Tin & Theme WordPress Quản Trị — Hiệp Phát Auto (v2)",
+      title: "HPO – Trung Tâm Giáo Dục Nghề Nghiệp Ô Tô Hiệp Phát",
       category: "Web",
       featured: true,
       summary:
@@ -173,13 +173,13 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://hpo-edu-v2.vercel.app",
+      demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
       results: "Phục vụ hàng nghìn lượt tra cứu học viên mỗi tháng với thời gian phản hồi trang dưới 1.2s.",
     },
     {
       id: "proj-3",
-      title: "Football Pay — Ứng Dụng Quản Lý Lịch Đá & Quyết Toán VietQR",
+      title: "Football Payment Manager",
       category: "Fullstack",
       featured: true,
       summary:
@@ -199,13 +199,13 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://football-pay.vercel.app",
+      demoUrl: "https://football-pay.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/footballPay",
       results: "Giúp ban quản trị tiết kiệm 80% thời gian tính toán và đối soát chi phí sau mỗi trận.",
     },
     {
       id: "proj-4",
-      title: "AVATAR — Studio Tạo Hình Nhân Vật 3D Thủ Tục (Three.js WebGL)",
+      title: "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)",
       category: "3D & WebGL",
       featured: true,
       summary:
@@ -225,7 +225,7 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://avatar-three-rouge.vercel.app",
+      demoUrl: "https://avatar-three-rouge.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/AVATAR",
       results: "Tải mô hình 3D tức thì trong < 100ms với dung lượng dưới 250KB, duy trì tốc độ 60 FPS trên mọi trình duyệt.",
     },
@@ -406,7 +406,7 @@ export const portfolioDataEn: PortfolioData = {
   projects: [
     {
       id: "proj-1",
-      title: "BITCO Tuy Nen — Building Materials Enterprise Portal",
+      title: "BITCO Tuy Nen Brick Corporation | Leading Building Materials",
       category: "Web",
       featured: true,
       summary:
@@ -427,13 +427,13 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://tuynen.vercel.app",
+      demoUrl: "https://tuynen.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/tuynen",
       results: "Page loads under 1.5 seconds, scored 95+ on Google PageSpeed Mobile, and achieves 100% W3C compliance.",
     },
     {
       id: "proj-2",
-      title: "HPO Driver Portal & Custom WordPress CMS (v2)",
+      title: "HPO – Hiep Phat Vocational Driving Education Center",
       category: "Web",
       featured: true,
       summary:
@@ -453,13 +453,13 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://hpo-edu-v2.vercel.app",
+      demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
       results: "Serving thousands of student lookups monthly with average page response times under 1.2s.",
     },
     {
       id: "proj-3",
-      title: "Football Pay — Match Management & Debt Settlement Platform",
+      title: "Football Payment Manager",
       category: "Fullstack",
       featured: true,
       summary:
@@ -479,13 +479,13 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://football-pay.vercel.app",
+      demoUrl: "https://football-pay.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/footballPay",
       results: "Saved club managers 80% of calculation time and streamlined weekly expense settlements.",
     },
     {
       id: "proj-4",
-      title: "AVATAR — Procedural 3D Character Studio (Three.js WebGL)",
+      title: "3D Chibi Girl Model — Three.js Low-Poly Stylized",
       category: "3D & WebGL",
       featured: true,
       summary:
@@ -505,7 +505,7 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "https://avatar-three-rouge.vercel.app",
+      demoUrl: "https://avatar-three-rouge.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/AVATAR",
       results: "Sub-100ms load time with asset payload under 250KB, maintaining consistent 60 FPS across browsers.",
     },
