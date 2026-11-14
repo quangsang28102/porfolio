@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 import { Project } from "@/types/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -11,11 +12,13 @@ import { GithubIcon } from "@/components/ui/Icons";
 import Image from "next/image";
 
 export function Projects() {
-  const { projects } = portfolioData;
+  const { language, t } = useLanguage();
+  const currentData = getPortfolioData(language);
+  const { projects } = currentData;
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
-  const categories = ["All", "Fullstack", "Web", "Backend"];
+  const categories = ["All", "Fullstack", "Web"];
 
   const filteredProjects =
     activeFilter === "All"
@@ -23,17 +26,17 @@ export function Projects() {
       : projects.filter((p) => p.category === activeFilter);
 
   return (
-    <section id="projects" className="py-24 border-t border-zinc-900 relative">
+    <section id="projects" className="py-24 border-t border-zinc-200 dark:border-zinc-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
             <div>
-              <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-500 mb-2 block">
-                04 // SẢN PHẨM &amp; DỰ ÁN
+              <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-600 dark:text-rose-500 mb-2 block">
+                {t("proj.badge")}
               </span>
-              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-                Các dự án đã xây dựng &amp; hoàn thiện
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 dark:text-white">
+                {t("proj.heading")}
               </h2>
             </div>
 
@@ -45,11 +48,11 @@ export function Projects() {
                   onClick={() => setActiveFilter(cat)}
                   className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors cursor-pointer ${
                     activeFilter === cat
-                      ? "bg-rose-600 text-white border border-rose-500"
-                      : "bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800"
+                      ? "bg-rose-600 text-white border border-rose-500 font-semibold shadow-sm"
+                      : "bg-white dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white border border-zinc-200 dark:border-zinc-800 shadow-sm"
                   }`}
                 >
-                  {cat === "All" ? "Tất cả" : cat}
+                  {cat === "All" ? t("proj.all") : cat}
                 </button>
               ))}
             </div>
@@ -67,19 +70,19 @@ export function Projects() {
                 <div>
                   {/* Image Preview */}
                   {project.images && project.images.length > 0 && (
-                    <div className="relative w-full h-52 rounded-xl overflow-hidden mb-5 border border-zinc-800/80 bg-zinc-900">
+                    <div className="relative w-full h-52 rounded-xl overflow-hidden mb-5 border border-zinc-200 dark:border-zinc-800/80 bg-zinc-100 dark:bg-zinc-900">
                       <Image
                         src={project.images[0]}
                         alt={project.title}
                         fill
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+                      <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-zinc-950 via-transparent to-transparent" />
                       
                       {project.featured && (
                         <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-rose-600 text-white flex items-center gap-1 shadow-lg shadow-rose-950/50">
                           <Sparkles className="w-3 h-3" />
-                          <span>Featured</span>
+                          <span>{t("proj.featured")}</span>
                         </div>
                       )}
                     </div>
@@ -87,7 +90,7 @@ export function Projects() {
 
                   {/* Category and Role */}
                   <div className="flex items-center gap-2 mb-3">
-                    <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
                       {project.category}
                     </span>
                     <span className="text-xs font-mono text-zinc-500">
@@ -97,16 +100,16 @@ export function Projects() {
 
                   {/* Title & Arrow */}
                   <div className="flex items-start justify-between gap-4 mb-3">
-                    <h3 className="text-xl font-bold text-white group-hover:text-rose-400 transition-colors">
+                    <h3 className="text-xl font-bold text-zinc-950 dark:text-white group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
                       {project.title}
                     </h3>
-                    <div className="p-2 rounded-lg bg-zinc-800/60 text-zinc-400 group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-all duration-300 shrink-0">
+                    <div className="p-2 rounded-lg bg-zinc-100 dark:bg-zinc-800/60 text-zinc-500 dark:text-zinc-400 group-hover:text-rose-600 dark:group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-all duration-300 shrink-0">
                       <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
                     </div>
                   </div>
 
                   {/* Summary */}
-                  <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3 mb-6">
+                  <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed line-clamp-3 mb-6">
                     {project.summary}
                   </p>
                 </div>
@@ -117,29 +120,29 @@ export function Projects() {
                     {project.technologies.slice(0, 5).map((tech) => (
                       <span
                         key={tech}
-                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-800/80 text-zinc-300 border border-zinc-700/60"
+                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-100 dark:bg-zinc-800/80 text-zinc-700 dark:text-zinc-300 border border-zinc-200 dark:border-zinc-700/60"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 5 && (
-                      <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-800/40 text-zinc-500">
+                      <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-100 dark:bg-zinc-800/40 text-zinc-500">
                         +{project.technologies.length - 5}
                       </span>
                     )}
                   </div>
 
-                  <div className="flex items-center justify-between pt-4 border-t border-zinc-800/60 text-xs font-mono">
-                    <span className="text-rose-400 flex items-center gap-1 group-hover:underline">
-                      Xem chi tiết bài toán &amp; giải pháp →
+                  <div className="flex items-center justify-between pt-4 border-t border-zinc-200 dark:border-zinc-800/60 text-xs font-mono">
+                    <span className="text-rose-600 dark:text-rose-400 flex items-center gap-1 group-hover:underline">
+                      {t("proj.viewDetail")}
                     </span>
-                    <div className="flex items-center gap-2 text-zinc-400" onClick={(e) => e.stopPropagation()}>
+                    <div className="flex items-center gap-2 text-zinc-500 dark:text-zinc-400" onClick={(e) => e.stopPropagation()}>
                       {project.githubUrl && (
                         <a
                           href={project.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-white transition-colors p-1"
+                          className="hover:text-zinc-950 dark:hover:text-white transition-colors p-1"
                           aria-label="GitHub Repository"
                         >
                           <GithubIcon className="w-4 h-4" />
@@ -150,7 +153,7 @@ export function Projects() {
                           href={project.demoUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="hover:text-white transition-colors p-1"
+                          className="hover:text-zinc-950 dark:hover:text-white transition-colors p-1"
                           aria-label="Demo Trực Tiếp"
                         >
                           <ExternalLink className="w-4 h-4" />

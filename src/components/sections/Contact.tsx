@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 import { Reveal } from "@/components/ui/Reveal";
 import { Toast } from "@/components/ui/Toast";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
@@ -9,7 +10,9 @@ import { Copy, Check, Send, MapPin } from "lucide-react";
 import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export function Contact() {
-  const { personal } = portfolioData;
+  const { language, t } = useLanguage();
+  const currentData = getPortfolioData(language);
+  const { personal } = currentData;
   const [copied, setCopied] = useState(false);
   const [toastMessage, setToastMessage] = useState<string | null>(null);
 
@@ -17,48 +20,48 @@ export function Contact() {
     try {
       await navigator.clipboard.writeText(personal.email);
       setCopied(true);
-      setToastMessage("Đã sao chép địa chỉ email vào clipboard!");
+      setToastMessage(t("contact.copySuccess"));
       setTimeout(() => {
         setCopied(false);
         setToastMessage(null);
       }, 3000);
     } catch {
-      setToastMessage("Không thể tự động sao chép, vui lòng copy thủ công.");
+      setToastMessage(t("contact.copyFail"));
     }
   };
 
   return (
-    <section id="contact" className="py-24 border-t border-zinc-900 relative">
+    <section id="contact" className="py-24 border-t border-zinc-200 dark:border-zinc-900 relative">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 text-center">
         {/* Section Heading */}
         <Reveal>
-          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-500 mb-2 inline-block">
-            06 // LIÊN HỆ &amp; HỢP TÁC
+          <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-600 dark:text-rose-500 mb-2 inline-block">
+            {t("contact.badge")}
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-white mb-4">
-            Cùng nhau kiến tạo sản phẩm tiếp theo
+          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-4">
+            {t("contact.heading")}
           </h2>
-          <p className="text-base sm:text-lg text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed">
-            Tôi luôn sẵn sàng đón nhận các cơ hội việc làm, dự án phát triển web toàn diện hoặc trao đổi kỹ thuật.
+          <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed">
+            {t("contact.sub")}
           </p>
         </Reveal>
 
         {/* Contact Spotlight Card */}
         <Reveal delay={0.15}>
-          <SpotlightCard className="p-8 sm:p-12 rounded-3xl text-left bg-zinc-950/80 border-zinc-800 shadow-2xl">
+          <SpotlightCard className="p-8 sm:p-12 rounded-3xl text-left bg-white/95 dark:bg-zinc-950/80 border-zinc-200 dark:border-zinc-800 shadow-xl dark:shadow-2xl">
             <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
               <div className="md:col-span-7 space-y-4">
-                <div className="flex items-center gap-2 text-rose-400 font-mono text-xs">
+                <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 font-mono text-xs font-semibold">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
-                  <span>Đang sẵn sàng cho các dự án mới</span>
+                  <span>{t("contact.available")}</span>
                 </div>
-                <h3 className="text-2xl font-bold text-white tracking-tight">
-                  Gửi lời chào hoặc yêu cầu tư vấn
+                <h3 className="text-2xl font-bold text-zinc-950 dark:text-white tracking-tight">
+                  {t("contact.cardHeading")}
                 </h3>
-                <p className="text-sm text-zinc-400 leading-relaxed">
-                  Bạn có thể gửi thư trực tiếp qua hộp thư cá nhân hoặc sao chép nhanh địa chỉ email dưới đây:
+                <p className="text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed">
+                  {t("contact.cardSub")}
                 </p>
-                <div className="flex items-center gap-2 text-zinc-400 text-xs font-mono pt-2">
+                <div className="flex items-center gap-2 text-zinc-500 font-mono text-xs pt-2">
                   <MapPin className="w-4 h-4 text-rose-500 shrink-0" />
                   <span>{personal.location}</span>
                 </div>
@@ -67,16 +70,16 @@ export function Contact() {
               {/* Actions */}
               <div className="md:col-span-5 flex flex-col gap-3">
                 {/* Email address display with copy */}
-                <div className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-900 border border-zinc-800 font-mono text-xs text-zinc-200">
-                  <span className="truncate mr-2">{personal.email}</span>
+                <div className="flex items-center justify-between p-3.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 font-mono text-xs text-zinc-800 dark:text-zinc-200 shadow-sm">
+                  <span className="truncate mr-2 font-medium">{personal.email}</span>
                   <button
                     onClick={handleCopyEmail}
-                    className="p-1.5 rounded-md hover:bg-zinc-800 text-zinc-400 hover:text-white transition-colors cursor-pointer shrink-0"
+                    className="p-1.5 rounded-md hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white transition-colors cursor-pointer shrink-0"
                     title="Sao chép email"
                     aria-label="Sao chép email"
                   >
                     {copied ? (
-                      <Check className="w-4 h-4 text-emerald-400" />
+                      <Check className="w-4 h-4 text-emerald-500 dark:text-emerald-400" />
                     ) : (
                       <Copy className="w-4 h-4" />
                     )}
@@ -85,11 +88,11 @@ export function Contact() {
 
                 {/* Send Email Mailto Button */}
                 <a
-                  href={`mailto:${personal.email}?subject=Liên hệ từ Portfolio`}
+                  href={`mailto:${personal.email}?subject=Contact from Portfolio`}
                   className="flex items-center justify-center gap-2 w-full py-3.5 rounded-xl bg-rose-600 hover:bg-rose-500 text-white font-semibold text-sm transition-all duration-300 shadow-[0_0_20px_rgba(225,29,72,0.35)] hover:shadow-[0_0_30px_rgba(225,29,72,0.5)]"
                 >
                   <Send className="w-4 h-4" />
-                  <span>Mở ứng dụng Email</span>
+                  <span>{t("contact.openEmail")}</span>
                 </a>
 
                 {/* Social channels */}
@@ -99,7 +102,7 @@ export function Contact() {
                       href={personal.social.github}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                      className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm"
                       aria-label="GitHub"
                     >
                       <GithubIcon className="w-4 h-4" />
@@ -110,7 +113,7 @@ export function Contact() {
                       href={personal.social.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                      className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm"
                       aria-label="LinkedIn"
                     >
                       <LinkedinIcon className="w-4 h-4" />
@@ -121,7 +124,7 @@ export function Contact() {
                       href={personal.social.facebook}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl bg-zinc-900 border border-zinc-800 text-zinc-400 hover:text-white hover:border-zinc-700 transition-colors"
+                      className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm"
                       aria-label="Facebook"
                     >
                       <FacebookIcon className="w-4 h-4" />

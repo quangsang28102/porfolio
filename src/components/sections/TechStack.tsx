@@ -1,24 +1,27 @@
 "use client";
 
 import React, { useState } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 import { SkillCategory } from "@/types/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { TechMarquee } from "@/components/ui/TechMarquee";
 import { Code2, Layers, Database, Cpu, TerminalSquare, Sparkles } from "lucide-react";
 
-const categories: { label: string; value: SkillCategory | "All" }[] = [
-  { label: "Tất cả", value: "All" },
-  { label: "Frontend", value: "Frontend" },
-  { label: "Backend", value: "Backend" },
-  { label: "Languages", value: "Languages" },
-  { label: "Database", value: "Database" },
-  { label: "DevOps & Tools", value: "DevOps & Tools" },
-];
-
 export function TechStack() {
-  const { skills } = portfolioData;
+  const { language, t } = useLanguage();
+  const currentData = getPortfolioData(language);
+  const { skills } = currentData;
   const [selectedCategory, setSelectedCategory] = useState<SkillCategory | "All">("All");
+
+  const categories: { label: string; value: SkillCategory | "All" }[] = [
+    { label: t("skills.all"), value: "All" },
+    { label: "Frontend", value: "Frontend" },
+    { label: "Backend", value: "Backend" },
+    { label: "Languages", value: "Languages" },
+    { label: "Database", value: "Database" },
+    { label: "DevOps & Tools", value: "DevOps & Tools" },
+  ];
 
   const filteredSkills =
     selectedCategory === "All"
@@ -43,19 +46,19 @@ export function TechStack() {
   };
 
   return (
-    <section id="skills" className="py-24 border-t border-zinc-900 relative">
+    <section id="skills" className="py-24 border-t border-zinc-200 dark:border-zinc-900 relative">
       <div className="max-w-6xl mx-auto px-4 sm:px-6">
         {/* Section Heading */}
         <Reveal>
           <div className="flex flex-col items-start mb-8">
-            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-500 mb-2">
-              02 // HỆ SINH THÁI CÔNG NGHỆ
+            <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-600 dark:text-rose-500 mb-2">
+              {t("skills.badge")}
             </span>
-            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
-              Vũ khí công nghệ &amp; Thư viện chuyên môn
+            <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-zinc-950 dark:text-white">
+              {t("skills.heading")}
             </h2>
-            <p className="text-sm sm:text-base text-zinc-400 mt-2 max-w-xl">
-              Tập trung tối đa vào tính ổn định, hiệu năng và khả năng mở rộng của hệ thống.
+            <p className="text-sm sm:text-base text-zinc-600 dark:text-zinc-400 mt-2 max-w-xl">
+              {t("skills.sub")}
             </p>
           </div>
         </Reveal>
@@ -75,8 +78,8 @@ export function TechStack() {
                 onClick={() => setSelectedCategory(cat.value)}
                 className={`px-4 py-2 rounded-xl text-xs sm:text-sm font-medium transition-all duration-200 cursor-pointer flex items-center gap-2 ${
                   isActive
-                    ? "bg-rose-600 text-white shadow-lg shadow-rose-950/40 border border-rose-500"
-                    : "bg-zinc-900/80 text-zinc-400 hover:text-zinc-200 hover:bg-zinc-800/80 border border-zinc-800"
+                    ? "bg-rose-600 text-white shadow-md shadow-rose-950/20 border border-rose-500 font-semibold"
+                    : "bg-white dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-zinc-200 hover:bg-zinc-100 dark:hover:bg-zinc-800/80 border border-zinc-200 dark:border-zinc-800 shadow-sm"
                 }`}
               >
                 {cat.value !== "All" && getCategoryIcon(cat.value)}
@@ -90,9 +93,9 @@ export function TechStack() {
         <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-3.5">
           {filteredSkills.map((skill, index) => (
             <Reveal key={skill.name} delay={index * 0.04}>
-              <div className="group relative p-4 rounded-xl bg-zinc-900/40 border border-zinc-800/80 hover:border-rose-500/50 hover:bg-zinc-900/90 transition-all duration-300 flex flex-col justify-between h-24">
+              <div className="group relative p-4 rounded-xl bg-white dark:bg-zinc-900/40 border border-zinc-200 dark:border-zinc-800/80 hover:border-rose-400 dark:hover:border-rose-500/50 hover:bg-zinc-50 dark:hover:bg-zinc-900/90 transition-all duration-300 flex flex-col justify-between h-24 shadow-sm">
                 <div className="flex items-start justify-between">
-                  <span className="text-zinc-500 group-hover:text-rose-400 transition-colors">
+                  <span className="text-zinc-400 dark:text-zinc-500 group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
                     {getCategoryIcon(skill.category)}
                   </span>
                   {skill.featured && (
@@ -100,7 +103,7 @@ export function TechStack() {
                   )}
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-zinc-200 group-hover:text-white transition-colors truncate">
+                  <h3 className="text-sm font-semibold text-zinc-800 dark:text-zinc-200 group-hover:text-zinc-950 dark:group-hover:text-white transition-colors truncate">
                     {skill.name}
                   </h3>
                   <span className="text-[10px] font-mono text-zinc-500">
@@ -115,4 +118,3 @@ export function TechStack() {
     </section>
   );
 }
-

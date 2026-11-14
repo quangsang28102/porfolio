@@ -3,10 +3,14 @@
 import React from "react";
 import { Mail, Phone, MapPin } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
-import { portfolioData } from "@/data/portfolio";
+import { getPortfolioData } from "@/data/portfolio";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function PaperCvContent() {
-  const { personal, education, skills, experiences, projects } = portfolioData;
+  const { language } = useLanguage();
+  const currentData = getPortfolioData(language);
+  const { personal, education, experiences, projects } = currentData;
+  const isEn = language === "en";
 
   return (
     <div className="paper-cv-root font-sans text-zinc-900 bg-white shadow-2xl max-w-[820px] mx-auto select-text leading-normal">
@@ -41,24 +45,22 @@ export function PaperCvContent() {
             </div>
           </div>
 
-          {/* Section: TÓM TẮT */}
+          {/* Section: TÓM TẮT / SUMMARY */}
           <div className="mt-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-2.5">
-              TÓM TẮT
+              {isEn ? "PROFESSIONAL SUMMARY" : "TÓM TẮT"}
             </h2>
             <p className="text-xs sm:text-[13px] text-zinc-800 leading-relaxed text-justify">
-              LTV Frontend có 2 năm kinh nghiệm xây dựng, bảo trì và nâng cấp hiệu năng website.
-              Thành thạo việc cắt layout giao diện phức tạp và linh hoạt xử lý logic front-end với
-              JavaScript/jQuery, ReactJS và Next.js. Có kinh nghiệm sâu sắc về Three.js / WebGL,
-              tạo lập và tùy biến dự án WordPress từ con số không. Chủ động áp dụng AI vào quy
-              trình làm việc hàng ngày để đảm bảo tiến độ nhanh chóng và độ chính xác tối đa.
+              {isEn
+                ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in crafting complex responsive layouts and implementing fluid front-end logic with modern JavaScript/TypeScript, ReactJS, and Next.js. Solid foundation in Three.js / WebGL 3D graphics and custom WordPress architecture. Proactively integrates AI tools into daily workflows to optimize speed and precision."
+                : "LTV Frontend có 2 năm kinh nghiệm xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp và linh hoạt xử lý logic front-end với JavaScript/jQuery, ReactJS và Next.js. Có kinh nghiệm sâu sắc về Three.js / WebGL, tạo lập và tùy biến dự án WordPress từ con số không. Chủ động áp dụng AI vào quy trình làm việc hàng ngày để đảm bảo tiến độ nhanh chóng và độ chính xác tối đa."}
             </p>
           </div>
 
-          {/* Section: HỌC VẤN */}
+          {/* Section: HỌC VẤN / EDUCATION */}
           <div className="mt-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
-              HỌC VẤN
+              {isEn ? "EDUCATION" : "HỌC VẤN"}
             </h2>
             <div className="space-y-3">
               {education.map((edu) => (
@@ -79,25 +81,25 @@ export function PaperCvContent() {
               ))}
               <div className="text-xs sm:text-[13px] pt-1">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span>Thực tập doanh nghiệp – Fresher</span>
+                  <span>{isEn ? "Enterprise Internship – Fresher" : "Thực tập doanh nghiệp – Fresher"}</span>
                   <span className="font-normal text-zinc-600 font-mono text-xs">
                     01/2024 – 07/2024
                   </span>
                 </div>
                 <div className="text-zinc-800 italic mb-1">Quốc Bảo Software</div>
                 <ul className="list-disc list-inside text-xs text-zinc-700 pl-1 space-y-0.5">
-                  <li>Thu thập thông tin nhu cầu khách hàng</li>
-                  <li>Thiết kế UI/UX ứng dụng &amp; website</li>
-                  <li>Lập trình giao diện Website</li>
+                  <li>{isEn ? "Gathered and analyzed client requirements" : "Thu thập thông tin nhu cầu khách hàng"}</li>
+                  <li>{isEn ? "Designed modern UI/UX for web and applications" : "Thiết kế UI/UX ứng dụng & website"}</li>
+                  <li>{isEn ? "Developed responsive frontend websites" : "Lập trình giao diện Website"}</li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Section: KỸ NĂNG */}
+          {/* Section: KỸ NĂNG / SKILLS */}
           <div className="mt-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-2.5">
-              KỸ NĂNG
+              {isEn ? "TECHNICAL SKILLS" : "KỸ NĂNG"}
             </h2>
             <div className="space-y-1.5 text-xs sm:text-[13px] text-zinc-800">
               <p>
@@ -119,10 +121,10 @@ export function PaperCvContent() {
             </div>
           </div>
 
-          {/* Section: KINH NGHIỆM LÀM VIỆC */}
+          {/* Section: KINH NGHIỆM LÀM VIỆC / WORK EXPERIENCE */}
           <div className="mt-6">
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
-              KINH NGHIỆM LÀM VIỆC
+              {isEn ? "WORK EXPERIENCE" : "KINH NGHIỆM LÀM VIỆC"}
             </h2>
             <div className="space-y-4">
               {experiences.map((exp) => (
@@ -130,7 +132,7 @@ export function PaperCvContent() {
                   <div className="flex justify-between items-baseline font-bold text-zinc-950">
                     <span>{exp.organization}</span>
                     <span className="font-normal text-zinc-600 font-mono text-xs">
-                      {exp.startDate} – {exp.endDate || "Hiện tại"}
+                      {exp.startDate} – {exp.endDate || (isEn ? "Present" : "Hiện tại")}
                     </span>
                   </div>
                   <div className="font-medium text-zinc-800 italic mb-1.5">
@@ -151,7 +153,7 @@ export function PaperCvContent() {
 
         {/* Page 1 footer number */}
         <div className="text-center text-[10px] text-zinc-400 font-mono pt-4 mt-6 border-t border-zinc-100">
-          Trang 1 / 2
+          {isEn ? "Page 1 of 2" : "Trang 1 / 2"}
         </div>
       </div>
 
@@ -161,7 +163,7 @@ export function PaperCvContent() {
           {/* Header trang 2 nhỏ gọn */}
           <div className="flex justify-between items-center pb-3 border-b-2 border-zinc-900 mb-6">
             <span className="font-extrabold uppercase text-xs sm:text-sm tracking-tight text-zinc-950">
-              {personal.fullName} — CV HỒ SƠ NĂNG LỰC
+              {personal.fullName} — {isEn ? "CURRICULUM VITAE" : "HỒ SƠ NĂNG LỰC"}
             </span>
             <span className="text-xs text-zinc-500 font-mono">{personal.email}</span>
           </div>
@@ -169,25 +171,33 @@ export function PaperCvContent() {
           {/* Section: DỰ ÁN CÁ NHÂN & THỰC TẾ */}
           <div>
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-4">
-              DỰ ÁN NỔI BẬT &amp; CÁ NHÂN
+              {isEn ? "KEY & PERSONAL PROJECTS" : "DỰ ÁN NỔI BẬT & CÁ NHÂN"}
             </h2>
 
             <div className="space-y-5">
               {/* Dự án 1: NIGHT HOWLER */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">NIGHT HOWLER — GAME MA SÓI 3D REALTIME</span>
+                  <span className="text-sm text-zinc-950">
+                    {isEn ? "NIGHT HOWLER — 3D REALTIME MULTIPLAYER WEREWOLF GAME" : "NIGHT HOWLER — GAME MA SÓI 3D REALTIME"}
+                  </span>
                   <span className="text-[11px] font-mono text-zinc-500">React 19 • Three.js • Colyseus • LiveKit</span>
                 </div>
                 <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
                   <li>
-                    Xây dựng hệ thống <strong>kênh chat và voice chat phân vùng độc lập</strong> theo đối tượng (phòng chờ, cộng đồng ban ngày, kênh bí mật của phe Sói vào ban đêm) sử dụng LiveKit WebRTC SDK.
+                    {isEn
+                      ? "Engineered partitioned spatial voice chat & text channels (lobby, daytime village, secret night werewolf channel) with LiveKit WebRTC SDK."
+                      : "Xây dựng hệ thống kênh chat và voice chat phân vùng độc lập theo đối tượng (phòng chờ, cộng đồng ban ngày, kênh bí mật của phe Sói vào ban đêm) sử dụng LiveKit WebRTC SDK."}
                   </li>
                   <li>
-                    Đồng bộ trạng thái bàn chơi thời gian thực (state sync) với độ trễ thấp thông qua Colyseus WebSockets; xây dựng kịch bản kiểm thử bot tự động mô phỏng tải.
+                    {isEn
+                      ? "Implemented authoritative realtime game state sync with Colyseus WebSockets; developed automated bot simulation script for stress testing."
+                      : "Đồng bộ trạng thái bàn chơi thời gian thực (state sync) với độ trễ thấp thông qua Colyseus WebSockets; xây dựng kịch bản kiểm thử bot tự động mô phỏng tải."}
                   </li>
                   <li>
-                    Tương tác không gian đồ họa 3D phong cách Stylized Low-Poly với React Three Fiber và camera động.
+                    {isEn
+                      ? "Built stylized 3D graphics and fluid orbit camera controls with React Three Fiber and post-processing effects."
+                      : "Tương tác không gian đồ họa 3D phong cách Stylized Low-Poly với React Three Fiber và camera động."}
                   </li>
                 </ul>
               </div>
@@ -195,18 +205,26 @@ export function PaperCvContent() {
               {/* Dự án 2: AVATAR / 3D PROCEDURAL */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">AVATAR — BỘ SƯU TẬP 3D THREE.JS PROCEDURAL</span>
+                  <span className="text-sm text-zinc-950">
+                    {isEn ? "AVATAR — THREE.JS PROCEDURAL 3D COLLECTION" : "AVATAR — BỘ SƯU TẬP 3D THREE.JS PROCEDURAL"}
+                  </span>
                   <span className="text-[11px] font-mono text-zinc-500">Three.js • WebGL • BufferGeometry • glTF</span>
                 </div>
                 <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
                   <li>
-                    Lên concept, bố cục bối cảnh, thiết kế hình ảnh và hiệu ứng nhân vật 3D phong cách Low-Poly chủ đề Ma Sói (Tiên tri Seer, Người Sói, Hiệp Sĩ, Phù Thủy, Thợ Săn).
+                    {isEn
+                      ? "Conceptualized and crafted 5 stylized low-poly chibi 3D characters (Seer, Werewolf, Guard, Witch, Hunter)."
+                      : "Lên concept, bố cục bối cảnh, thiết kế hình ảnh và hiệu ứng nhân vật 3D phong cách Low-Poly chủ đề Ma Sói (Tiên tri Seer, Người Sói, Hiệp Sĩ, Phù Thủy, Thợ Săn)."}
                   </li>
                   <li>
-                    Lập trình cấu trúc hình học thủ tục (<strong>Procedural BufferGeometry</strong>) hoàn toàn bằng Three.js, không phụ thuộc file 3D ngoài, giúp dung lượng siêu nhẹ (<strong>&lt; 300KB</strong>).
+                    {isEn
+                      ? "Generated procedural BufferGeometry solely in vanilla JavaScript/Three.js, eliminating heavy 3D assets (<300KB/model)."
+                      : "Lập trình cấu trúc hình học thủ tục (Procedural BufferGeometry) hoàn toàn bằng Three.js, không phụ thuộc file 3D ngoài, giúp dung lượng siêu nhẹ (< 300KB)."}
                   </li>
                   <li>
-                    Xây dựng tương tác xoay 360°, đổi 4 tư thế (`idle`, `cast`, `meditate`, `t-pose`), hiệu ứng phát sáng quả cầu phép Fresnel và xuất trực tiếp file `.GLB` / `.OBJ` cho Game Engine.
+                    {isEn
+                      ? "Supported 360° rotation, 4 poses (idle, cast, meditate, t-pose), Fresnel glow shaders, and direct .GLB/.OBJ export."
+                      : "Xây dựng tương tác xoay 360°, đổi 4 tư thế (idle, cast, meditate, t-pose), hiệu ứng phát sáng quả cầu phép Fresnel và xuất trực tiếp file .GLB / .OBJ cho Game Engine."}
                   </li>
                 </ul>
               </div>
@@ -214,18 +232,26 @@ export function PaperCvContent() {
               {/* Dự án 3: FOOTBALL PAY */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">FOOTBALL PAY — HỆ THỐNG QUẢN LÝ THI ĐẤU &amp; CHI PHÍ</span>
+                  <span className="text-sm text-zinc-950">
+                    {isEn ? "FOOTBALL PAY — MATCH & EXPENSE SETTLEMENT PLATFORM" : "FOOTBALL PAY — HỆ THỐNG QUẢN LÝ THI ĐẤU & CHI PHÍ"}
+                  </span>
                   <span className="text-[11px] font-mono text-zinc-500">Next.js App Router • React 19 • Google Sheets API</span>
                 </div>
                 <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
                   <li>
-                    Thiết kế và xây dựng ứng dụng quản lý lịch thi đấu, tự động hóa chia tiền sân bãi, nước uống và chi phí phát sinh trên từng đầu người.
+                    {isEn
+                      ? "Automated match schedules and fair fee splitting (pitch rental, beverages, miscellaneous expenses) per participant."
+                      : "Thiết kế và xây dựng ứng dụng quản lý lịch thi đấu, tự động hóa chia tiền sân bãi, nước uống và chi phí phát sinh trên từng đầu người."}
                   </li>
                   <li>
-                    Phân quyền 2 luồng Admin và Member: Admin quản lý trận, CRUD thành viên, cấu hình tài khoản, theo dõi nợ; Member kiểm tra dư nợ và thanh toán.
+                    {isEn
+                      ? "Configured dual Admin/Member workflows: Admin manages matches, rosters, and debts; Members check balances and pay."
+                      : "Phân quyền 2 luồng Admin và Member: Admin quản lý trận, CRUD thành viên, cấu hình tài khoản, theo dõi nợ; Member kiểm tra dư nợ và thanh toán."}
                   </li>
                   <li>
-                    Tích hợp sinh <strong>mã QR thanh toán động VietQR / Momo</strong> theo cú pháp tự động; hỗ trợ đồng bộ hai chiều với Google Sheets và xuất báo cáo Excel (`.xlsx`).
+                    {isEn
+                      ? "Integrated dynamic payment QR generator (VietQR/Momo), bidirectional Google Sheets sync, and Excel export."
+                      : "Tích hợp sinh mã QR thanh toán động VietQR / Momo theo cú pháp tự động; hỗ trợ đồng bộ hai chiều với Google Sheets và xuất báo cáo Excel (.xlsx)."}
                   </li>
                 </ul>
               </div>
@@ -233,38 +259,46 @@ export function PaperCvContent() {
               {/* Dự án 4: BITCO TUY NEN */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">LANDING PAGE BITCO TUY NEN BÌNH ĐỊNH</span>
+                  <span className="text-sm text-zinc-950">
+                    {isEn ? "BITCO TUY NEN ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN BÌNH ĐỊNH"}
+                  </span>
                   <span className="text-[11px] font-mono text-zinc-500">HTML5 • Modular CSS3 • Parallax • Vanilla JS</span>
                 </div>
                 <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
                   <li>
-                    Thiết kế và xây dựng Website doanh nghiệp giới thiệu gạch nung Tuy Nen và vật liệu xanh (Gạch AAC, Tấm Panel ALC) chuẩn responsive.
+                    {isEn
+                      ? "Designed and developed corporate showcase for premium building materials (Tuy Nen bricks, AAC lightweight blocks)."
+                      : "Thiết kế và xây dựng Website doanh nghiệp giới thiệu gạch nung Tuy Nen và vật liệu xanh (Gạch AAC, Tấm Panel ALC) chuẩn responsive."}
                   </li>
                   <li>
-                    Lập trình các hiệu ứng thị giác tương tác mượt mà: <strong>Hero Parallax</strong>, <strong>Scroll Brick Drop animation</strong>, bộ lọc sản phẩm dạng tab và bộ đếm thành tựu sản xuất tự động.
+                    {isEn
+                      ? "Created interactive visual interactions: Hero Parallax, Scroll Brick Drop animation, product tabs, and animated metrics."
+                      : "Lập trình các hiệu ứng thị giác tương tác mượt mà: Hero Parallax, Scroll Brick Drop animation, bộ lọc sản phẩm dạng tab và bộ đếm thành tựu sản xuất tự động."}
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Section: NGOẠI NGỮ */}
+          {/* Section: NGOẠI NGỮ / LANGUAGES */}
           <div className="mt-8">
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-3">
-              NGOẠI NGỮ
+              {isEn ? "LANGUAGES" : "NGOẠI NGỮ"}
             </h2>
             <p className="text-xs sm:text-[13px] text-zinc-800">
-              <strong className="text-zinc-950 font-semibold">Tiếng Anh:</strong> TOEIC 590 — Có khả năng đọc hiểu tài liệu kỹ thuật chuyên ngành và giao tiếp cơ bản trong môi trường làm việc công nghệ.
+              <strong className="text-zinc-950 font-semibold">{isEn ? "English:" : "Tiếng Anh:"}</strong>{" "}
+              {isEn
+                ? "TOEIC 590 — Proficient in reading specialized technical documentation and communicating effectively in technology workplaces."
+                : "TOEIC 590 — Có khả năng đọc hiểu tài liệu kỹ thuật chuyên ngành và giao tiếp cơ bản trong môi trường làm việc công nghệ."}
             </p>
           </div>
         </div>
 
         {/* Page 2 footer number */}
         <div className="text-center text-[10px] text-zinc-400 font-mono pt-4 mt-8 border-t border-zinc-100">
-          Trang 2 / 2
+          {isEn ? "Page 2 of 2" : "Trang 2 / 2"}
         </div>
       </div>
     </div>
   );
 }
-

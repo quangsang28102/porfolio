@@ -1,6 +1,6 @@
 import { PortfolioData } from "@/types/portfolio";
 
-export const portfolioData: PortfolioData = {
+export const portfolioDataVi: PortfolioData = {
   personal: {
     fullName: "Nguyễn Đỗ Quang Sáng",
     role: "Frontend Developer",
@@ -84,11 +84,11 @@ export const portfolioData: PortfolioData = {
       description:
         "Chịu trách nhiệm thiết kế, phát triển và vận hành hệ thống cổng thông tin đào tạo lái xe, tích hợp widget 3D và số hóa quy trình thi sát hạch.",
       achievements: [
-        "Thiết kế Landing Page và xây dựng Design System hoàn chỉnh trên Figma; tạo layout trang web tĩnh chuẩn responsive đa màn hình.",
-        "Xây dựng ứng dụng số hóa kỳ thi tốt nghiệp đào tạo lái xe ô tô: chuyển đổi từ hình thức thi giấy thủ công sang hệ thống trực tuyến, cấu hình đề thi, giám sát tiến trình làm bài realtime, in bài thi tự động và xuất báo cáo thống kê.",
-        "Phát triển và tích hợp widget Robot Chatbot 3D tương tác vào website chính bằng TypeScript và Three.js.",
-        "Tối ưu hiệu năng tải trang, cấu hình metadata SEO tổng thể và xây dựng hệ thống tra cứu chứng chỉ, hồ sơ bằng mã QR.",
-        "Tái cấu trúc code và tùy biến theme quản trị WordPress, xây dựng các kịch bản tự động tối ưu tác vụ văn phòng nội bộ.",
+        "Số hóa quy trình thi tốt nghiệp đào tạo lái xe ô tô: chuyển đổi thành công 100% hình thức thi giấy thủ công sang trực tuyến, cấu hình đề thi, giám sát tiến trình làm bài realtime, in bài tự động và xuất báo cáo thống kê chính xác.",
+        "Phát triển và tích hợp widget Robot Chatbot 3D tương tác vào chân trang web doanh nghiệp bằng TypeScript và Three.js WebGL.",
+        "Thiết kế landing page và xây dựng Design System hoàn chỉnh trên Figma; tạo layout trang web tĩnh chuẩn responsive đa màn hình.",
+        "Tối ưu hiệu năng tải trang, cấu hình metadata SEO tổng thể và xây dựng hệ thống tra cứu chứng chỉ, hồ sơ bằng mã QR trực tuyến.",
+        "Tái cấu trúc code và tùy biến theme quản trị WordPress, xây dựng các ứng dụng tự động tối ưu tác vụ văn phòng nội bộ.",
       ],
       technologies: ["TypeScript", "Three.js", "HTML5/CSS3", "WordPress", "JavaScript", "Figma", "SEO"],
     },
@@ -301,3 +301,312 @@ export const portfolioData: PortfolioData = {
     },
   ],
 };
+
+export const portfolioDataEn: PortfolioData = {
+  personal: {
+    fullName: "Nguyen Do Quang Sang",
+    role: "Frontend Developer",
+    headline: "Crafting High-Performance Web Applications & Interactive 3D Graphics.",
+    shortBio:
+      "Frontend Developer with 2+ years of hands-on experience building modern web applications, digitized platforms, and interactive 3D WebGL experiences with Three.js & React. Skilled in turning Figma mockups into pixel-perfect responsive layouts, optimizing Core Web Vitals, and integrating realtime WebSockets / APIs.",
+    aboutParagraphs: [
+      "Hello! I am Nguyen Do Quang Sang, a Frontend Developer graduated in Software Engineering from Ho Chi Minh City University of Foreign Languages and Information Technology (HUFLIT) with a GPA of 8.3/10 (Honors).",
+      "I have over 2 years of experience developing, maintaining, and performance-tuning websites on ReactJS, Next.js, vanilla JavaScript/TypeScript, and WordPress. A standout highlight in my technical journey is mastering WebGL 3D graphics with Three.js (procedural 3D geometries, 3D assistant widgets) and realtime multiplayer networking (Colyseus WebSockets, LiveKit Voice SDK).",
+      "With a solid UI/UX design background (Figma, Photoshop) alongside proactive adoption of AI tools into daily engineering workflows, I always ensure rapid delivery, pixel-perfect UI execution, and high code quality.",
+    ],
+    strengths: [
+      {
+        title: "Frontend & UI/UX Engineering",
+        description:
+          "Proficient in ReactJS, Next.js App Router, Tailwind CSS, turning complex Figma wireframes into pixel-perfect responsive code with high SEO and Core Web Vitals scores.",
+        icon: "Layout",
+      },
+      {
+        title: "3D Web & Interactive Graphics",
+        description:
+          "Procedural 3D model generation using Three.js BufferGeometry, custom flat shading, GLTF/OBJ asset pipeline, and interactive embedded web widgets.",
+        icon: "Sparkles",
+      },
+      {
+        title: "Realtime Systems & APIs",
+        description:
+          "Hands-on experience with Colyseus WebSockets, LiveKit spatial voice channels, RESTful Node.js/Express APIs, and bidirectional Google Sheets sync.",
+        icon: "Server",
+      },
+    ],
+    location: "Ho Chi Minh City, Vietnam",
+    email: "qsang.dev@gmail.com",
+    phone: "+84 336 554 902",
+    availableForWork: true,
+    cvPath: "/files/cv.pdf",
+    social: {
+      github: "https://github.com/QuangSang",
+      linkedin: "https://linkedin.com",
+      facebook: "https://facebook.com",
+      website: "https://quangsang.dev",
+    },
+  },
+  skills: [
+    // Frontend
+    { name: "ReactJS", category: "Frontend", featured: true },
+    { name: "Next.js (App Router)", category: "Frontend", featured: true },
+    { name: "Three.js / WebGL", category: "Frontend", featured: true },
+    { name: "Tailwind CSS", category: "Frontend", featured: true },
+    { name: "HTML5 & CSS3", category: "Frontend", featured: false },
+    { name: "jQuery", category: "Frontend", featured: false },
+    { name: "WordPress (Custom Themes)", category: "Frontend", featured: true },
+
+    // Languages
+    { name: "TypeScript", category: "Languages", featured: true },
+    { name: "JavaScript (ES6+)", category: "Languages", featured: true },
+
+    // Backend
+    { name: "Node.js & Express.js", category: "Backend", featured: true },
+    { name: "RESTful APIs", category: "Backend", featured: true },
+    { name: "Colyseus (WebSockets)", category: "Backend", featured: true },
+    { name: "LiveKit SDK (Voice Chat)", category: "Backend", featured: false },
+
+    // Database & Tools
+    { name: "Git & GitHub", category: "DevOps & Tools", featured: true },
+    { name: "Postman", category: "DevOps & Tools", featured: false },
+    { name: "Google Sheets API", category: "DevOps & Tools", featured: true },
+    { name: "Figma & Adobe XD", category: "DevOps & Tools", featured: true },
+    { name: "Adobe Photoshop", category: "DevOps & Tools", featured: false },
+    { name: "Vite", category: "DevOps & Tools", featured: false },
+  ],
+  experiences: [
+    {
+      id: "exp-1",
+      role: "Web & Software Application Developer",
+      organization: "Hiep Phat Auto Co., Ltd.",
+      location: "Ho Chi Minh City",
+      startDate: "09/2024",
+      endDate: "Present",
+      isCurrent: true,
+      description:
+        "Responsible for designing, developing, and operating the driver education enterprise portal, integrating 3D interactive widgets, and digitizing the examination system.",
+      achievements: [
+        "Digitized the driving school graduation examination system: successfully converted 100% of manual paper exams to an online platform, exam configuration, realtime exam tracking, automated printing, and reporting.",
+        "Engineered and embedded an interactive 3D Robot Assistant widget into the portal using TypeScript and Three.js WebGL.",
+        "Designed landing pages and created a unified Design System in Figma; built responsive static pages across multi-device viewports.",
+        "Optimized page load performance, structured comprehensive metadata SEO, and implemented an online QR-code lookup system for student credentials.",
+        "Refactored codebases, customized WordPress administration themes, and developed automated scripts optimizing internal office tasks.",
+      ],
+      technologies: ["TypeScript", "Three.js", "HTML5/CSS3", "WordPress", "JavaScript", "Figma", "SEO"],
+    },
+    {
+      id: "exp-2",
+      role: "Frontend Developer",
+      organization: "Quoc Bao Software",
+      location: "Ho Chi Minh City",
+      startDate: "04/2024",
+      endDate: "07/2024",
+      isCurrent: false,
+      description:
+        "Participated in developing web application user interfaces and customizing enterprise website solutions based on client specifications.",
+      achievements: [
+        "Gathered client requirements, drafted wireframes, and designed modern UI/UX layouts in Figma and Adobe XD.",
+        "Converted UI design prototypes into pixel-perfect, responsive static website code.",
+        "Customized and extended WordPress theme templates to align with business requirements on schedule.",
+      ],
+      technologies: ["JavaScript", "HTML5", "CSS3", "WordPress", "Figma", "Adobe XD"],
+    },
+    {
+      id: "exp-3",
+      role: "Web Developer Intern (Fresher)",
+      organization: "Quoc Bao Software",
+      location: "Ho Chi Minh City",
+      startDate: "01/2024",
+      endDate: "04/2024",
+      isCurrent: false,
+      description:
+        "Engaged in professional software engineering workflows, practiced responsive layout development, and collaborated directly with clients.",
+      achievements: [
+        "Completed enterprise internship with high commendation from corporate leadership.",
+        "Contributed to building 3 real-world corporate website projects and WordPress themes.",
+      ],
+      technologies: ["HTML5", "CSS3", "JavaScript", "WordPress", "Git"],
+    },
+  ],
+  projects: [
+    {
+      id: "proj-1",
+      title: "NightHowler — 3D Multiplayer Werewolf Arena",
+      category: "Fullstack",
+      featured: true,
+      summary:
+        "Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js graphics, and spatial partitioned voice chat networking.",
+      role: "Lead Fullstack & 3D Web Developer",
+      problem:
+        "Traditional web-based Werewolf games lacked 3D spatial immersion and struggled to coordinate secret voice communication channels between factions (villagers vs. wolves at night).",
+      solution:
+        "Monorepo architecture with 3 packages (`shared`, `server`, `client`). Leveraged React 19, Three.js, React Three Fiber, and Colyseus WebSocket engine for authoritative state sync; integrated LiveKit Server SDK for partitioned voice/text rooms (lobby, daytime village, secretive night werewolf channel).",
+      features: [
+        "Stylized Low-Poly 3D graphics with dynamic shadows, orbit camera control, and post-processing filters",
+        "Dynamic partitioned voice chat & text channels automatically toggling permissions based on game phases",
+        "Low-latency realtime state synchronization powered by Colyseus WebSockets protocol",
+        "Automated bot simulation test script (`botSimulation.ts`) for stress testing and rule validation",
+      ],
+      technologies: [
+        "React 19",
+        "Three.js",
+        "@react-three/fiber",
+        "Colyseus",
+        "LiveKit SDK",
+        "Node.js",
+        "TypeScript",
+        "Tailwind CSS",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "",
+      githubUrl: "https://github.com/QuangSang/NightHowler",
+      results: "Production-ready scalable monorepo supporting concurrent game sessions with crystal-clear WebRTC voice networking.",
+    },
+    {
+      id: "proj-2",
+      title: "Procedural 3D Character Collection — Three.js Low-Poly Stylized",
+      category: "Web",
+      featured: true,
+      summary:
+        "Procedural 3D character generator built entirely with mathematical BufferGeometry in Three.js, eliminating reliance on heavy external 3D files.",
+      role: "3D Web Creative Developer",
+      problem:
+        "Loading standard 3D asset files (FBX, OBJ files weighing dozens of megabytes) caused sluggish webpage initial loads and excessive bandwidth consumption.",
+      solution:
+        "Programmed procedural BufferGeometry vertices from scratch, tuned Flat Shading materials, computed Fresnel glows and multi-point studio lighting for 5 stylized chibi characters (Seer, Werewolf, Guard, Witch, Hunter). Supports 360° interactive inspection, 4 poses, and instant .GLB/.OBJ export.",
+      features: [
+        "100% code-driven procedural geometry using vanilla JavaScript and vector math",
+        "Fresnel glowing crystal orbs, metallic T-visor knight helmets, and layered robes",
+        "Interactive pose switcher: `idle`, `cast`, `meditate`, `t-pose`",
+        "Direct export to glTF 2.0 Binary (`.glb`) ultra-lightweight format (~125KB - 290KB) ready for game engines",
+        "1:1 visual comparison tool (`comparison.html`) benchmarking 3D output against 2D concept art",
+      ],
+      technologies: ["Three.js", "WebGL", "BufferGeometry", "JavaScript ES6+", "HTML5/CSS3"],
+      images: [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "",
+      githubUrl: "https://github.com/QuangSang/3D-shape",
+      results: "Ultra-compact asset size (<300KB) enabling instantaneous browser rendering without loading spinners.",
+    },
+    {
+      id: "proj-3",
+      title: "Football Pay — Match Management & Debt Settlement Platform",
+      category: "Fullstack",
+      featured: true,
+      summary:
+        "Web application automating pitch fee splitting, member rosters, and debt tracking with dual Admin and Member role access.",
+      role: "Fullstack Developer",
+      problem:
+        "Managing football pitch rentals, drinks, and collecting fees from individual players via paper notes frequently led to calculation errors and unpaid debts.",
+      solution:
+        "Built a Next.js (App Router) application with React 19 and Tailwind CSS. Automatically computes average per-player fees, updates debt balances, generates dynamic VietQR/Momo payment QR codes, and synchronizes directly with Google Sheets.",
+      features: [
+        "Player roster management (CRUD) and active attendance status",
+        "Match management: automated pitch, beverage, and sundry fee calculations distributed equally per attendee",
+        "Dynamic payment QR code generator with pre-filled account number, amount, and reference notes",
+        "Bidirectional data sync with Google Sheets API and spreadsheet export to Excel (.xlsx)",
+        "Comprehensive dashboard analytics: total matches, aggregate expenses, collected funds, and pending debts",
+      ],
+      technologies: [
+        "Next.js",
+        "React 19",
+        "TypeScript",
+        "Tailwind CSS",
+        "Google Sheets API",
+        "TanStack Table",
+        "XLSX",
+      ],
+      images: [
+        "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "",
+      githubUrl: "https://github.com/QuangSang/football-admin",
+      results: "Saved club managers 80% of calculation time and streamlined weekly expense settlements.",
+    },
+    {
+      id: "proj-4",
+      title: "HPO Driver Education Portal & Graduation Exam Digitization",
+      category: "Web",
+      featured: true,
+      summary:
+        "Comprehensive driving academy portal featuring an automated graduation exam digitization system, QR code lookup, and 3D assistant robot.",
+      role: "Frontend & 3D Widget Developer",
+      problem:
+        "The academy needed to digitize its theoretical examination workflow from paper to an online platform, while enhancing modern brand engagement.",
+      solution:
+        "Architected an optimized multi-page enterprise web portal; developed an independent interactive 3D robot companion (TypeScript & Three.js); created software for computerized exam session management with automated paper printing and reporting.",
+      features: [
+        "Digital exam workflow: computerized question configuration, real-time proctoring, and automated printing",
+        "Interactive 3D Robot Chatbot companion embedded directly into the site footer with Three.js WebGL",
+        "Instant online student credential and permit verification via QR codes",
+        "Structured multi-page site for course fees, 600-question theory review with optimized SEO and Core Web Vitals",
+      ],
+      technologies: ["TypeScript", "Three.js", "HTML5", "CSS3", "JavaScript", "WordPress", "SEO"],
+      images: [
+        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "",
+      githubUrl: "https://github.com/QuangSang/WEB-HPO-V2",
+      results: "Successfully digitized 100% of theoretical exam processes, serving thousands of students each month.",
+    },
+    {
+      id: "proj-5",
+      title: "BITCO Tuy Nen — Building Materials Enterprise Landing Page",
+      category: "Web",
+      featured: false,
+      summary:
+        "High-conversion corporate showcase for premium brick manufacturing and green building materials with smooth interactive parallax effects.",
+      role: "Frontend Developer & UI Designer",
+      problem:
+        "A traditional construction material manufacturer needed a modern digital presence to engage major contractors and commercial projects.",
+      solution:
+        "Designed and developed a bespoke landing page with modular CSS; implemented smooth Parallax scroll effects, advantage card glow, and animated production capacity metrics.",
+      features: [
+        "Smooth Hero Parallax, Scroll Brick Drop animation, and viewport ScrollReveal",
+        "Interactive tabbed product filtering (Tuy Nen Clay Bricks, Autoclaved Aerated Concrete AAC, ALC Panels)",
+        "Animated stats counters triggering on viewport entrance",
+        "Validated client inquiry form with input error checking",
+        "Full technical SEO metadata, Open Graph preview tags, and 100% responsive layout",
+      ],
+      technologies: ["HTML5", "CSS3 (Modular)", "JavaScript ES6+", "FontAwesome", "Responsive Design"],
+      images: [
+        "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "",
+      githubUrl: "https://github.com/QuangSang/TuyNen",
+      results: "High Google PageSpeed score and an impressive brand presentation fostering contractor partnerships.",
+    },
+  ],
+  education: [
+    {
+      id: "edu-1",
+      institution: "HCMC University of Foreign Languages & Information Technology (HUFLIT)",
+      degree: "Bachelor of Software Engineering",
+      major: "Information Technology — Software Engineering",
+      startDate: "09/2020",
+      endDate: "04/2024",
+      score: "GPA: 8.3 / 10 (Graduated with Honors)",
+      description:
+        "Formal academic training in Software Engineering, Data Structures & Algorithms, Web Application Development, Database Architecture, and Software Project Management.",
+    },
+  ],
+  certifications: [
+    {
+      id: "cert-1",
+      title: "TOEIC 590 International English Certificate",
+      issuer: "Educational Testing Service (ETS)",
+      issuedAt: "2024",
+      credentialUrl: "",
+    },
+  ],
+};
+
+export function getPortfolioData(lang: "vi" | "en" = "vi"): PortfolioData {
+  return lang === "en" ? portfolioDataEn : portfolioDataVi;
+}
+
+// Default export for backward compatibility
+export const portfolioData = portfolioDataVi;

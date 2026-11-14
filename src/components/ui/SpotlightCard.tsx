@@ -56,7 +56,7 @@ export function SpotlightCard({
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "relative rounded-2xl border border-zinc-800/80 bg-zinc-900/60 p-6 backdrop-blur-sm overflow-hidden transition-all duration-300 hover:border-rose-500/40 hover:shadow-xl hover:shadow-rose-950/20",
+        "relative rounded-2xl border border-zinc-200 bg-white/90 shadow-sm hover:border-rose-400/50 hover:shadow-md hover:shadow-rose-500/10 dark:border-zinc-800/80 dark:bg-zinc-900/60 p-6 backdrop-blur-sm overflow-hidden transition-all duration-300 dark:hover:border-rose-500/40 dark:hover:shadow-xl dark:hover:shadow-rose-950/20",
         className
       )}
       {...props}
