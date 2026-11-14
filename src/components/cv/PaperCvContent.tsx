@@ -52,8 +52,8 @@ export function PaperCvContent() {
             </h2>
             <p className="text-xs sm:text-[13px] text-zinc-800 leading-relaxed text-justify">
               {isEn
-                ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in crafting complex responsive layouts and implementing fluid front-end logic with modern JavaScript/TypeScript, ReactJS, and Next.js. Solid foundation in Three.js / WebGL 3D graphics and custom WordPress architecture. Proactively integrates AI tools into daily workflows to optimize speed and precision."
-                : "LTV Frontend có 2 năm kinh nghiệm xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp và linh hoạt xử lý logic front-end với JavaScript/jQuery, ReactJS và Next.js. Có kinh nghiệm sâu sắc về Three.js / WebGL, tạo lập và tùy biến dự án WordPress từ con số không. Chủ động áp dụng AI vào quy trình làm việc hàng ngày để đảm bảo tiến độ nhanh chóng và độ chính xác tối đa."}
+                ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in slicing complex W3C-compliant responsive layouts from Photoshop, Illustrator, Adobe XD, and Figma into HTML5/CSS3 and JavaScript/jQuery. Experienced in developing and converting static HTML into WordPress Custom Themes. Proactively integrates AI tools (Claude, ChatGPT, Copilot) into daily workflows to optimize speed and precision."
+                : "Lập trình viên Frontend có hơn 2 năm kinh nghiệm thực tế xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp chuẩn W3C & Responsive từ Photoshop, Illustrator, Adobe XD, Figma sang HTML5/CSS3 và JavaScript/jQuery. Có kinh nghiệm xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh. Chủ động ứng dụng các công cụ AI (Claude, ChatGPT, Copilot) vào quy trình code để tối ưu hóa tiến độ và chất lượng sản phẩm."}
             </p>
           </div>
 
@@ -104,19 +104,19 @@ export function PaperCvContent() {
             <div className="space-y-1.5 text-xs sm:text-[13px] text-zinc-800">
               <p>
                 <strong className="text-zinc-950 font-semibold">Frontend &amp; UI:</strong>{" "}
-                HTML5, CSS3, JavaScript, TypeScript, ReactJS, Next.js, Three.js, Tailwind CSS, jQuery, WordPress
-              </p>
-              <p>
-                <strong className="text-zinc-950 font-semibold">Backend &amp; APIs:</strong>{" "}
-                Node.js, Express.js, RESTful APIs, Colyseus (WebSockets), LiveKit SDK
+                HTML5 (W3C Standard), CSS3, JavaScript (ES6+), jQuery, WordPress (Custom Themes &amp; Child Themes), Responsive Web Design, Tailwind CSS, ReactJS, Next.js
               </p>
               <p>
                 <strong className="text-zinc-950 font-semibold">Design Tools:</strong>{" "}
-                Figma, Adobe Photoshop, Adobe XD
+                Figma, Adobe Photoshop, Adobe XD, Adobe Illustrator ({isEn ? "Layout slicing, asset export, UI/UX" : "Cắt layout, trích xuất assets, thiết kế UI/UX"})
               </p>
               <p>
-                <strong className="text-zinc-950 font-semibold">Version Control &amp; Others:</strong>{" "}
-                Git, GitHub, Postman, Google Sheets API
+                <strong className="text-zinc-950 font-semibold">{isEn ? "AI & Optimization:" : "Ứng dụng AI & Tối ưu:"}</strong>{" "}
+                Claude, ChatGPT, GitHub Copilot, Core Web Vitals, Google PageSpeed, Cross-Browser Compatibility
+              </p>
+              <p>
+                <strong className="text-zinc-950 font-semibold">{isEn ? "Backend & Version Control:" : "Backend & Quản lý mã nguồn:"}</strong>{" "}
+                Node.js, Express.js, RESTful APIs, Git, GitHub, Postman
               </p>
             </div>
           </div>
@@ -127,7 +127,7 @@ export function PaperCvContent() {
               {isEn ? "WORK EXPERIENCE" : "KINH NGHIỆM LÀM VIỆC"}
             </h2>
             <div className="space-y-4">
-              {experiences.map((exp) => (
+              {experiences.slice(0, 2).map((exp) => (
                 <div key={exp.id} className="text-xs sm:text-[13px]">
                   <div className="flex justify-between items-baseline font-bold text-zinc-950">
                     <span>{exp.organization}</span>
@@ -174,57 +174,57 @@ export function PaperCvContent() {
               {isEn ? "KEY & PERSONAL PROJECTS" : "DỰ ÁN NỔI BẬT & CÁ NHÂN"}
             </h2>
 
-            <div className="space-y-5">
-              {/* Dự án 1: NIGHT HOWLER */}
+            <div className="space-y-4">
+              {/* Dự án 1: BITCO TUY NEN */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
                   <span className="text-sm text-zinc-950">
-                    {isEn ? "NIGHT HOWLER — 3D REALTIME MULTIPLAYER WEREWOLF GAME" : "NIGHT HOWLER — GAME MA SÓI 3D REALTIME"}
+                    {isEn ? "BITCO TUY NEN — W3C ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN BÌNH ĐỊNH (CHUẨN W3C)"}
                   </span>
-                  <span className="text-[11px] font-mono text-zinc-500">React 19 • Three.js • Colyseus • LiveKit</span>
+                  <span className="text-[11px] font-mono text-zinc-500">HTML5 (W3C) • Modular CSS3 • jQuery/JS • Parallax</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Engineered partitioned spatial voice chat & text channels (lobby, daytime village, secret night werewolf channel) with LiveKit WebRTC SDK."
-                      : "Xây dựng hệ thống kênh chat và voice chat phân vùng độc lập theo đối tượng (phòng chờ, cộng đồng ban ngày, kênh bí mật của phe Sói vào ban đêm) sử dụng LiveKit WebRTC SDK."}
+                      ? "Slices pixel-perfect responsive layouts from design files into clean HTML5/CSS3 and JavaScript/jQuery with 100% W3C Validation compliance."
+                      : "Chuyển đổi layout chuẩn pixel-perfect từ thiết kế sang HTML5/CSS3 và JavaScript/jQuery, tối ưu mã nguồn đáp ứng 100% tiêu chuẩn W3C Validation."}
                   </li>
                   <li>
                     {isEn
-                      ? "Implemented authoritative realtime game state sync with Colyseus WebSockets; developed automated bot simulation script for stress testing."
-                      : "Đồng bộ trạng thái bàn chơi thời gian thực (state sync) với độ trễ thấp thông qua Colyseus WebSockets; xây dựng kịch bản kiểm thử bot tự động mô phỏng tải."}
+                      ? "Engineered fluid interactive effects: Hero Parallax, Scroll Brick Drop animation, tabbed product filters, and automated metrics counter."
+                      : "Lập trình hiệu ứng thị giác tương tác mượt mà: Hero Parallax, Scroll Brick Drop animation, bộ lọc sản phẩm dạng Tab và bộ đếm thành tựu sản xuất tự động."}
                   </li>
                   <li>
                     {isEn
-                      ? "Built stylized 3D graphics and fluid orbit camera controls with React Three Fiber and post-processing effects."
-                      : "Tương tác không gian đồ họa 3D phong cách Stylized Low-Poly với React Three Fiber và camera động."}
+                      ? "Fully responsive across mobile/tablet/desktop breakpoints; optimized assets for sub-1.5s load times and high Google PageSpeed."
+                      : "Tương thích hoàn hảo trên mọi thiết bị và đa trình duyệt; tối ưu tài nguyên đạt tốc độ tải dưới 1.5s và điểm số Google PageSpeed cao."}
                   </li>
                 </ul>
               </div>
 
-              {/* Dự án 2: AVATAR / 3D PROCEDURAL */}
+              {/* Dự án 2: HPO PORTAL & WORDPRESS CUSTOM CMS */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
                   <span className="text-sm text-zinc-950">
-                    {isEn ? "AVATAR — THREE.JS PROCEDURAL 3D COLLECTION" : "AVATAR — BỘ SƯU TẬP 3D THREE.JS PROCEDURAL"}
+                    {isEn ? "HPO DRIVER PORTAL & CUSTOM WORDPRESS THEME" : "CỔNG THÔNG TIN & THEME WORDPRESS TUỲ BIẾN (HPO PORTAL)"}
                   </span>
-                  <span className="text-[11px] font-mono text-zinc-500">Three.js • WebGL • BufferGeometry • glTF</span>
+                  <span className="text-[11px] font-mono text-zinc-500">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Conceptualized and crafted 5 stylized low-poly chibi 3D characters (Seer, Werewolf, Guard, Witch, Hunter)."
-                      : "Lên concept, bố cục bối cảnh, thiết kế hình ảnh và hiệu ứng nhân vật 3D phong cách Low-Poly chủ đề Ma Sói (Tiên tri Seer, Người Sói, Hiệp Sĩ, Phù Thủy, Thợ Săn)."}
+                      ? "Built and converted custom WordPress themes from static HTML sources, structuring clean template code for streamlined content & fee management."
+                      : "Xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh, cấu hình cấu trúc code sạch và quản trị nội dung khóa học, học phí thuận tiện."}
                   </li>
                   <li>
                     {isEn
-                      ? "Generated procedural BufferGeometry solely in vanilla JavaScript/Three.js, eliminating heavy 3D assets (<300KB/model)."
-                      : "Lập trình cấu trúc hình học thủ tục (Procedural BufferGeometry) hoàn toàn bằng Three.js, không phụ thuộc file 3D ngoài, giúp dung lượng siêu nhẹ (< 300KB)."}
+                      ? "Configured full SEO metadata and Core Web Vitals optimizations; integrated real-time student credential verification via QR codes."
+                      : "Cấu hình metadata SEO tổng thể, tối ưu hóa tốc độ tải trang (Core Web Vitals) và tích hợp module tra cứu hồ sơ học viên trực tuyến qua mã QR."}
                   </li>
                   <li>
                     {isEn
-                      ? "Supported 360° rotation, 4 poses (idle, cast, meditate, t-pose), Fresnel glow shaders, and direct .GLB/.OBJ export."
-                      : "Xây dựng tương tác xoay 360°, đổi 4 tư thế (idle, cast, meditate, t-pose), hiệu ứng phát sáng quả cầu phép Fresnel và xuất trực tiếp file .GLB / .OBJ cho Game Engine."}
+                      ? "Executed regular web maintenance, security hardening, and browser compatibility patches."
+                      : "Thực hiện bảo trì hệ thống website định kỳ (Maintenance), rà soát bảo mật và đảm bảo tương thích ổn định lâu dài."}
                   </li>
                 </ul>
               </div>
@@ -235,45 +235,45 @@ export function PaperCvContent() {
                   <span className="text-sm text-zinc-950">
                     {isEn ? "FOOTBALL PAY — MATCH & EXPENSE SETTLEMENT PLATFORM" : "FOOTBALL PAY — HỆ THỐNG QUẢN LÝ THI ĐẤU & CHI PHÍ"}
                   </span>
-                  <span className="text-[11px] font-mono text-zinc-500">Next.js App Router • React 19 • Google Sheets API</span>
+                  <span className="text-[11px] font-mono text-zinc-500">Next.js App Router • React 19 • Google Sheets API • VietQR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Automated match schedules and fair fee splitting (pitch rental, beverages, miscellaneous expenses) per participant."
+                      ? "Designed and developed match scheduling and automated expense splitting system (pitch rental, beverages, sundries) per attendee."
                       : "Thiết kế và xây dựng ứng dụng quản lý lịch thi đấu, tự động hóa chia tiền sân bãi, nước uống và chi phí phát sinh trên từng đầu người."}
                   </li>
                   <li>
                     {isEn
-                      ? "Configured dual Admin/Member workflows: Admin manages matches, rosters, and debts; Members check balances and pay."
-                      : "Phân quyền 2 luồng Admin và Member: Admin quản lý trận, CRUD thành viên, cấu hình tài khoản, theo dõi nợ; Member kiểm tra dư nợ và thanh toán."}
+                      ? "Configured dual Admin/Member workflows: Admin manages matches, rosters, and debts; Members inspect balances and settle payments."
+                      : "Phân quyền 2 luồng Admin và Member: Admin quản lý trận, CRUD thành viên, theo dõi nợ; Member kiểm tra số dư và thanh toán."}
                   </li>
                   <li>
                     {isEn
-                      ? "Integrated dynamic payment QR generator (VietQR/Momo), bidirectional Google Sheets sync, and Excel export."
+                      ? "Integrated dynamic payment QR generator (VietQR/Momo), bidirectional Google Sheets sync, and Excel report export."
                       : "Tích hợp sinh mã QR thanh toán động VietQR / Momo theo cú pháp tự động; hỗ trợ đồng bộ hai chiều với Google Sheets và xuất báo cáo Excel (.xlsx)."}
                   </li>
                 </ul>
               </div>
 
-              {/* Dự án 4: BITCO TUY NEN */}
+              {/* Dự án 4: NIGHT HOWLER & 3D INTERACTIVE */}
               <div className="text-xs sm:text-[13px]">
                 <div className="flex justify-between items-baseline font-bold text-zinc-950">
                   <span className="text-sm text-zinc-950">
-                    {isEn ? "BITCO TUY NEN ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN BÌNH ĐỊNH"}
+                    {isEn ? "NIGHT HOWLER & 3D PROCEDURAL GRAPHICS" : "NIGHT HOWLER & ĐỒ HỌA 3D PROCEDURAL"}
                   </span>
-                  <span className="text-[11px] font-mono text-zinc-500">HTML5 • Modular CSS3 • Parallax • Vanilla JS</span>
+                  <span className="text-[11px] font-mono text-zinc-500">React 19 • Three.js • Colyseus WebSockets • LiveKit</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1.5 space-y-1 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Designed and developed corporate showcase for premium building materials (Tuy Nen bricks, AAC lightweight blocks)."
-                      : "Thiết kế và xây dựng Website doanh nghiệp giới thiệu gạch nung Tuy Nen và vật liệu xanh (Gạch AAC, Tấm Panel ALC) chuẩn responsive."}
+                      ? "Demonstrates deep frontend technical competence: Built realtime multiplayer 3D game arena with partitioned spatial voice chat (LiveKit) and WebSocket state sync."
+                      : "Minh chứng năng lực kỹ thuật và tư duy thuật toán frontend chuyên sâu: Xây dựng game Ma Sói 3D tương tác realtime với hệ thống voice chat phân vùng (LiveKit) và đồng bộ trạng thái bàn chơi qua WebSockets."}
                   </li>
                   <li>
                     {isEn
-                      ? "Created interactive visual interactions: Hero Parallax, Scroll Brick Drop animation, product tabs, and animated metrics."
-                      : "Lập trình các hiệu ứng thị giác tương tác mượt mà: Hero Parallax, Scroll Brick Drop animation, bộ lọc sản phẩm dạng tab và bộ đếm thành tựu sản xuất tự động."}
+                      ? "Engineered procedural 3D BufferGeometry solely via Three.js (<300KB/model) with 360° interactive rotation, Fresnel glow shaders, and direct .GLB/.OBJ export."
+                      : "Lập trình hình học thủ tục 3D (Procedural BufferGeometry) hoàn toàn bằng Three.js, tối ưu dung lượng siêu nhẹ (< 300KB/model), tương tác xoay 360° và xuất file .GLB/.OBJ."}
                   </li>
                 </ul>
               </div>

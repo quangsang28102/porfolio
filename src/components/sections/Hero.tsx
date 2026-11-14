@@ -206,16 +206,22 @@ export function Hero() {
                   <span className="text-zinc-500">primaryStack:</span> &#91;
                 </p>
                 <p className="pl-8 text-rose-600 dark:text-rose-300">
-                  &quot;React &amp; Next.js (App Router)&quot;,
+                  &quot;HTML5 &amp; CSS3 (W3C Standard)&quot;,
                 </p>
                 <p className="pl-8 text-rose-600 dark:text-rose-300">
-                  &quot;Three.js / WebGL (3D Web)&quot;,
+                  &quot;JavaScript (ES6+) &amp; jQuery&quot;,
                 </p>
                 <p className="pl-8 text-rose-600 dark:text-rose-300">
-                  &quot;TypeScript &amp; Tailwind CSS&quot;,
+                  &quot;WordPress (Custom Themes)&quot;,
                 </p>
                 <p className="pl-8 text-rose-600 dark:text-rose-300">
-                  &quot;Node.js &amp; WebSockets (Colyseus)&quot;
+                  &quot;Figma / Photoshop / Adobe XD&quot;,
+                </p>
+                <p className="pl-8 text-rose-600 dark:text-rose-300">
+                  &quot;AI Coding (Claude, ChatGPT, Copilot)&quot;,
+                </p>
+                <p className="pl-8 text-rose-600 dark:text-rose-300">
+                  &quot;React &amp; Next.js Ecosystem&quot;
                 </p>
                 <p className="pl-4">&#93;,</p>
                 <p className="pl-4">
