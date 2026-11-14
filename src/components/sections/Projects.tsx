@@ -1,0 +1,175 @@
+"use client";
+
+import React, { useState } from "react";
+import { portfolioData } from "@/data/portfolio";
+import { Project } from "@/types/portfolio";
+import { Reveal } from "@/components/ui/Reveal";
+import { SpotlightCard } from "@/components/ui/SpotlightCard";
+import { ProjectModal } from "@/components/ui/ProjectModal";
+import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
+import { GithubIcon } from "@/components/ui/Icons";
+import Image from "next/image";
+
+export function Projects() {
+  const { projects } = portfolioData;
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+  const [activeFilter, setActiveFilter] = useState<string>("All");
+
+  const categories = ["All", "Fullstack", "Web", "Backend"];
+
+  const filteredProjects =
+    activeFilter === "All"
+      ? projects
+      : projects.filter((p) => p.category === activeFilter);
+
+  return (
+    <section id="projects" className="py-24 border-t border-zinc-900 relative">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6">
+        {/* Section Heading */}
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+            <div>
+              <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-500 mb-2 block">
+                04 // SẢN PHẨM &amp; DỰ ÁN
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-white">
+                Các dự án đã xây dựng &amp; hoàn thiện
+              </h2>
+            </div>
+
+            {/* Filter buttons */}
+            <div className="flex flex-wrap gap-2">
+              {categories.map((cat) => (
+                <button
+                  key={cat}
+                  onClick={() => setActiveFilter(cat)}
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors cursor-pointer ${
+                    activeFilter === cat
+                      ? "bg-rose-600 text-white border border-rose-500"
+                      : "bg-zinc-900/80 text-zinc-400 hover:text-white border border-zinc-800"
+                  }`}
+                >
+                  {cat === "All" ? "Tất cả" : cat}
+                </button>
+              ))}
+            </div>
+          </div>
+        </Reveal>
+
+        {/* Projects Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          {filteredProjects.map((project, index) => (
+            <Reveal key={project.id} delay={index * 0.1}>
+              <SpotlightCard
+                onClick={() => setSelectedProject(project)}
+                className="group cursor-pointer flex flex-col justify-between h-full hover:-translate-y-2 transition-transform duration-300"
+              >
+                <div>
+                  {/* Image Preview */}
+                  {project.images && project.images.length > 0 && (
+                    <div className="relative w-full h-52 rounded-xl overflow-hidden mb-5 border border-zinc-800/80 bg-zinc-900">
+                      <Image
+                        src={project.images[0]}
+                        alt={project.title}
+                        fill
+                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-zinc-950 via-zinc-950/20 to-transparent" />
+                      
+                      {project.featured && (
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-rose-600 text-white flex items-center gap-1 shadow-lg shadow-rose-950/50">
+                          <Sparkles className="w-3 h-3" />
+                          <span>Featured</span>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Category and Role */}
+                  <div className="flex items-center gap-2 mb-3">
+                    <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-400 border border-rose-500/20">
+                      {project.category}
+                    </span>
+                    <span className="text-xs font-mono text-zinc-500">
+                      • {project.role}
+                    </span>
+                  </div>
+
+                  {/* Title & Arrow */}
+                  <div className="flex items-start justify-between gap-4 mb-3">
+                    <h3 className="text-xl font-bold text-white group-hover:text-rose-400 transition-colors">
+                      {project.title}
+                    </h3>
+                    <div className="p-2 rounded-lg bg-zinc-800/60 text-zinc-400 group-hover:text-rose-400 group-hover:bg-rose-500/10 transition-all duration-300 shrink-0">
+                      <ArrowUpRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
+                    </div>
+                  </div>
+
+                  {/* Summary */}
+                  <p className="text-sm text-zinc-400 leading-relaxed line-clamp-3 mb-6">
+                    {project.summary}
+                  </p>
+                </div>
+
+                {/* Footer: Tech Stack and quick action */}
+                <div>
+                  <div className="flex flex-wrap gap-1.5 mb-4">
+                    {project.technologies.slice(0, 5).map((tech) => (
+                      <span
+                        key={tech}
+                        className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-800/80 text-zinc-300 border border-zinc-700/60"
+                      >
+                        {tech}
+                      </span>
+                    ))}
+                    {project.technologies.length > 5 && (
+                      <span className="px-2 py-0.5 rounded text-[11px] font-mono bg-zinc-800/40 text-zinc-500">
+                        +{project.technologies.length - 5}
+                      </span>
+                    )}
+                  </div>
+
+                  <div className="flex items-center justify-between pt-4 border-t border-zinc-800/60 text-xs font-mono">
+                    <span className="text-rose-400 flex items-center gap-1 group-hover:underline">
+                      Xem chi tiết bài toán &amp; giải pháp →
+                    </span>
+                    <div className="flex items-center gap-2 text-zinc-400" onClick={(e) => e.stopPropagation()}>
+                      {project.githubUrl && (
+                        <a
+                          href={project.githubUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-white transition-colors p-1"
+                          aria-label="GitHub Repository"
+                        >
+                          <GithubIcon className="w-4 h-4" />
+                        </a>
+                      )}
+                      {project.demoUrl && (
+                        <a
+                          href={project.demoUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:text-white transition-colors p-1"
+                          aria-label="Demo Trực Tiếp"
+                        >
+                          <ExternalLink className="w-4 h-4" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </SpotlightCard>
+            </Reveal>
+          ))}
+        </div>
+      </div>
+
+      {/* Project Detail Modal */}
+      <ProjectModal
+        project={selectedProject}
+        onClose={() => setSelectedProject(null)}
+      />
+    </section>
+  );
+}
