@@ -1,6 +1,7 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { portfolioData } from "@/data/portfolio";
 import { ArrowRight, FileText, Mail, Sparkles, Terminal } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
@@ -106,16 +107,13 @@ export function Hero() {
                 </a>
               </MagneticButton>
 
-              {personal.cvPath && (
-                <a
-                  href={personal.cvPath}
-                  download
-                  className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-zinc-800 bg-zinc-900/40 hover:bg-zinc-800 text-zinc-400 hover:text-white text-sm font-medium transition-colors"
-                >
-                  <FileText className="w-4 h-4" />
-                  <span>Tải CV (PDF)</span>
-                </a>
-              )}
+              <Link
+                href="/cv"
+                className="inline-flex items-center gap-2 px-5 py-3.5 rounded-xl border border-rose-500/40 bg-rose-500/10 hover:bg-rose-500/20 text-rose-300 hover:text-white text-sm font-semibold transition-all duration-300 shadow-lg shadow-rose-950/20"
+              >
+                <FileText className="w-4 h-4 text-rose-400" />
+                <span>Xem CV giấy (A4)</span>
+              </Link>
             </motion.div>
 
             {/* Social quick links */}

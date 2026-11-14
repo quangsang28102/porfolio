@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
+import Link from "next/link";
 import { portfolioData } from "@/data/portfolio";
 import { Menu, X, FileText, Send, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
@@ -96,16 +97,13 @@ export function Header() {
 
         {/* CTA Actions */}
         <div className="hidden lg:flex items-center gap-3">
-          {personal.cvPath && (
-            <a
-              href={personal.cvPath}
-              download
-              className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-zinc-700/80 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-semibold transition-all duration-200"
-            >
-              <FileText className="w-3.5 h-3.5 text-rose-500" />
-              <span>CV</span>
-            </a>
-          )}
+          <Link
+            href="/cv"
+            className="flex items-center gap-2 px-3.5 py-1.5 rounded-lg border border-zinc-700/80 bg-zinc-900/80 hover:bg-zinc-800 text-zinc-300 hover:text-white text-xs font-semibold transition-all duration-200"
+          >
+            <FileText className="w-3.5 h-3.5 text-rose-500" />
+            <span>Xem CV giấy</span>
+          </Link>
           <a
             href="#contact"
             className="flex items-center gap-2 px-4 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-[0_0_15px_rgba(225,29,72,0.35)] hover:shadow-[0_0_22px_rgba(225,29,72,0.6)] transition-all duration-300"
@@ -151,17 +149,14 @@ export function Header() {
                 </a>
               ))}
               <div className="pt-3 border-t border-zinc-800 flex gap-2">
-                {personal.cvPath && (
-                  <a
-                    href={personal.cvPath}
-                    download
-                    onClick={() => setMobileMenuOpen(false)}
-                    className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold"
-                  >
-                    <FileText className="w-3.5 h-3.5 text-rose-500" />
-                    <span>Tải CV</span>
-                  </a>
-                )}
+                <Link
+                  href="/cv"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex-1 flex items-center justify-center gap-2 py-2 rounded-lg bg-zinc-900 border border-zinc-800 text-zinc-300 text-xs font-semibold hover:text-white"
+                >
+                  <FileText className="w-3.5 h-3.5 text-rose-500" />
+                  <span>Xem CV giấy</span>
+                </Link>
                 <a
                   href="#contact"
                   onClick={() => setMobileMenuOpen(false)}
