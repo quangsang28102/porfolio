@@ -84,14 +84,14 @@ export const portfolioDataVi: PortfolioData = {
         "Thiết kế Landing Page và xây dựng Design System hoàn chỉnh trên Figma; chuyển đổi thành công sang layout web tĩnh chuẩn responsive đa màn hình.",
         "Tái tổ chức cấu trúc code, cấu hình đường dẫn và điều chỉnh giao diện WordPress từ theme gốc, tối ưu hóa trang Admin phục vụ cập nhật nội dung thuận tiện.",
         "Thực hiện bảo trì định kỳ (Maintenance), tối ưu hóa tốc độ tải trang, cấu hình metadata SEO tổng thể đạt điểm Core Web Vitals cao.",
-        "Xây dựng ứng dụng số hóa quy trình thi tốt nghiệp đào tạo lái xe ô tô: số hóa bài thi từ giấy sang trực tuyến, giám sát tiến trình realtime và in bài tự động.",
+        "Xây dựng ứng dụng quản lý quy trình thi tốt nghiệp đào tạo lái xe ô tô: số hóa bài thi từ giấy sang trực tuyến, giám sát tiến trình realtime, in bài tự động, thống kê và xuất báo cáo",
         "Chủ động ứng dụng AI (Claude, ChatGPT, Copilot) vào quy trình code để tự động hóa tác vụ văn phòng và rút ngắn 40% thời gian xử lý dữ liệu.",
       ],
       technologies: ["HTML5", "CSS3", "JavaScript", "WordPress", "Figma", "SEO & W3C", "AI Tools"],
     },
     {
       id: "exp-2",
-      role: "Lập trình viên Frontend",
+      role: "Lập trình viên Frontend (Fresher)",
       organization: "Quốc Bảo Software",
       location: "TP. Hồ Chí Minh",
       startDate: "04/2024",
@@ -108,7 +108,7 @@ export const portfolioDataVi: PortfolioData = {
     },
     {
       id: "exp-3",
-      role: "Thực tập sinh Lập trình Web (Fresher)",
+      role: "Thực tập sinh Lập trình Web ",
       organization: "Quốc Bảo Software",
       location: "TP. Hồ Chí Minh",
       startDate: "01/2024",
@@ -208,6 +208,8 @@ export const portfolioDataVi: PortfolioData = {
       title: "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)",
       category: "3D & WebGL",
       featured: true,
+      inProgress: true,
+      status: "in-progress",
       summary:
         "Ứng dụng tương tác 3D WebGL trên trình duyệt: tạo dựng hình học nhân vật thủ tục (Procedural BufferGeometry) siêu nhẹ (<300KB), tương tác xoay 360 độ và xuất file .GLB/.OBJ.",
       role: "3D WebGL & Frontend Developer",
@@ -234,6 +236,8 @@ export const portfolioDataVi: PortfolioData = {
       title: "NightHowler — Đấu Trường Ma Sói 3D Thời Gian Thực & Voice Chat Không Gian",
       category: "Fullstack",
       featured: false,
+      inProgress: true,
+      status: "in-progress",
       summary:
         "Game Ma Sói 3D thời gian thực với kiến trúc Monorepo, đồ họa WebGL/Three.js, đồng bộ trạng thái bàn chơi qua Colyseus WebSockets và voice chat phân vùng theo phe (LiveKit SDK).",
       role: "Lead 3D & Fullstack Developer",
@@ -488,6 +492,8 @@ export const portfolioDataEn: PortfolioData = {
       title: "3D Chibi Girl Model — Three.js Low-Poly Stylized",
       category: "3D & WebGL",
       featured: true,
+      inProgress: true,
+      status: "in-progress",
       summary:
         "Interactive browser-based 3D WebGL application: Procedural BufferGeometry generator (<300KB), fluid 360° orbital rotation, real-time shaders, and glTF/OBJ file export.",
       role: "3D WebGL & Frontend Developer",
@@ -514,6 +520,8 @@ export const portfolioDataEn: PortfolioData = {
       title: "NightHowler — 3D Multiplayer Werewolf Arena",
       category: "Fullstack",
       featured: false,
+      inProgress: true,
+      status: "in-progress",
       summary:
         "Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js, Colyseus WebSockets authoritative state sync, and LiveKit partitioned spatial voice chat.",
       role: "Lead 3D & Fullstack Developer",

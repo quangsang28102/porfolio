@@ -283,6 +283,9 @@ export function PaperCvContent() {
                     <span className="text-sm text-zinc-950 font-bold">
                       {isEn ? "3D Chibi Girl Model — Three.js Low-Poly Stylized" : "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly)"}
                     </span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-300 font-semibold">
+                      {isEn ? "In Progress" : "Đang phát triển"}
+                    </span>
                     <a
                       href="https://avatar-three-rouge.vercel.app/"
                       target="_blank"
@@ -314,6 +317,9 @@ export function PaperCvContent() {
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
                       {isEn ? "NIGHT HOWLER — 3D MULTIPLAYER WEREWOLF ARENA" : "NIGHT HOWLER — ĐẤU TRƯỜNG MA SÓI 3D & VOICE CHAT"}
+                    </span>
+                    <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-300 font-semibold">
+                      {isEn ? "In Progress" : "Đang phát triển"}
                     </span>
                     <a
                       href="https://github.com/quangsang28102/NightHowler"

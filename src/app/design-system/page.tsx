@@ -737,9 +737,14 @@ export default function DesignSystemPage() {
             {/* 2. 3D Chibi Girl Model */}
             <div className="group rounded-3xl bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 p-6 transition-all duration-300 hover:border-rose-500/50 hover:shadow-2xl hover:shadow-rose-950/20 hover:-translate-y-2 relative overflow-hidden">
               <div className="flex items-center justify-between mb-4">
-                <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
-                  3D &amp; WebGL
-                </span>
+                <div className="flex items-center gap-2">
+                  <span className="px-3 py-1 rounded-full text-[11px] font-mono font-medium bg-sky-500/10 text-sky-600 dark:text-sky-400 border border-sky-500/20">
+                    3D &amp; WebGL
+                  </span>
+                  <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30">
+                    Đang phát triển (WIP)
+                  </span>
+                </div>
                 <a
                   href="https://avatar-three-rouge.vercel.app/"
                   target="_blank"

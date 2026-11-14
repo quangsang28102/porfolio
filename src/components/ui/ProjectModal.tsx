@@ -80,6 +80,12 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
               <span className="px-3 py-1 rounded-full text-xs font-mono font-medium bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
                 {project.category}
               </span>
+              {project.inProgress && (
+                <span className="px-3 py-1 rounded-full text-xs font-mono font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 flex items-center gap-1.5">
+                  <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+                  <span>{t("proj.inProgress")}</span>
+                </span>
+              )}
               <span className="px-3 py-1 rounded-full text-xs font-mono text-zinc-600 dark:text-zinc-400 bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800">
                 {t("proj.role")}: {project.role}
               </span>

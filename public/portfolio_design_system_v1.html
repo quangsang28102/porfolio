@@ -1,13 +1,17 @@
 <!DOCTYPE html>
 <html lang="vi" class="dark">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Portfolio Design System v1.0 — Nguyễn Đỗ Quang Sáng</title>
-  <meta name="description" content="Hệ thống thiết kế chuẩn cho Portfolio: Tokens màu, Typography, Component Showcase, Motion & Hand-off Guide." />
+  <meta name="description"
+    content="Hệ thống thiết kế chuẩn cho Portfolio: Tokens màu, Typography, Component Showcase, Motion & Hand-off Guide." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
   <style>
     :root {
       --bg: #09090b;
@@ -23,6 +27,7 @@
       --font-mono: 'JetBrains Mono', monospace;
       --radius: 14px;
     }
+
     html.light {
       --bg: #fafafa;
       --bg-card: #ffffff;
@@ -34,142 +39,390 @@
       --primary-hover: #be123c;
       --primary-glow: rgba(225, 29, 72, 0.2);
     }
-    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
     body {
       background-color: var(--bg);
       color: var(--text);
       font-family: var(--font-sans);
       line-height: 1.6;
       transition: background-color 0.3s, color 0.3s;
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
       background-size: 32px 32px;
     }
+
     html.light body {
-      background-image: 
+      background-image:
         linear-gradient(to right, rgba(0, 0, 0, 0.04) 1px, transparent 1px),
         linear-gradient(to bottom, rgba(0, 0, 0, 0.04) 1px, transparent 1px);
     }
-    a { color: inherit; text-decoration: none; }
-    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
     .header-bar {
-      position: sticky; top: 0; z-index: 50;
+      position: sticky;
+      top: 0;
+      z-index: 50;
       background: rgba(9, 9, 11, 0.85);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--border);
       padding: 14px 0;
     }
-    html.light .header-bar { background: rgba(250, 250, 250, 0.85); }
-    .header-inner { display: flex; align-items: center; justify-content: space-between; }
-    .brand-tag { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 15px; }
+
+    html.light .header-bar {
+      background: rgba(250, 250, 250, 0.85);
+    }
+
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand-tag {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      font-size: 15px;
+    }
+
     .brand-glyph {
-      width: 32px; height: 32px; border-radius: 8px;
-      background: rgba(225, 29, 72, 0.15); color: var(--primary);
+      width: 32px;
+      height: 32px;
+      border-radius: 8px;
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--primary);
       border: 1px solid rgba(225, 29, 72, 0.3);
-      display: flex; align-items: center; justify-content: center;
-      font-family: var(--font-mono); font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-mono);
+      font-weight: 800;
     }
+
     .theme-toggle-btn {
-      padding: 6px 14px; border-radius: 9999px; font-size: 12px; font-family: var(--font-mono);
-      background: var(--bg-card); color: var(--text); border: 1px solid var(--border);
-      cursor: pointer; transition: all 0.2s;
+      padding: 6px 14px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      background: var(--bg-card);
+      color: var(--text);
+      border: 1px solid var(--border);
+      cursor: pointer;
+      transition: all 0.2s;
     }
-    .theme-toggle-btn:hover { border-color: var(--primary); }
-    
+
+    .theme-toggle-btn:hover {
+      border-color: var(--primary);
+    }
+
     /* Hero Cover */
     .hero-card {
-      margin-top: 32px; margin-bottom: 40px; padding: 48px; border-radius: 24px;
-      background: var(--bg-card); border: 1px solid var(--border);
-      position: relative; overflow: hidden; box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      margin-top: 32px;
+      margin-bottom: 40px;
+      padding: 48px;
+      border-radius: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
     }
-    .hero-badges { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 16px; }
+
+    .hero-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
     .badge {
-      padding: 4px 12px; border-radius: 9999px; font-size: 11px;
-      font-family: var(--font-mono); font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      font-weight: 600;
     }
-    .badge-primary { background: rgba(225, 29, 72, 0.15); color: var(--primary); border: 1px solid rgba(225, 29, 72, 0.3); }
-    .badge-success { background: rgba(16, 185, 129, 0.15); color: #10b981; border: 1px solid rgba(16, 185, 129, 0.3); }
-    .badge-muted { background: var(--bg-elevated); color: var(--text-muted); border: 1px solid var(--border); }
-    .hero-title { font-size: 42px; font-weight: 800; line-height: 1.2; margin-bottom: 16px; }
-    .hero-title span { color: var(--primary); }
-    .hero-desc { font-size: 16px; color: var(--text-muted); max-width: 800px; margin-bottom: 32px; }
-    .hero-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; padding-top: 24px; border-top: 1px solid var(--border); font-family: var(--font-mono); font-size: 12px; }
-    
-    /* Navigation Pills */
-    .nav-pills {
-      display: flex; gap: 8px; overflow-x: auto; padding: 12px 0; margin-bottom: 48px;
-      position: sticky; top: 60px; z-index: 40; background: var(--bg);
-    }
-    .pill {
-      padding: 6px 16px; border-radius: 9999px; font-size: 12px; font-family: var(--font-mono);
-      background: var(--bg-card); color: var(--text-muted); border: 1px solid var(--border);
-      white-space: nowrap; transition: all 0.2s;
-    }
-    .pill:hover, .pill.active { background: var(--primary); color: #fff; border-color: var(--primary); font-weight: 600; }
-    
-    /* Section styling */
-    section { margin-bottom: 64px; scroll-margin-top: 120px; }
-    .sec-header { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
-    .sec-num {
-      padding: 4px 10px; border-radius: 6px; font-family: var(--font-mono);
-      font-size: 12px; font-weight: 700; background: rgba(225, 29, 72, 0.15); color: var(--primary);
+
+    .badge-primary {
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--primary);
       border: 1px solid rgba(225, 29, 72, 0.3);
     }
-    .sec-title { font-size: 26px; font-weight: 700; }
-    .sec-desc { font-size: 14px; color: var(--text-muted); margin-bottom: 24px; max-width: 850px; }
-    
-    /* Swatches Grid */
-    .swatches-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 32px; }
-    .swatch-card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 16px; cursor: pointer; transition: transform 0.2s, border-color 0.2s;
+
+    .badge-success {
+      background: rgba(16, 185, 129, 0.15);
+      color: #10b981;
+      border: 1px solid rgba(16, 185, 129, 0.3);
     }
-    .swatch-card:hover { transform: translateY(-3px); border-color: var(--primary); }
-    .swatch-color { height: 72px; border-radius: 10px; margin-bottom: 12px; border: 1px solid rgba(255,255,255,0.1); }
-    .swatch-name { font-weight: 700; font-size: 14px; margin-bottom: 2px; }
-    .swatch-hex { font-family: var(--font-mono); font-size: 12px; color: var(--primary); margin-bottom: 6px; }
-    .swatch-role { font-size: 11px; color: var(--text-muted); }
+
+    .badge-muted {
+      background: var(--bg-elevated);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+    }
+
+    .hero-title {
+      font-size: 42px;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 16px;
+    }
+
+    .hero-title span {
+      color: var(--primary);
+    }
+
+    .hero-desc {
+      font-size: 16px;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin-bottom: 32px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 16px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    /* Navigation Pills */
+    .nav-pills {
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 12px 0;
+      margin-bottom: 48px;
+      position: sticky;
+      top: 60px;
+      z-index: 40;
+      background: var(--bg);
+    }
+
+    .pill {
+      padding: 6px 16px;
+      border-radius: 9999px;
+      font-size: 12px;
+      font-family: var(--font-mono);
+      background: var(--bg-card);
+      color: var(--text-muted);
+      border: 1px solid var(--border);
+      white-space: nowrap;
+      transition: all 0.2s;
+    }
+
+    .pill:hover,
+    .pill.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+      font-weight: 600;
+    }
+
+    /* Section styling */
+    section {
+      margin-bottom: 64px;
+      scroll-margin-top: 120px;
+    }
+
+    .sec-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .sec-num {
+      padding: 4px 10px;
+      border-radius: 6px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      font-weight: 700;
+      background: rgba(225, 29, 72, 0.15);
+      color: var(--primary);
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+
+    .sec-title {
+      font-size: 26px;
+      font-weight: 700;
+    }
+
+    .sec-desc {
+      font-size: 14px;
+      color: var(--text-muted);
+      margin-bottom: 24px;
+      max-width: 850px;
+    }
+
+    /* Swatches Grid */
+    .swatches-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-bottom: 32px;
+    }
+
+    .swatch-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px;
+      cursor: pointer;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+
+    .swatch-card:hover {
+      transform: translateY(-3px);
+      border-color: var(--primary);
+    }
+
+    .swatch-color {
+      height: 72px;
+      border-radius: 10px;
+      margin-bottom: 12px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .swatch-name {
+      font-weight: 700;
+      font-size: 14px;
+      margin-bottom: 2px;
+    }
+
+    .swatch-hex {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--primary);
+      margin-bottom: 6px;
+    }
+
+    .swatch-role {
+      font-size: 11px;
+      color: var(--text-muted);
+    }
 
     /* Component Sandbox */
     .sandbox-card {
-      background: var(--bg-card); border: 1px solid var(--border); border-radius: 16px;
-      padding: 24px; margin-bottom: 24px;
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      margin-bottom: 24px;
     }
-    .sandbox-label { font-family: var(--font-mono); font-size: 12px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 16px; }
-    .btn-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
+
+    .sandbox-label {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--text-muted);
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .btn-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+    }
+
     .btn {
-      padding: 10px 20px; border-radius: 12px; font-size: 13px; font-weight: 600;
-      cursor: pointer; border: none; transition: all 0.2s; display: inline-flex; align-items: center; gap: 8px;
+      padding: 10px 20px;
+      border-radius: 12px;
+      font-size: 13px;
+      font-weight: 600;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
+
     .btn-primary {
-      background: var(--primary); color: #fff;
+      background: var(--primary);
+      color: #fff;
       box-shadow: 0 0 20px var(--primary-glow);
     }
-    .btn-primary:hover { background: var(--primary-hover); transform: translateY(-2px); box-shadow: 0 0 30px rgba(225, 29, 72, 0.6); }
-    .btn-outline {
-      background: transparent; color: var(--text); border: 1px solid var(--border);
+
+    .btn-primary:hover {
+      background: var(--primary-hover);
+      transform: translateY(-2px);
+      box-shadow: 0 0 30px rgba(225, 29, 72, 0.6);
     }
-    .btn-outline:hover { background: var(--bg-elevated); transform: translateY(-2px); }
-    
-    /* Code block */
-    pre {
-      background: #000; color: #f43f5e; padding: 20px; border-radius: 14px;
-      font-family: var(--font-mono); font-size: 12px; overflow-x: auto;
+
+    .btn-outline {
+      background: transparent;
+      color: var(--text);
       border: 1px solid var(--border);
     }
-    
+
+    .btn-outline:hover {
+      background: var(--bg-elevated);
+      transform: translateY(-2px);
+    }
+
+    /* Code block */
+    pre {
+      background: #000;
+      color: #f43f5e;
+      padding: 20px;
+      border-radius: 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      overflow-x: auto;
+      border: 1px solid var(--border);
+    }
+
     /* Toast */
     #toast {
-      position: fixed; bottom: 24px; right: 24px; padding: 12px 20px;
-      background: #18181b; color: #fff; border: 1px solid var(--primary);
-      border-radius: 12px; font-family: var(--font-mono); font-size: 12px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.5); opacity: 0; pointer-events: none;
-      transition: opacity 0.3s, transform 0.3s; transform: translateY(20px); z-index: 100;
+      position: fixed;
+      bottom: 24px;
+      right: 24px;
+      padding: 12px 20px;
+      background: #18181b;
+      color: #fff;
+      border: 1px solid var(--primary);
+      border-radius: 12px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s, transform 0.3s;
+      transform: translateY(20px);
+      z-index: 100;
     }
-    #toast.show { opacity: 1; pointer-events: auto; transform: translateY(0); }
+
+    #toast.show {
+      opacity: 1;
+      pointer-events: auto;
+      transform: translateY(0);
+    }
   </style>
 </head>
+
 <body>
   <div id="toast">Đã sao chép!</div>
 
@@ -225,8 +478,10 @@
         <h2 class="sec-title">Thương Hiệu &amp; Triết Lý Thiết Kế</h2>
       </div>
       <p class="sec-desc">
-        Định hướng theo phong cách <strong>Developer-Centric &amp; High-Contrast Minimalist</strong>. Nền đen sâu (Deep Black)
-        giúp tăng cường độ tập trung vào sản phẩm, kết hợp các vi tương tác vật lý (Spotlight bám chuột, Glow CTA) tạo ấn tượng chuyên nghiệp.
+        Định hướng theo phong cách <strong>Developer-Centric &amp; High-Contrast Minimalist</strong>. Nền đen sâu (Deep
+        Black)
+        giúp tăng cường độ tập trung vào sản phẩm, kết hợp các vi tương tác vật lý (Spotlight bám chuột, Glow CTA) tạo
+        ấn tượng chuyên nghiệp.
       </p>
     </section>
 
@@ -288,8 +543,10 @@
         <div style="font-size: 36px; font-weight: 800; margin-bottom: 12px;">Display Hero H1 — 36px/48px Extrabold</div>
         <div style="font-size: 24px; font-weight: 700; margin-bottom: 12px;">Section Title H2 — 24px/32px Bold</div>
         <div style="font-size: 18px; font-weight: 600; margin-bottom: 12px;">Card Title H3 — 18px/24px Semi-bold</div>
-        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Body Regular — 14px/22px Text for paragraphs and descriptions.</div>
-        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--primary);">Mono Label — JetBrains Mono 12px for tech stacks and metrics.</div>
+        <div style="font-size: 14px; color: var(--text-muted); margin-bottom: 12px;">Body Regular — 14px/22px Text for
+          paragraphs and descriptions.</div>
+        <div style="font-family: var(--font-mono); font-size: 12px; color: var(--primary);">Mono Label — JetBrains Mono
+          12px for tech stacks and metrics.</div>
       </div>
     </section>
 
@@ -303,8 +560,10 @@
       <div class="sandbox-card">
         <div class="sandbox-label">1. Nút Bấm Tương Tác</div>
         <div class="btn-row">
-          <button class="btn btn-primary" onclick="showToast('Bấm nút Primary CTA thành công!')">Primary Glowing CTA</button>
-          <button class="btn btn-outline" onclick="showToast('Bấm nút Secondary Outline thành công!')">Secondary Outline</button>
+          <button class="btn btn-primary" onclick="showToast('Bấm nút Primary CTA thành công!')">Primary Glowing
+            CTA</button>
+          <button class="btn btn-outline" onclick="showToast('Bấm nút Secondary Outline thành công!')">Secondary
+            Outline</button>
         </div>
       </div>
 
@@ -335,7 +594,10 @@
         </div>
 
         <div class="sandbox-card" style="margin-bottom:0">
-          <div style="font-size:11px; font-family:var(--font-mono); color:#10b981; margin-bottom:8px;">● avatar-three-rouge.vercel.app ↗</div>
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;">
+            <div style="font-size:11px; font-family:var(--font-mono); color:#10b981;">● avatar-three-rouge.vercel.app ↗</div>
+            <span style="font-size:10px; font-family:var(--font-mono); background:rgba(245,158,11,0.15); color:#f59e0b; border:1px solid rgba(245,158,11,0.3); padding:2px 6px; border-radius:9999px; font-weight:600;">Đang phát triển (WIP)</span>
+          </div>
           <h3 style="font-size:16px; font-weight:700; margin-bottom:6px;">Mô hình 3D Chibi Girl (Three.js)</h3>
           <p style="font-size:12px; color:var(--text-muted); margin-bottom:12px;">Procedural BufferGeometry (<250KB), 360° orbit, glTF/OBJ export.</p>
           <a href="https://avatar-three-rouge.vercel.app/" target="_blank" style="font-size:12px; font-family:var(--font-mono); color:var(--primary); font-weight:600;">Xem Demo ↗</a>
@@ -403,4 +665,5 @@
     }
   </script>
 </body>
+
 </html>

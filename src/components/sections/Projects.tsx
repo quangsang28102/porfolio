@@ -84,15 +84,28 @@ export function Projects() {
                           <span>{t("proj.featured")}</span>
                         </div>
                       )}
+
+                      {project.inProgress && (
+                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-400 text-zinc-950 flex items-center gap-1.5 shadow-lg shadow-amber-950/40 border border-amber-300">
+                          <span className="w-1.5 h-1.5 rounded-full bg-zinc-950 animate-ping" />
+                          <span>{t("proj.inProgress")}</span>
+                        </div>
+                      )}
                     </div>
                   )}
 
                   {/* Category, Live Demo Badge, and Role */}
                   <div className="flex flex-wrap items-center justify-between gap-2 mb-3">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-wrap items-center gap-2">
                       <span className="px-2.5 py-0.5 rounded-full text-xs font-mono bg-rose-500/10 text-rose-600 dark:text-rose-400 border border-rose-500/20">
                         {project.category}
                       </span>
+                      {project.inProgress && (
+                        <span className="px-2 py-0.5 rounded-full text-[10px] font-mono font-semibold bg-amber-500/15 text-amber-600 dark:text-amber-400 border border-amber-500/30 flex items-center gap-1">
+                          <span className="w-1.5 h-1.5 rounded-full bg-amber-500 animate-pulse" />
+                          <span>{t("proj.inProgress")}</span>
+                        </span>
+                      )}
                       <span className="text-xs font-mono text-zinc-500 hidden sm:inline">
                         • {project.role}
                       </span>

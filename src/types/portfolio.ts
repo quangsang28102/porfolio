@@ -30,6 +30,8 @@ export interface Project {
   title: string;
   category: "Fullstack" | "Web" | "Backend" | "Mobile" | "3D & WebGL" | "Other";
   featured: boolean;
+  inProgress?: boolean;
+  status?: "completed" | "in-progress";
   summary: string;
   role: string;
   problem: string;
