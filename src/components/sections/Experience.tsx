@@ -81,9 +81,7 @@ export function Experience() {
                   {/* Achievements */}
                   {exp.achievements && exp.achievements.length > 0 && (
                     <div className="mb-6 space-y-2">
-                      <h4 className="text-xs font-mono uppercase tracking-wider text-zinc-500 dark:text-zinc-400 font-semibold">
-                        {t("exp.achievements")}
-                      </h4>
+
                       <ul className="space-y-2">
                         {exp.achievements.map((ach, i) => (
                           <li

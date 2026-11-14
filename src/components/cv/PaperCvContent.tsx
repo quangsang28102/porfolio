@@ -176,7 +176,7 @@ export function PaperCvContent() {
           {/* Section: DỰ ÁN CÁ NHÂN & THỰC TẾ */}
           <div>
             <h2 className="text-sm font-bold uppercase tracking-wider text-zinc-950 pb-1 border-b border-zinc-300 mb-4">
-              {isEn ? "KEY & PERSONAL PROJECTS" : "DỰ ÁN NỔI BẬT & CÁ NHÂN"}
+              {isEn ? "PERSONAL PROJECTS" : "DỰ ÁN CÁ NHÂN"}
             </h2>
 
             <div className="space-y-3.5">
@@ -281,7 +281,7 @@ export function PaperCvContent() {
                 <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
                   <div className="flex items-center gap-2">
                     <span className="text-sm text-zinc-950 font-bold">
-                      {isEn ? "3D Chibi Girl Model — Three.js Low-Poly Stylized" : "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly)"}
+                      {isEn ? "AVATAR COLLECTION (Three.js Low-Poly)" : "AVATAR COLLECTION (Three.js Low-Poly)"}
                     </span>
                     <span className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-amber-50 text-amber-700 border border-amber-300 font-semibold">
                       {isEn ? "In Progress" : "Đang phát triển"}
@@ -300,8 +300,8 @@ export function PaperCvContent() {
                 <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Constructed procedural 3D character geometries entirely in code via Three.js BufferGeometry (<250KB payload) with 360° orbital camera manipulation."
-                      : "Lập trình dựng hình học 3D nhân vật hoàn toàn bằng code (BufferGeometry procedural) siêu nhẹ (<250KB), xoay tương tác không gian 360 độ."}
+                      ? "Constructed procedural 3D Werewolf game character geometries entirely in code via Three.js BufferGeometry (<250KB payload) with 360° orbital camera manipulation."
+                      : "Lập trình dựng hình học 3D các nhân vật trên tựa game ma sói hoàn toàn bằng code (BufferGeometry procedural) siêu nhẹ (<250KB), xoay tương tác không gian 360 độ."}
                   </li>
                   <li>
                     {isEn
