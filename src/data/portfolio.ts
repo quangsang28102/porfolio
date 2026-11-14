@@ -128,7 +128,7 @@ export const portfolioDataVi: PortfolioData = {
       id: "proj-1",
       title: "Công ty Cổ phần Gạch Tuy Nen Bình Định - BITCO | Vật Liệu Xây Dựng Hàng Đầu",
       category: "Web",
-      featured: true,
+      featured: false,
       summary:
         "Dự án tiêu biểu thể hiện kỹ năng cắt layout từ thiết kế sang HTML5/CSS3 chuẩn W3C, không dùng framework nặng, kết hợp hiệu ứng Parallax và tương thích đa trình duyệt.",
       role: "Frontend Developer & UI Slicer",
@@ -155,7 +155,7 @@ export const portfolioDataVi: PortfolioData = {
       id: "proj-2",
       title: "HPO – Trung Tâm Giáo Dục Nghề Nghiệp Ô Tô Hiệp Phát",
       category: "Web",
-      featured: true,
+      featured: false,
       summary:
         "Cổng thông tin đào tạo lái xe chuyển đổi từ source HTML tĩnh sang theme WordPress quản trị, tích hợp module tra cứu QR và tối ưu hóa SEO.",
       role: "Frontend & WordPress Theme Developer",
@@ -181,7 +181,7 @@ export const portfolioDataVi: PortfolioData = {
       id: "proj-3",
       title: "Football Payment Manager",
       category: "Fullstack",
-      featured: true,
+      featured: false,
       summary:
         "Ứng dụng web tự động hóa chia tiền sân bãi, quản lý thành viên và theo dõi công nợ đội bóng với sinh mã VietQR động và đồng bộ hai chiều Google Sheets.",
       role: "Fullstack Developer (Logic & UI/UX)",
@@ -207,7 +207,7 @@ export const portfolioDataVi: PortfolioData = {
       id: "proj-4",
       title: "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)",
       category: "3D & WebGL",
-      featured: true,
+      featured: false,
       inProgress: true,
       status: "in-progress",
       summary:
@@ -412,7 +412,7 @@ export const portfolioDataEn: PortfolioData = {
       id: "proj-1",
       title: "BITCO Tuy Nen Brick Corporation | Leading Building Materials",
       category: "Web",
-      featured: true,
+      featured: false,
       summary:
         "Flagship showcase demonstrating W3C-compliant pixel-perfect layout slicing from design mockups into pure HTML5/CSS3 without heavy frameworks, featuring Parallax scroll and cross-browser reliability.",
       role: "Frontend Developer & UI Slicer",
@@ -439,7 +439,7 @@ export const portfolioDataEn: PortfolioData = {
       id: "proj-2",
       title: "HPO – Hiep Phat Vocational Driving Education Center",
       category: "Web",
-      featured: true,
+      featured: false,
       summary:
         "Driver education portal converted from static HTML sources into a customized WordPress administration theme, featuring online QR lookup and SEO optimization.",
       role: "Frontend & WordPress Theme Developer",
@@ -465,7 +465,7 @@ export const portfolioDataEn: PortfolioData = {
       id: "proj-3",
       title: "Football Payment Manager",
       category: "Fullstack",
-      featured: true,
+      featured: false,
       summary:
         "Web application automating pitch fee splitting, member rosters, and debt tracking with dynamic VietQR payment codes and Google Sheets sync.",
       role: "Fullstack Developer (Logic & UI/UX)",
@@ -491,7 +491,7 @@ export const portfolioDataEn: PortfolioData = {
       id: "proj-4",
       title: "3D Chibi Girl Model — Three.js Low-Poly Stylized",
       category: "3D & WebGL",
-      featured: true,
+      featured: false,
       inProgress: true,
       status: "in-progress",
       summary:

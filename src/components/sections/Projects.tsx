@@ -7,7 +7,7 @@ import { Project } from "@/types/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { ProjectModal } from "@/components/ui/ProjectModal";
-import { ArrowUpRight, ExternalLink, Sparkles } from "lucide-react";
+import { ArrowUpRight, ExternalLink } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import Image from "next/image";
 
@@ -78,15 +78,9 @@ export function Projects() {
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-zinc-950 via-transparent to-transparent" />
 
-                      {project.featured && (
-                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-rose-600 text-white flex items-center gap-1 shadow-lg shadow-rose-950/50">
-                          <Sparkles className="w-3 h-3" />
-                          <span>{t("proj.featured")}</span>
-                        </div>
-                      )}
-
+                      {/* In Progress Badge (Replaces Featured) */}
                       {project.inProgress && (
-                        <div className="absolute top-3 left-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-400 text-zinc-950 flex items-center gap-1.5 shadow-lg shadow-amber-950/40 border border-amber-300">
+                        <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-bold bg-amber-400 text-zinc-950 flex items-center gap-1.5 shadow-lg shadow-amber-950/40 border border-amber-300">
                           <span className="w-1.5 h-1.5 rounded-full bg-zinc-950 animate-ping" />
                           <span>{t("proj.inProgress")}</span>
                         </div>
