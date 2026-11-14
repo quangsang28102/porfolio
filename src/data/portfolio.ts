@@ -3,7 +3,7 @@ import { PortfolioData } from "@/types/portfolio";
 export const portfolioDataVi: PortfolioData = {
   personal: {
     fullName: "Nguyễn Đỗ Quang Sáng",
-    role: "Staff Frontend Developer",
+    role: "Frontend Developer",
     headline: "Cắt Layout Pixel-Perfect (Figma / Photoshop / XD), Phát triển Custom Theme WordPress & Ứng dụng AI.",
     shortBio:
       "Lập trình viên Frontend với hơn 2 năm kinh nghiệm thực tế chuyên sâu về chuyển đổi thiết kế sang HTML5/CSS3 chuẩn W3C, xử lý logic front-end mượt mà với JavaScript/jQuery và xây dựng Custom Theme WordPress từ source HTML tĩnh. Tiên phong áp dụng các công cụ AI (ChatGPT, Claude, GitHub Copilot) vào quy trình code để tối ưu tốc độ và chất lượng sản phẩm.",
@@ -292,7 +292,7 @@ export const portfolioDataVi: PortfolioData = {
 export const portfolioDataEn: PortfolioData = {
   personal: {
     fullName: "Nguyen Do Quang Sang",
-    role: "Staff Frontend Developer",
+    role: "Frontend Developer",
     headline: "Pixel-Perfect Layout Slicing (Figma / Photoshop / XD), Custom WordPress Theme & AI-Accelerated Coding.",
     shortBio:
       "Frontend Developer with 2+ years of hands-on experience specializing in converting UI designs into W3C-compliant HTML5/CSS3, implementing fluid frontend logic with JavaScript/jQuery, and developing custom WordPress themes from static HTML sources. Proactively leveraging AI tools (ChatGPT, Claude, GitHub Copilot) into daily coding workflows to maximize velocity and code precision.",

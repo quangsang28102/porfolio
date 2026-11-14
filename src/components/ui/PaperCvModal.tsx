@@ -72,8 +72,8 @@ export function PaperCvModal({ isOpen, onClose }: PaperCvModalProps) {
                 </Link>
 
                 <a
-                  href="/files/Nguyen_Do_Quang_Sang_CV.pdf"
-                  download="Nguyen_Do_Quang_Sang_CV.pdf"
+                  href={language === "en" ? "/files/Nguyen_Do_Quang_Sang_CV_EN.pdf" : "/files/Nguyen_Do_Quang_Sang_CV.pdf"}
+                  download={language === "en" ? "Nguyen_Do_Quang_Sang_CV_EN.pdf" : "Nguyen_Do_Quang_Sang_CV.pdf"}
                   className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-xs font-semibold text-white transition-colors cursor-pointer"
                 >
                   <Download className="w-3.5 h-3.5" />

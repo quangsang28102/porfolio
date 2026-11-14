@@ -173,17 +173,15 @@ export default function DesignSystemPage() {
             <div className="flex items-center p-0.5 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono">
               <button
                 onClick={() => setLanguage("vi")}
-                className={`px-2 py-0.5 rounded-full transition-all cursor-pointer ${
-                  language === "vi" ? "bg-rose-600 text-white shadow-sm" : "text-zinc-500"
-                }`}
+                className={`px-2 py-0.5 rounded-full transition-all cursor-pointer ${language === "vi" ? "bg-rose-600 text-white shadow-sm" : "text-zinc-500"
+                  }`}
               >
                 VI
               </button>
               <button
                 onClick={() => setLanguage("en")}
-                className={`px-2 py-0.5 rounded-full transition-all cursor-pointer ${
-                  language === "en" ? "bg-rose-600 text-white shadow-sm" : "text-zinc-500"
-                }`}
+                className={`px-2 py-0.5 rounded-full transition-all cursor-pointer ${language === "en" ? "bg-rose-600 text-white shadow-sm" : "text-zinc-500"
+                  }`}
               >
                 EN
               </button>
@@ -259,11 +257,10 @@ export default function DesignSystemPage() {
               <a
                 key={sec.id}
                 href={`#${sec.id}`}
-                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${
-                  activeSection === sec.id
+                className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${activeSection === sec.id
                     ? "bg-rose-600 text-white shadow-md shadow-rose-950/40 font-semibold"
                     : "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700"
-                }`}
+                  }`}
               >
                 {sec.label}
               </a>
@@ -440,7 +437,7 @@ export default function DesignSystemPage() {
                 <span>font-mono • text-xs (12px) • JetBrains Mono</span>
               </div>
               <code className="text-xs font-mono text-rose-600 dark:text-rose-400 bg-rose-500/10 px-2 py-1 rounded border border-rose-500/20">
-                const candidate = &#123; name: &quot;Quang Sang&quot;, role: &quot;Frontend Staff&quot;, gpa: 8.3 &#125;;
+                const candidate = &#123; name: &quot;Quang Sang&quot;, role: &quot;Frontend &quot;, gpa: 8.3 &#125;;
               </code>
             </div>
           </div>
@@ -877,7 +874,7 @@ export default function DesignSystemPage() {
                 </button>
               </div>
               <pre className="text-rose-400">
-{`:root {
+                {`:root {
   --primary: 346 87% 43%;        /* Crimson NestJS: #E11D48 */
   --primary-foreground: 0 0% 100%;
   --background: 240 10% 3.9%;     /* Deep Black: #09090B */

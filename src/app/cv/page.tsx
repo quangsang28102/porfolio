@@ -71,7 +71,7 @@ export default function CvPage() {
 
             <div className="hidden sm:flex items-center gap-1.5 text-xs font-mono font-medium text-zinc-500 dark:text-zinc-400">
               <FileText className="w-3.5 h-3.5 text-rose-500" />
-              <span>{language === "en" ? "A4 Standard Digital CV" : "CV Chuẩn In A4 Quốc Tế"}</span>
+              <span>{language === "en" ? "A4 CV" : "CV A4"}</span>
             </div>
           </div>
 
@@ -81,21 +81,19 @@ export default function CvPage() {
             <div className="flex items-center p-0.5 rounded-xl bg-zinc-100 dark:bg-zinc-950 border border-zinc-200 dark:border-zinc-800 text-[11px] font-mono font-semibold">
               <button
                 onClick={() => setLanguage("vi")}
-                className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${
-                  language === "vi"
+                className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${language === "vi"
                     ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm font-bold"
                     : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 VI
               </button>
               <button
                 onClick={() => setLanguage("en")}
-                className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${
-                  language === "en"
+                className={`px-2 py-1 rounded-lg transition-all cursor-pointer ${language === "en"
                     ? "bg-white dark:bg-rose-600 text-rose-600 dark:text-white shadow-sm font-bold"
                     : "text-zinc-500 dark:text-zinc-400 hover:text-zinc-900 dark:hover:text-white"
-                }`}
+                  }`}
               >
                 EN
               </button>
@@ -178,10 +176,10 @@ export default function CvPage() {
 
             {/* Download CV PDF Button */}
             <a
-              href="/files/Nguyen_Do_Quang_Sang_CV.pdf"
-              download="Nguyen_Do_Quang_Sang_CV.pdf"
+              href={language === "en" ? "/files/Nguyen_Do_Quang_Sang_CV_EN.pdf" : "/files/Nguyen_Do_Quang_Sang_CV.pdf"}
+              download={language === "en" ? "Nguyen_Do_Quang_Sang_CV_EN.pdf" : "Nguyen_Do_Quang_Sang_CV.pdf"}
               className="flex items-center gap-2 px-3.5 sm:px-4 py-1.5 rounded-lg bg-rose-600 hover:bg-rose-500 text-white text-xs font-semibold shadow-md shadow-rose-950/30 hover:shadow-lg transition-all cursor-pointer whitespace-nowrap active:scale-95"
-              title={language === "en" ? "Download CV PDF" : "Tải xuống file CV PDF"}
+              title={language === "en" ? "Download CV PDF (English)" : "Tải xuống file CV PDF"}
             >
               <Download className="w-3.5 h-3.5" />
               <span>{t("cv.download")}</span>
@@ -198,7 +196,7 @@ export default function CvPage() {
             transformOrigin: "top center",
             transition: "transform 0.15s ease",
           }}
-          className="w-full max-w-[850px] print:shadow-none"
+          className="cv-zoom-container w-full max-w-[820px] print:shadow-none print:transform-none print:w-full print:max-w-none"
         >
           <PaperCvContent />
         </div>

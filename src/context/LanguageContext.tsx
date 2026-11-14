@@ -205,12 +205,34 @@ const translations: Record<Language, Record<string, string>> = {
 const LanguageContext = createContext<LanguageContextType | undefined>(undefined);
 
 export function LanguageProvider({ children }: { children: React.ReactNode }) {
-  const [language, setLanguageState] = useState<Language>("vi");
+  const [language, setLanguageState] = useState<Language>(() => {
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get("lang") as Language | null;
+      if (urlLang === "vi" || urlLang === "en") {
+        return urlLang;
+      }
+      const saved = localStorage.getItem("portfolio-locale") as Language | null;
+      if (saved === "vi" || saved === "en") {
+        return saved;
+      }
+    }
+    return "vi";
+  });
 
   useEffect(() => {
-    const saved = localStorage.getItem("portfolio-locale") as Language | null;
-    if (saved === "vi" || saved === "en") {
-      setLanguageState(saved);
+    if (typeof window !== "undefined") {
+      const urlParams = new URLSearchParams(window.location.search);
+      const urlLang = urlParams.get("lang") as Language | null;
+      if (urlLang === "vi" || urlLang === "en") {
+        setLanguageState(urlLang);
+        localStorage.setItem("portfolio-locale", urlLang);
+        return;
+      }
+      const saved = localStorage.getItem("portfolio-locale") as Language | null;
+      if (saved === "vi" || saved === "en") {
+        setLanguageState(saved);
+      }
     }
   }, []);
 
