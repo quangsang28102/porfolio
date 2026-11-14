@@ -1,9 +1,10 @@
 "use client";
 
 import React from "react";
+import Link from "next/link";
 import { getPortfolioData } from "@/data/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
-import { Mail, Heart } from "lucide-react";
+import { Mail, Heart, Palette, FileText } from "lucide-react";
 import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export function Footer() {
@@ -79,8 +80,27 @@ export function Footer() {
           )}
         </div>
       </div>
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-900 text-center text-zinc-500 dark:text-zinc-600 text-[11px] font-mono">
-        © {currentYear} {personal.fullName}. {t("footer.rights")}
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 mt-8 pt-6 border-t border-zinc-200 dark:border-zinc-900 flex flex-col sm:flex-row items-center justify-between gap-4 text-zinc-500 dark:text-zinc-600 text-[11px] font-mono">
+        <div>
+          © {currentYear} {personal.fullName}. {t("footer.rights")}
+        </div>
+        <div className="flex items-center gap-4">
+          <Link
+            href="/design-system"
+            className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors flex items-center gap-1"
+          >
+            <Palette className="w-3.5 h-3.5 text-rose-500" />
+            <span>Design System v1.0</span>
+          </Link>
+          <span>•</span>
+          <Link
+            href="/cv"
+            className="hover:text-rose-600 dark:hover:text-rose-400 transition-colors flex items-center gap-1"
+          >
+            <FileText className="w-3.5 h-3.5 text-rose-500" />
+            <span>{t("nav.viewCv")}</span>
+          </Link>
+        </div>
       </div>
     </footer>
   );

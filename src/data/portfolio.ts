@@ -38,7 +38,7 @@ export const portfolioDataVi: PortfolioData = {
     availableForWork: true,
     cvPath: "/files/cv.pdf",
     social: {
-      github: "https://github.com/QuangSang",
+      github: "https://github.com/quangsang28102",
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
       website: "https://quangsang.dev",
@@ -147,13 +147,13 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/TuyNen",
+      demoUrl: "https://tuynen.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/tuynen",
       results: "Website tải dưới 1.5 giây, đạt 95+ điểm Google PageSpeed trên thiết bị di động và đáp ứng 100% chuẩn W3C.",
     },
     {
       id: "proj-2",
-      title: "Cổng Thông Tin & Quản Trị WordPress — Hiệp Phát Auto (HPO)",
+      title: "Cổng Thông Tin & Theme WordPress Quản Trị — Hiệp Phát Auto (v2)",
       category: "Web",
       featured: true,
       summary:
@@ -173,17 +173,17 @@ export const portfolioDataVi: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/WEB-HPO-V2",
+      demoUrl: "https://hpo-edu-v2.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
       results: "Phục vụ hàng nghìn lượt tra cứu học viên mỗi tháng với thời gian phản hồi trang dưới 1.2s.",
     },
     {
       id: "proj-3",
-      title: "Football Pay — Ứng Dụng Quản Lý Lịch Đá & Quyết Toán Chi Phí",
+      title: "Football Pay — Ứng Dụng Quản Lý Lịch Đá & Quyết Toán VietQR",
       category: "Fullstack",
       featured: true,
       summary:
-        "Ứng dụng web tự động hóa chia tiền sân bãi, quản lý thành viên và theo dõi công nợ đội bóng với sinh mã VietQR động và đồng bộ Google Sheets.",
+        "Ứng dụng web tự động hóa chia tiền sân bãi, quản lý thành viên và theo dõi công nợ đội bóng với sinh mã VietQR động và đồng bộ hai chiều Google Sheets.",
       role: "Fullstack Developer (Logic & UI/UX)",
       problem:
         "Việc tính tiền sân bóng, nước uống và nhắc nợ thủ công thường xuyên xảy ra nhầm lẫn, mất nhiều thời gian đối soát sau mỗi trận đấu.",
@@ -195,38 +195,65 @@ export const portfolioDataVi: PortfolioData = {
         "Sinh mã QR động kèm thông tin số tài khoản và nội dung chuyển khoản tự động",
         "Đồng bộ hai chiều với Google Sheets API và xuất bảng tính Excel (.xlsx)",
       ],
-      technologies: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "XLSX"],
+      technologies: ["Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "VietQR", "XLSX"],
       images: [
         "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/football-admin",
+      demoUrl: "https://football-pay.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/footballPay",
       results: "Giúp ban quản trị tiết kiệm 80% thời gian tính toán và đối soát chi phí sau mỗi trận.",
     },
     {
       id: "proj-4",
-      title: "NightHowler — Đấu Trường Ma Sói 3D Thời Gian Thực",
+      title: "AVATAR — Studio Tạo Hình Nhân Vật 3D Thủ Tục (Three.js WebGL)",
+      category: "3D & WebGL",
+      featured: true,
+      summary:
+        "Ứng dụng tương tác 3D WebGL trên trình duyệt: tạo dựng hình học nhân vật thủ tục (Procedural BufferGeometry) siêu nhẹ (<300KB), tương tác xoay 360 độ và xuất file .GLB/.OBJ.",
+      role: "3D WebGL & Frontend Developer",
+      problem:
+        "Các mô hình 3D truyền thống tải qua file tĩnh khiến web load chậm và khó can thiệp tùy biến thông số kích thước, màu sắc trực tiếp theo thời gian thực.",
+      solution:
+        "Tính toán và dựng hình học nhân vật hoàn toàn bằng code (Three.js BufferGeometry procedural), tối ưu hoá draw calls, tích hợp bộ điều khiển xoay OrbitControls, shader glow và công cụ xuất file chuẩn glTF/OBJ.",
+      features: [
+        "Dựng mô hình 3D thủ tục bằng toán học & BufferGeometry không phụ thuộc asset tĩnh nặng",
+        "Xoay đa chiều 360°, phóng to thu nhỏ mượt mà với Three.js OrbitControls",
+        "Hiệu ứng ánh sáng Fresnel Glow và vật liệu phản xạ thời gian thực",
+        "Hỗ trợ xuất trực tiếp mô hình ra file định dạng .GLB và .OBJ để import vào Blender/Game Engine",
+      ],
+      technologies: ["Three.js", "WebGL", "BufferGeometry", "OrbitControls", "glTF/OBJ Export", "Vite", "Tailwind CSS"],
+      images: [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "https://avatar-three-rouge.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/AVATAR",
+      results: "Tải mô hình 3D tức thì trong < 100ms với dung lượng dưới 250KB, duy trì tốc độ 60 FPS trên mọi trình duyệt.",
+    },
+    {
+      id: "proj-5",
+      title: "NightHowler — Đấu Trường Ma Sói 3D Thời Gian Thực & Voice Chat Không Gian",
       category: "Fullstack",
       featured: false,
       summary:
-        "Minh chứng cho năng lực xử lý logic phức tạp: Game Ma Sói 3D thời gian thực với kiến trúc Monorepo, đồ họa WebGL/Three.js và mạng phân vùng âm thanh voice chat.",
-      role: "Lead 3D & Frontend Developer",
+        "Game Ma Sói 3D thời gian thực với kiến trúc Monorepo, đồ họa WebGL/Three.js, đồng bộ trạng thái bàn chơi qua Colyseus WebSockets và voice chat phân vùng theo phe (LiveKit SDK).",
+      role: "Lead 3D & Fullstack Developer",
       problem:
-        "Các tựa game web truyền thống thiếu tính nhập vai không gian và gặp khó khăn khi phân vùng luồng nói chuyện thoại bí mật giữa các phe.",
+        "Các game web truyền thống thiếu tính nhập vai tương tác 3D và không thể phân quyền luồng đàm thoại bí mật thời gian thực giữa Dân làng và Ma sói.",
       solution:
-        "Kiến trúc Monorepo (`shared`, `server`, `client`) kết hợp React 19, Three.js, Colyseus WebSockets và LiveKit SDK phân vùng voice chat động theo từng giai đoạn ngày/đêm.",
+        "Thiết kế kiến trúc Monorepo (shared, server, client) với React 19, Three.js, server Colyseus WebSockets quản lý phòng chơi, và tích hợp LiveKit SDK xử lý voice chat không gian phân vùng theo từng pha ngày/đêm.",
       features: [
-        "Đồ họa 3D Stylized Low-Poly với camera tương tác động",
-        "Kênh voice chat & text chat phân vùng động tự động chuyển quyền nói/nghe",
-        "Đồng bộ trạng thái bàn chơi thời gian thực với độ trễ thấp",
+        "Đồ họa 3D Stylized Low-Poly với camera tương tác không gian theo thời gian thực",
+        "Phân vùng voice chat & text chat động giữa các phe (Dân làng, Ma sói, Phòng chờ)",
+        "Đồng bộ hóa trạng thái bàn chơi và vote loại trừ thời gian thực độ trễ siêu thấp",
+        "Kiến trúc Monorepo module hóa tối đa cho khả năng mở rộng quy mô phòng chơi",
       ],
-      technologies: ["React 19", "Three.js", "Colyseus WebSockets", "LiveKit SDK", "TypeScript"],
+      technologies: ["React 19", "Three.js", "Colyseus WebSockets", "LiveKit SDK", "TypeScript Monorepo", "Node.js"],
       images: [
         "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
       ],
       demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/NightHowler",
-      results: "Minh chứng khả năng làm chủ các công nghệ mới và tư duy kiến trúc hệ thống mở rộng.",
+      githubUrl: "https://github.com/quangsang28102/NightHowler",
+      results: "Minh chứng khả năng làm chủ công nghệ cao: WebSockets realtime, xử lý âm thanh không gian WebRTC và đồ họa 3D tương tác.",
     },
   ],
   education: [
@@ -291,7 +318,7 @@ export const portfolioDataEn: PortfolioData = {
     availableForWork: true,
     cvPath: "/files/cv.pdf",
     social: {
-      github: "https://github.com/QuangSang",
+      github: "https://github.com/quangsang28102",
       linkedin: "https://linkedin.com",
       facebook: "https://facebook.com",
       website: "https://quangsang.dev",
@@ -400,13 +427,13 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/TuyNen",
+      demoUrl: "https://tuynen.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/tuynen",
       results: "Page loads under 1.5 seconds, scored 95+ on Google PageSpeed Mobile, and achieves 100% W3C compliance.",
     },
     {
       id: "proj-2",
-      title: "HPO Driver Portal & Custom WordPress CMS",
+      title: "HPO Driver Portal & Custom WordPress CMS (v2)",
       category: "Web",
       featured: true,
       summary:
@@ -426,8 +453,8 @@ export const portfolioDataEn: PortfolioData = {
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/WEB-HPO-V2",
+      demoUrl: "https://hpo-edu-v2.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
       results: "Serving thousands of student lookups monthly with average page response times under 1.2s.",
     },
     {
@@ -448,38 +475,65 @@ export const portfolioDataEn: PortfolioData = {
         "Dynamic payment QR code generator with pre-filled account number and reference notes",
         "Bidirectional sync with Google Sheets API and spreadsheet export to Excel (.xlsx)",
       ],
-      technologies: ["Next.js", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "XLSX"],
+      technologies: ["Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "VietQR", "XLSX"],
       images: [
         "https://images.unsplash.com/photo-1508098682722-e99c43a406b2?w=1200&auto=format&fit=crop&q=80",
       ],
-      demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/football-admin",
+      demoUrl: "https://football-pay.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/footballPay",
       results: "Saved club managers 80% of calculation time and streamlined weekly expense settlements.",
     },
     {
       id: "proj-4",
+      title: "AVATAR — Procedural 3D Character Studio (Three.js WebGL)",
+      category: "3D & WebGL",
+      featured: true,
+      summary:
+        "Interactive browser-based 3D WebGL application: Procedural BufferGeometry generator (<300KB), fluid 360° orbital rotation, real-time shaders, and glTF/OBJ file export.",
+      role: "3D WebGL & Frontend Developer",
+      problem:
+        "Heavy 3D model assets severely slow down web performance and cannot easily be procedurally modified at runtime.",
+      solution:
+        "Generated 3D geometries mathematically in code via Three.js BufferGeometry without static assets, added custom lighting/shaders, OrbitControls, and client-side glTF/OBJ export.",
+      features: [
+        "100% procedural 3D modeling using mathematics and Three.js BufferGeometry",
+        "Fluid 360° orbit rotation, zoom, and panning via OrbitControls",
+        "Real-time Fresnel glow shader materials and dynamic studio lighting",
+        "Direct export to .GLB and .OBJ formats for Blender/game engine pipelines",
+      ],
+      technologies: ["Three.js", "WebGL", "BufferGeometry", "OrbitControls", "glTF/OBJ Export", "Vite", "Tailwind CSS"],
+      images: [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+      ],
+      demoUrl: "https://avatar-three-rouge.vercel.app",
+      githubUrl: "https://github.com/quangsang28102/AVATAR",
+      results: "Sub-100ms load time with asset payload under 250KB, maintaining consistent 60 FPS across browsers.",
+    },
+    {
+      id: "proj-5",
       title: "NightHowler — 3D Multiplayer Werewolf Arena",
       category: "Fullstack",
       featured: false,
       summary:
-        "Proof of advanced engineering capability: Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js, and partitioned voice chat networking.",
-      role: "Lead 3D & Frontend Developer",
+        "Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js, Colyseus WebSockets authoritative state sync, and LiveKit partitioned spatial voice chat.",
+      role: "Lead 3D & Fullstack Developer",
       problem:
         "Traditional web games lacked immersion and spatial voice segregation between factions.",
       solution:
-        "Monorepo architecture combining React 19, Three.js, Colyseus WebSockets, and LiveKit WebRTC SDK for spatial audio communication.",
+        "Monorepo architecture combining React 19, Three.js, Colyseus WebSockets, and LiveKit WebRTC SDK for spatial audio communication partitioned by game phase (Day/Night/Lobby).",
       features: [
         "Stylized Low-Poly 3D graphics with dynamic orbit camera control",
         "Dynamic partitioned voice chat & text channels toggling permissions per phase",
         "Low-latency authoritative state sync over WebSockets",
+        "Monorepo architecture cleanly modularizing client, server, and shared schemas",
       ],
-      technologies: ["React 19", "Three.js", "Colyseus WebSockets", "LiveKit SDK", "TypeScript"],
+      technologies: ["React 19", "Three.js", "Colyseus WebSockets", "LiveKit SDK", "TypeScript Monorepo", "Node.js"],
       images: [
         "https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1200&auto=format&fit=crop&q=80",
       ],
       demoUrl: "",
-      githubUrl: "https://github.com/QuangSang/NightHowler",
-      results: "Demonstrates mastery of cutting-edge technologies and scalable architecture.",
+      githubUrl: "https://github.com/quangsang28102/NightHowler",
+      results: "Demonstrates mastery of cutting-edge technologies: WebSockets, WebRTC spatial voice, and 3D graphics.",
     },
   ],
   education: [

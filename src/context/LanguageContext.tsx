@@ -21,6 +21,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.education": "Học vấn",
     "nav.contact": "Liên hệ",
     "nav.viewCv": "Xem CV giấy",
+    "nav.designSystem": "Design System",
     "nav.contactCta": "Liên hệ ngay",
 
     // Hero
@@ -115,6 +116,7 @@ const translations: Record<Language, Record<string, string>> = {
     "nav.education": "Education",
     "nav.contact": "Contact",
     "nav.viewCv": "Paper CV",
+    "nav.designSystem": "Design System",
     "nav.contactCta": "Get in Touch",
 
     // Hero

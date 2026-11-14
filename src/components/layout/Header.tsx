@@ -5,7 +5,7 @@ import Link from "next/link";
 import { getPortfolioData } from "@/data/portfolio";
 import { useTheme } from "@/context/ThemeContext";
 import { useLanguage } from "@/context/LanguageContext";
-import { Menu, X, FileText, Send, Sun, Moon } from "lucide-react";
+import { Menu, X, FileText, Send, Sun, Moon, Palette } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
@@ -156,6 +156,15 @@ export function Header() {
             <span>{t("nav.viewCv")}</span>
           </Link>
 
+          {/* Design System Link */}
+          <Link
+            href="/design-system"
+            className="hidden md:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-full border border-zinc-200 dark:border-zinc-800 bg-zinc-100/90 dark:bg-zinc-900/80 hover:bg-zinc-200 dark:hover:bg-zinc-800 text-zinc-700 dark:text-zinc-300 hover:text-zinc-950 dark:hover:text-white text-xs font-medium whitespace-nowrap transition-all shadow-sm"
+          >
+            <Palette className="w-3.5 h-3.5 text-rose-500 shrink-0" />
+            <span>{t("nav.designSystem")}</span>
+          </Link>
+
           {/* Contact CTA Button */}
           <a
             href="#contact"
@@ -201,7 +210,15 @@ export function Header() {
                   {item.label}
                 </a>
               ))}
-              <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex gap-2">
+              <div className="pt-3 border-t border-zinc-200 dark:border-zinc-800 flex flex-col sm:flex-row gap-2">
+                <Link
+                  href="/design-system"
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="flex-1 flex items-center justify-center gap-2 py-2 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-800 dark:text-zinc-300 text-xs font-semibold"
+                >
+                  <Palette className="w-3.5 h-3.5 text-rose-500" />
+                  <span>{t("nav.designSystem")}</span>
+                </Link>
                 <Link
                   href="/cv"
                   onClick={() => setMobileMenuOpen(false)}

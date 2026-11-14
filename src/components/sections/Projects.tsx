@@ -18,7 +18,7 @@ export function Projects() {
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
   const [activeFilter, setActiveFilter] = useState<string>("All");
 
-  const categories = ["All", "Fullstack", "Web"];
+  const categories = ["All", "Fullstack", "Web", "3D & WebGL"];
 
   const filteredProjects =
     activeFilter === "All"

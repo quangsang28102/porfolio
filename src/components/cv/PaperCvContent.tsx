@@ -34,10 +34,15 @@ export function PaperCvContent() {
                 <Phone className="w-3.5 h-3.5 text-zinc-900" />
                 {personal.phone}
               </span>
-              <span className="flex items-center gap-1.5">
+              <a
+                href={personal.social.github || "https://github.com/quangsang28102"}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1.5 hover:text-rose-600 transition-colors"
+              >
                 <GithubIcon className="w-3.5 h-3.5 text-zinc-900" />
-                QuangSang
-              </span>
+                quangsang28102
+              </a>
               <span className="flex items-center gap-1.5">
                 <MapPin className="w-3.5 h-3.5 text-zinc-900" />
                 {personal.location}
@@ -174,106 +179,163 @@ export function PaperCvContent() {
               {isEn ? "KEY & PERSONAL PROJECTS" : "DỰ ÁN NỔI BẬT & CÁ NHÂN"}
             </h2>
 
-            <div className="space-y-4">
+            <div className="space-y-3.5">
               {/* Dự án 1: BITCO TUY NEN */}
-              <div className="text-xs sm:text-[13px]">
-                <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">
-                    {isEn ? "BITCO TUY NEN — W3C ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN BÌNH ĐỊNH (CHUẨN W3C)"}
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-500">HTML5 (W3C) • Modular CSS3 • jQuery/JS • Parallax</span>
+              <div className="text-xs sm:text-[12.5px]">
+                <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-zinc-950 font-bold">
+                      {isEn ? "BITCO TUY NEN — W3C ENTERPRISE LANDING PAGE" : "LANDING PAGE BITCO TUY NEN (CHUẨN W3C)"}
+                    </span>
+                    <a
+                      href="https://tuynen.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                    >
+                      tuynen.vercel.app ↗
+                    </a>
+                  </div>
+                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">HTML5 (W3C) • Modular CSS3 • jQuery • Parallax</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
                   <li>
                     {isEn
                       ? "Slices pixel-perfect responsive layouts from design files into clean HTML5/CSS3 and JavaScript/jQuery with 100% W3C Validation compliance."
-                      : "Chuyển đổi layout chuẩn pixel-perfect từ thiết kế sang HTML5/CSS3 và JavaScript/jQuery, tối ưu mã nguồn đáp ứng 100% tiêu chuẩn W3C Validation."}
+                      : "Cắt layout chuẩn pixel-perfect từ thiết kế sang HTML5/CSS3 và JavaScript/jQuery, tối ưu mã nguồn đáp ứng 100% tiêu chuẩn W3C Validation."}
                   </li>
                   <li>
                     {isEn
-                      ? "Engineered fluid interactive effects: Hero Parallax, Scroll Brick Drop animation, tabbed product filters, and automated metrics counter."
-                      : "Lập trình hiệu ứng thị giác tương tác mượt mà: Hero Parallax, Scroll Brick Drop animation, bộ lọc sản phẩm dạng Tab và bộ đếm thành tựu sản xuất tự động."}
-                  </li>
-                  <li>
-                    {isEn
-                      ? "Fully responsive across mobile/tablet/desktop breakpoints; optimized assets for sub-1.5s load times and high Google PageSpeed."
-                      : "Tương thích hoàn hảo trên mọi thiết bị và đa trình duyệt; tối ưu tài nguyên đạt tốc độ tải dưới 1.5s và điểm số Google PageSpeed cao."}
+                      ? "Engineered fluid interactive effects: Hero Parallax, scroll animations, tabbed product filters, and sub-1.5s load times on Vercel."
+                      : "Lập trình hiệu ứng Parallax, bộ lọc sản phẩm dạng Tab, bộ đếm tự động; responsive mọi màn hình và tải nhanh dưới 1.5s trên Vercel."}
                   </li>
                 </ul>
               </div>
 
               {/* Dự án 2: HPO PORTAL & WORDPRESS CUSTOM CMS */}
-              <div className="text-xs sm:text-[13px]">
-                <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">
-                    {isEn ? "HPO DRIVER PORTAL & CUSTOM WORDPRESS THEME" : "CỔNG THÔNG TIN & THEME WORDPRESS TUỲ BIẾN (HPO PORTAL)"}
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-500">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
+              <div className="text-xs sm:text-[12.5px]">
+                <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-zinc-950 font-bold">
+                      {isEn ? "HPO DRIVER PORTAL & CUSTOM WORDPRESS THEME" : "CỔNG THÔNG TIN & THEME WORDPRESS (HPO PORTAL v2)"}
+                    </span>
+                    <a
+                      href="https://hpo-edu-v2.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                    >
+                      hpo-edu-v2.vercel.app ↗
+                    </a>
+                  </div>
+                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Built and converted custom WordPress themes from static HTML sources, structuring clean template code for streamlined content & fee management."
-                      : "Xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh, cấu hình cấu trúc code sạch và quản trị nội dung khóa học, học phí thuận tiện."}
+                      ? "Converted static HTML sources into a customized WordPress administration theme, structuring clean template code for course and fee management."
+                      : "Chuyển đổi source HTML tĩnh sang Custom Theme WordPress, tối ưu code sạch và trang Admin giúp quản trị bài viết, học phí dễ dàng."}
                   </li>
                   <li>
                     {isEn
-                      ? "Configured full SEO metadata and Core Web Vitals optimizations; integrated real-time student credential verification via QR codes."
-                      : "Cấu hình metadata SEO tổng thể, tối ưu hóa tốc độ tải trang (Core Web Vitals) và tích hợp module tra cứu hồ sơ học viên trực tuyến qua mã QR."}
-                  </li>
-                  <li>
-                    {isEn
-                      ? "Executed regular web maintenance, security hardening, and browser compatibility patches."
-                      : "Thực hiện bảo trì hệ thống website định kỳ (Maintenance), rà soát bảo mật và đảm bảo tương thích ổn định lâu dài."}
+                      ? "Configured SEO metadata, Core Web Vitals optimizations, and real-time student credential verification via dynamic QR codes."
+                      : "Cấu hình metadata SEO tổng thể, tối ưu Core Web Vitals và tích hợp module tra cứu hồ sơ học viên trực tuyến bằng mã QR."}
                   </li>
                 </ul>
               </div>
 
               {/* Dự án 3: FOOTBALL PAY */}
-              <div className="text-xs sm:text-[13px]">
-                <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">
-                    {isEn ? "FOOTBALL PAY — MATCH & EXPENSE SETTLEMENT PLATFORM" : "FOOTBALL PAY — HỆ THỐNG QUẢN LÝ THI ĐẤU & CHI PHÍ"}
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-500">Next.js App Router • React 19 • Google Sheets API • VietQR</span>
+              <div className="text-xs sm:text-[12.5px]">
+                <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-zinc-950 font-bold">
+                      {isEn ? "FOOTBALL PAY — MATCH & EXPENSE SETTLEMENT" : "FOOTBALL PAY — QUẢN LÝ ĐỘI BÓNG & QUYẾT TOÁN VIETQR"}
+                    </span>
+                    <a
+                      href="https://football-pay.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                    >
+                      football-pay.vercel.app ↗
+                    </a>
+                  </div>
+                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">Next.js • React 19 • Google Sheets API • VietQR</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Designed and developed match scheduling and automated expense splitting system (pitch rental, beverages, sundries) per attendee."
-                      : "Thiết kế và xây dựng ứng dụng quản lý lịch thi đấu, tự động hóa chia tiền sân bãi, nước uống và chi phí phát sinh trên từng đầu người."}
+                      ? "Designed automated match scheduling, per-person expense splitting, dynamic VietQR payment code generation, and bidirectional Google Sheets API sync."
+                      : "Xây dựng ứng dụng quản lý lịch thi đấu, tự động hóa chia tiền sân bãi trên từng người, sinh mã QR VietQR động và đồng bộ 2 chiều với Google Sheets API."}
                   </li>
                   <li>
                     {isEn
-                      ? "Configured dual Admin/Member workflows: Admin manages matches, rosters, and debts; Members inspect balances and settle payments."
-                      : "Phân quyền 2 luồng Admin và Member: Admin quản lý trận, CRUD thành viên, theo dõi nợ; Member kiểm tra số dư và thanh toán."}
-                  </li>
-                  <li>
-                    {isEn
-                      ? "Integrated dynamic payment QR generator (VietQR/Momo), bidirectional Google Sheets sync, and Excel report export."
-                      : "Tích hợp sinh mã QR thanh toán động VietQR / Momo theo cú pháp tự động; hỗ trợ đồng bộ hai chiều với Google Sheets và xuất báo cáo Excel (.xlsx)."}
+                      ? "Configured dual Admin/Member workflows: Admin manages matches, rosters, and debts; Members inspect balances and settle payments with instant QR."
+                      : "Phân quyền 2 luồng: Admin quản lý trận, CRUD thành viên, theo dõi nợ; Member kiểm tra công nợ và thanh toán nhanh chóng."}
                   </li>
                 </ul>
               </div>
 
-              {/* Dự án 4: NIGHT HOWLER & 3D INTERACTIVE */}
-              <div className="text-xs sm:text-[13px]">
-                <div className="flex justify-between items-baseline font-bold text-zinc-950">
-                  <span className="text-sm text-zinc-950">
-                    {isEn ? "NIGHT HOWLER & 3D PROCEDURAL GRAPHICS" : "NIGHT HOWLER & ĐỒ HỌA 3D PROCEDURAL"}
-                  </span>
-                  <span className="text-[11px] font-mono text-zinc-500">React 19 • Three.js • Colyseus WebSockets • LiveKit</span>
+              {/* Dự án 4: AVATAR 3D THREE.JS STUDIO */}
+              <div className="text-xs sm:text-[12.5px]">
+                <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-zinc-950 font-bold">
+                      {isEn ? "AVATAR — PROCEDURAL 3D THREE.JS STUDIO" : "AVATAR — TẠO HÌNH NHÂN VẬT 3D PROCEDURAL (THREE.JS)"}
+                    </span>
+                    <a
+                      href="https://avatar-three-rouge.vercel.app"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                    >
+                      avatar-three-rouge.vercel.app ↗
+                    </a>
+                  </div>
+                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">Three.js • WebGL • BufferGeometry • glTF/OBJ</span>
                 </div>
-                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-1 space-y-0.5 text-justify">
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
                   <li>
                     {isEn
-                      ? "Demonstrates deep frontend technical competence: Built realtime multiplayer 3D game arena with partitioned spatial voice chat (LiveKit) and WebSocket state sync."
-                      : "Minh chứng năng lực kỹ thuật và tư duy thuật toán frontend chuyên sâu: Xây dựng game Ma Sói 3D tương tác realtime với hệ thống voice chat phân vùng (LiveKit) và đồng bộ trạng thái bàn chơi qua WebSockets."}
+                      ? "Constructed procedural 3D character geometries entirely in code via Three.js BufferGeometry (<250KB payload) with 360° orbital camera manipulation."
+                      : "Lập trình dựng hình học 3D nhân vật hoàn toàn bằng code (BufferGeometry procedural) siêu nhẹ (<250KB), xoay tương tác không gian 360 độ."}
                   </li>
                   <li>
                     {isEn
-                      ? "Engineered procedural 3D BufferGeometry solely via Three.js (<300KB/model) with 360° interactive rotation, Fresnel glow shaders, and direct .GLB/.OBJ export."
-                      : "Lập trình hình học thủ tục 3D (Procedural BufferGeometry) hoàn toàn bằng Three.js, tối ưu dung lượng siêu nhẹ (< 300KB/model), tương tác xoay 360° và xuất file .GLB/.OBJ."}
+                      ? "Integrated real-time Fresnel glow shaders, customizable character attributes, and direct client-side export to standard .GLB and .OBJ formats."
+                      : "Tích hợp shader ánh sáng Fresnel glow thời gian thực, tùy chỉnh thông số nhân vật và hỗ trợ xuất trực tiếp ra file .GLB và .OBJ."}
+                  </li>
+                </ul>
+              </div>
+
+              {/* Dự án 5: NIGHT HOWLER */}
+              <div className="text-xs sm:text-[12.5px]">
+                <div className="flex flex-wrap justify-between items-baseline gap-1 font-bold text-zinc-950">
+                  <div className="flex items-center gap-2">
+                    <span className="text-sm text-zinc-950 font-bold">
+                      {isEn ? "NIGHT HOWLER — 3D MULTIPLAYER WEREWOLF ARENA" : "NIGHT HOWLER — ĐẤU TRƯỜNG MA SÓI 3D & VOICE CHAT"}
+                    </span>
+                    <a
+                      href="https://github.com/quangsang28102/NightHowler"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-[10px] font-mono px-1.5 py-0.2 rounded bg-zinc-100 hover:bg-rose-50 text-rose-600 border border-zinc-200 hover:border-rose-300 font-semibold"
+                    >
+                      github.com/quangsang28102/NightHowler ↗
+                    </a>
+                  </div>
+                  <span className="text-[10.5px] font-mono text-zinc-500 font-normal">React 19 • Three.js • Colyseus • LiveKit Spatial Audio</span>
+                </div>
+                <ul className="list-disc list-outside text-xs text-zinc-700 ml-4 mt-0.5 space-y-0.5 text-justify">
+                  <li>
+                    {isEn
+                      ? "Realtime multiplayer 3D Werewolf gaming platform built with Monorepo architecture, WebGL/Three.js, Colyseus WebSockets state sync, and LiveKit spatial audio voice chat."
+                      : "Hệ thống game 3D thời gian thực kiến trúc Monorepo, đồ họa WebGL Three.js, đồng bộ trạng thái bàn chơi qua WebSockets (Colyseus) và voice chat phân vùng theo phe qua LiveKit SDK."}
+                  </li>
+                  <li>
+                    {isEn
+                      ? "Demonstrates strong foundational architecture, fullstack state management, and mastery of advanced web technologies."
+                      : "Minh chứng năng lực tư duy kiến trúc hệ thống, làm chủ công nghệ cao (WebSockets, WebRTC không gian) và giải quyết các bài toán kỹ thuật phức tạp."}
                   </li>
                 </ul>
               </div>

@@ -28,7 +28,7 @@ export interface Experience {
 export interface Project {
   id: string;
   title: string;
-  category: "Fullstack" | "Web" | "Backend" | "Mobile" | "Other";
+  category: "Fullstack" | "Web" | "Backend" | "Mobile" | "3D & WebGL" | "Other";
   featured: boolean;
   summary: string;
   role: string;
