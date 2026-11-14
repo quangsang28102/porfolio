@@ -46,11 +46,10 @@ export function Projects() {
                 <button
                   key={cat}
                   onClick={() => setActiveFilter(cat)}
-                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors cursor-pointer ${
-                    activeFilter === cat
+                  className={`px-3.5 py-1.5 rounded-xl text-xs font-mono font-medium transition-colors cursor-pointer ${activeFilter === cat
                       ? "bg-rose-600 text-white border border-rose-500 font-semibold shadow-sm"
                       : "bg-white dark:bg-zinc-900/80 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white border border-zinc-200 dark:border-zinc-800 shadow-sm"
-                  }`}
+                    }`}
                 >
                   {cat === "All" ? t("proj.all") : cat}
                 </button>
@@ -78,7 +77,7 @@ export function Projects() {
                         className="object-cover transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-zinc-950 via-transparent to-transparent" />
-                      
+
                       {project.featured && (
                         <div className="absolute top-3 right-3 px-2.5 py-1 rounded-full text-[10px] font-mono font-semibold bg-rose-600 text-white flex items-center gap-1 shadow-lg shadow-rose-950/50">
                           <Sparkles className="w-3 h-3" />
