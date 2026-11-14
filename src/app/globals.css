@@ -127,10 +127,16 @@ section[id] {
     margin: 0 !important;
     padding: 0 !important;
     background: #ffffff !important;
-    color: #000000 !important;
+    color: #18181b !important;
     -webkit-print-color-adjust: exact !important;
     print-color-adjust: exact !important;
     font-size: 12px;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-variant-ligatures: none !important;
+    font-feature-settings: normal !important;
+    -webkit-font-smoothing: antialiased !important;
+    -moz-osx-font-smoothing: grayscale !important;
+    text-rendering: geometricPrecision !important;
   }
 
   /* Hide UI elements during print */
@@ -166,6 +172,15 @@ section[id] {
     padding: 0 !important;
     box-shadow: none !important;
     background: #ffffff !important;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-variant-ligatures: none !important;
+    font-feature-settings: normal !important;
+  }
+
+  .paper-cv-root * {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif !important;
+    font-variant-ligatures: none !important;
+    font-feature-settings: normal !important;
   }
 
   .paper-page {
