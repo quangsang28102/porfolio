@@ -9,14 +9,14 @@ export const portfolioDataVi: PortfolioData = {
       "Lập trình viên Frontend với hơn 2 năm kinh nghiệm thực tế chuyên sâu về chuyển đổi thiết kế sang HTML5/CSS3 chuẩn W3C, xử lý logic front-end mượt mà với JavaScript/jQuery và xây dựng Custom Theme WordPress từ source HTML tĩnh. Tiên phong áp dụng các công cụ AI (ChatGPT, Claude, GitHub Copilot) vào quy trình code để tối ưu tốc độ và chất lượng sản phẩm.",
     aboutParagraphs: [
       "Xin chào! Tôi là Nguyễn Đỗ Quang Sáng, tốt nghiệp chuyên ngành Công nghệ Phần mềm tại Đại học Ngoại ngữ & Tin học TP.HCM (HUFLIT) với GPA 8.3/10.",
-      "Tôi có hơn 2 năm kinh nghiệm thực chiến tại các doanh nghiệp phần mềm và dịch vụ số, đảm nhiệm trọn vẹn quy trình Frontend: từ việc tiếp nhận file thiết kế (Figma, Photoshop, Adobe XD, Illustrator) để cắt layout chuẩn responsive pixel-perfect, tối ưu theo tiêu chuẩn W3C, cho đến phát triển và tùy biến Custom Theme WordPress từ source HTML tĩnh đáp ứng đúng yêu cầu của khách hàng.",
+      "Tôi có hơn 2 năm kinh nghiệm thực chiến tại các doanh nghiệp phần mềm và dịch vụ số, đảm nhiệm trọn vẹn quy trình Frontend: từ việc tiếp nhận file thiết kế (Figma, Photoshop, Adobe XD) để cắt layout chuẩn responsive pixel-perfect, tối ưu theo tiêu chuẩn W3C, cho đến phát triển và tùy biến Custom Theme WordPress từ source HTML tĩnh đáp ứng đúng yêu cầu của khách hàng.",
       "Bên cạnh nền tảng kỹ thuật vững chắc, tôi luôn chủ động tích hợp các trợ lý AI (ChatGPT, Claude, Gemini, GitHub Copilot) vào công việc hàng ngày nhằm giải quyết bài toán nhanh hơn, viết code sạch (Clean Code), giảm thiểu lỗi và sẵn sàng bảo trì, nâng cấp hệ thống website lâu dài theo tiêu chuẩn khắt khe.",
     ],
     strengths: [
       {
         title: "Cắt Layout Pixel-Perfect & Chuẩn W3C",
         description:
-          "Thành thạo chuyển đổi bản vẽ từ Photoshop, Adobe XD, Illustrator, Figma sang mã nguồn HTML5/CSS3 và JavaScript/jQuery chuẩn W3C, tương thích mọi trình duyệt và responsive 100%.",
+          "Thành thạo chuyển đổi bản vẽ từ Photoshop, Adobe XD, Figma sang mã nguồn HTML5/CSS3 và JavaScript/jQuery chuẩn W3C, tương thích mọi trình duyệt và responsive 100%.",
         icon: "Layout",
       },
       {

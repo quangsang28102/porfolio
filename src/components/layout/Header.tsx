@@ -61,23 +61,17 @@ export function Header() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between gap-2 sm:gap-4">
-        {/* Logo — Responsive, never overflows on small screens */}
+        {/* Logo — Responsive, clean branding */}
         <a
           href="#"
-          className="group flex items-center gap-2 sm:gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight min-w-0 shrink"
+          className="group flex items-center gap-2 sm:gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight shrink-0"
         >
           <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600 transition-all duration-300 shadow-sm shrink-0">
             &lt;/&gt;
           </span>
-          <div className="flex items-baseline gap-1.5 min-w-0 truncate">
-            <span className="group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors truncate">
-              <span className="sm:hidden font-bold">Quang Sáng</span>
-              <span className="hidden sm:inline">{personal.fullName}</span>
-            </span>
-            <span className="text-[10px] font-mono font-semibold text-rose-500 bg-rose-500/10 px-1.5 py-0.5 rounded border border-rose-500/20 hidden xl:inline-block shrink-0">
-              DEV
-            </span>
-          </div>
+          <span className="font-bold tracking-tight whitespace-nowrap group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+            {language === "vi" ? "Quang Sáng" : "Quang Sang"}
+          </span>
         </a>
 
         {/* Desktop Center Navigation — Clean Pill with whitespace-nowrap */}

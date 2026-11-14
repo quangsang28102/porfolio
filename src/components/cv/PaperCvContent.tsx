@@ -67,8 +67,8 @@ export function PaperCvContent() {
             </h2>
             <p className="text-[11px] sm:text-[11.5px] text-zinc-800 font-normal leading-relaxed text-justify">
               {isEn
-                ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in slicing complex W3C-compliant responsive layouts from Photoshop, Illustrator, Adobe XD, and Figma into HTML5/CSS3 and JavaScript/jQuery. Experienced in developing and converting static HTML into WordPress Custom Themes. Proactively integrates AI tools (Claude, ChatGPT, Copilot) into daily workflows to optimize speed and precision."
-                : "Lập trình viên Frontend có hơn 2 năm kinh nghiệm thực tế xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp chuẩn W3C & Responsive từ Photoshop, Illustrator, Adobe XD, Figma sang HTML5/CSS3 và JavaScript/jQuery. Có kinh nghiệm xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh. Chủ động ứng dụng các công cụ AI (Claude, ChatGPT, Copilot) vào quy trình code để tối ưu hóa tiến độ và chất lượng sản phẩm."}
+                ? "Frontend Developer with 2+ years of hands-on experience building, maintaining, and performance-tuning web applications. Proficient in slicing complex W3C-compliant responsive layouts from Photoshop, Adobe XD, and Figma into HTML5/CSS3 and JavaScript/jQuery. Experienced in developing and converting static HTML into WordPress Custom Themes. Proactively integrates AI tools (Claude, ChatGPT, Copilot) into daily workflows to optimize speed and precision."
+                : "Lập trình viên Frontend có hơn 2 năm kinh nghiệm thực tế xây dựng, bảo trì và nâng cấp hiệu năng website. Thành thạo việc cắt layout giao diện phức tạp chuẩn W3C & Responsive từ Photoshop, Adobe XD, Figma sang HTML5/CSS3 và JavaScript/jQuery. Có kinh nghiệm xây dựng và chuyển đổi Custom Theme WordPress từ source HTML tĩnh. Chủ động ứng dụng các công cụ AI (Claude, ChatGPT, Copilot) vào quy trình code để tối ưu hóa tiến độ và chất lượng sản phẩm."}
             </p>
           </div>
 
@@ -125,7 +125,7 @@ export function PaperCvContent() {
               </p>
               <p>
                 <strong className="text-zinc-950 font-semibold">Design Tools:</strong>{" "}
-                Figma, Adobe Photoshop, Adobe XD, Adobe Illustrator ({isEn ? "Layout slicing, asset export, UI/UX" : "Cắt layout, trích xuất assets, thiết kế UI/UX"})
+                Figma, Adobe Photoshop, Adobe XD ({isEn ? "Layout slicing, asset export, UI/UX" : "Cắt layout, trích xuất assets, thiết kế UI/UX"})
               </p>
               <p>
                 <strong className="text-zinc-950 font-semibold">{isEn ? "AI & Optimization:" : "Ứng dụng AI & Tối ưu:"}</strong>{" "}
