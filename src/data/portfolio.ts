@@ -8,7 +8,7 @@ export const portfolioDataVi: PortfolioData = {
     shortBio:
       "Lập trình viên Frontend với hơn 2 năm kinh nghiệm thực tế chuyên sâu về chuyển đổi thiết kế sang HTML5/CSS3 chuẩn W3C, xử lý logic front-end mượt mà với JavaScript/jQuery và xây dựng Custom Theme WordPress từ source HTML tĩnh. Tiên phong áp dụng các công cụ AI (ChatGPT, Claude, GitHub Copilot) vào quy trình code để tối ưu tốc độ và chất lượng sản phẩm.",
     aboutParagraphs: [
-      "Xin chào! Tôi là Nguyễn Đỗ Quang Sáng, tốt nghiệp chuyên ngành Công nghệ Phần mềm tại Đại học Ngoại ngữ & Tin học TP.HCM (HUFLIT) với GPA 8.3/10.",
+      "Xin chào! Tôi là Nguyễn Đỗ Quang Sáng, tốt nghiệp chuyên ngành Công nghệ Phần mềm tại Đại học Ngoại ngữ & Tin học TP.HCM (HUFLIT) với GPA 7.8/10.",
       "Tôi có hơn 2 năm kinh nghiệm thực chiến tại các doanh nghiệp phần mềm và dịch vụ số, đảm nhiệm trọn vẹn quy trình Frontend: từ việc tiếp nhận file thiết kế (Figma, Photoshop, Adobe XD) để cắt layout chuẩn responsive pixel-perfect, tối ưu theo tiêu chuẩn W3C, cho đến phát triển và tùy biến Custom Theme WordPress từ source HTML tĩnh đáp ứng đúng yêu cầu của khách hàng.",
       "Bên cạnh nền tảng kỹ thuật vững chắc, tôi luôn chủ động tích hợp các trợ lý AI (ChatGPT, Claude, Gemini, GitHub Copilot) vào công việc hàng ngày nhằm giải quyết bài toán nhanh hơn, viết code sạch (Clean Code), giảm thiểu lỗi và sẵn sàng bảo trì, nâng cấp hệ thống website lâu dài theo tiêu chuẩn khắt khe.",
     ],
@@ -273,7 +273,7 @@ export const portfolioDataVi: PortfolioData = {
       major: "Công nghệ Thông tin — Chuyên ngành Công nghệ Phần mềm",
       startDate: "09/2020",
       endDate: "04/2024",
-      score: "GPA: 8.3 / 10",
+      score: "GPA: 7.8 / 10",
       description:
         "Đào tạo chính quy bài bản về Kỹ thuật phần mềm, Phát triển ứng dụng Web, Cấu trúc dữ liệu & Giải thuật, Thiết kế giao diện và Quản lý dự án phần mềm.",
     },
@@ -297,7 +297,7 @@ export const portfolioDataEn: PortfolioData = {
     shortBio:
       "Frontend Developer with 2+ years of hands-on experience specializing in converting UI designs into W3C-compliant HTML5/CSS3, implementing fluid frontend logic with JavaScript/jQuery, and developing custom WordPress themes from static HTML sources. Proactively leveraging AI tools (ChatGPT, Claude, GitHub Copilot) into daily coding workflows to maximize velocity and code precision.",
     aboutParagraphs: [
-      "Hello! I am Nguyen Do Quang Sang, a Software Engineering graduate from Ho Chi Minh City University of Foreign Languages and Information Technology (HUFLIT) with a GPA of 8.3/10.",
+      "Hello! I am Nguyen Do Quang Sang, a Software Engineering graduate from Ho Chi Minh City University of Foreign Languages and Information Technology (HUFLIT) with a GPA of 7.8/10.",
       "I have over 2 years of professional experience across digital software firms, mastering the complete frontend pipeline: taking design assets (Figma, Photoshop, Adobe XD, Illustrator), slicing pixel-perfect responsive layouts strictly compliant with W3C standards, and developing custom WordPress themes from static HTML sources tailored to business goals.",
       "Beyond strong core engineering foundations, I actively integrate AI coding companions (ChatGPT, Claude, Gemini, GitHub Copilot) into daily development to build clean, maintainable, and cross-browser compatible websites aligned with rigorous standards.",
     ],
@@ -562,7 +562,7 @@ export const portfolioDataEn: PortfolioData = {
       major: "Information Technology — Software Engineering",
       startDate: "09/2020",
       endDate: "04/2024",
-      score: "GPA: 8.3 / 10",
+      score: "GPA: 7.8 / 10",
       description:
         "Formal academic training in Software Engineering, Web Application Development, Data Structures & Algorithms, UI/UX Design, and Software Project Management.",
     },
