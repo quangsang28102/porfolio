@@ -148,7 +148,7 @@ export const portfolioDataVi: PortfolioData = {
       ],
       technologies: ["HTML5 (W3C)", "Modular CSS3", "JavaScript ES6+", "jQuery", "Responsive Design", "Photoshop"],
       images: [
-        "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/tuynen-bitco.jpg",
       ],
       demoUrl: "https://tuynen.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/tuynen",
@@ -175,7 +175,7 @@ export const portfolioDataVi: PortfolioData = {
       ],
       technologies: ["Design System (Tokens & Components)", "HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
       images: [
-        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/hpo-edu.jpg",
       ],
       demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
@@ -202,7 +202,7 @@ export const portfolioDataVi: PortfolioData = {
       ],
       technologies: ["Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "VietQR", "XLSX"],
       images: [
-        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/football-pay.png",
       ],
       demoUrl: "https://football-pay.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/footballPay",
@@ -230,7 +230,7 @@ export const portfolioDataVi: PortfolioData = {
       ],
       technologies: ["Three.js", "WebGL", "BufferGeometry", "OrbitControls", "glTF/OBJ Export", "Vite", "Tailwind CSS"],
       images: [
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/avatar-three.jpg",
       ],
       demoUrl: "https://avatar-three-rouge.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/AVATAR",
@@ -437,7 +437,7 @@ export const portfolioDataEn: PortfolioData = {
       ],
       technologies: ["HTML5 (W3C)", "Modular CSS3", "JavaScript ES6+", "jQuery", "Responsive Design", "Photoshop"],
       images: [
-        "https://images.unsplash.com/photo-1590381105924-c72589b9ef3f?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/tuynen-bitco.jpg",
       ],
       demoUrl: "https://tuynen.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/tuynen",
@@ -464,7 +464,7 @@ export const portfolioDataEn: PortfolioData = {
       ],
       technologies: ["Design System (Tokens & Components)", "HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
       images: [
-        "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/hpo-edu.jpg",
       ],
       demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
@@ -491,7 +491,7 @@ export const portfolioDataEn: PortfolioData = {
       ],
       technologies: ["Next.js App Router", "React 19", "TypeScript", "Tailwind CSS", "Google Sheets API", "VietQR", "XLSX"],
       images: [
-        "https://images.unsplash.com/photo-1574629810360-7efbbe195018?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/football-pay.png",
       ],
       demoUrl: "https://football-pay.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/footballPay",
@@ -499,7 +499,7 @@ export const portfolioDataEn: PortfolioData = {
     },
     {
       id: "proj-4",
-      title: "3D Chibi Girl Model — Three.js Low-Poly Stylized",
+      title: "AVATAR COLLECTION (Three.js Low-Poly Stylized)",
       category: "3D & WebGL",
       featured: false,
       inProgress: true,
@@ -519,7 +519,7 @@ export const portfolioDataEn: PortfolioData = {
       ],
       technologies: ["Three.js", "WebGL", "BufferGeometry", "OrbitControls", "glTF/OBJ Export", "Vite", "Tailwind CSS"],
       images: [
-        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=1200&auto=format&fit=crop&q=80",
+        "/images/projects/avatar-three.jpg",
       ],
       demoUrl: "https://avatar-three-rouge.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/AVATAR",

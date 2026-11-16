@@ -69,7 +69,7 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                   src={project.images[0]}
                   alt={project.title}
                   fill
-                  className="object-cover"
+                  className="object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-zinc-950 via-transparent to-transparent opacity-80" />
               </div>

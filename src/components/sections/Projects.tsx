@@ -76,7 +76,7 @@ export function Projects() {
                         src={project.images[0]}
                         alt={project.title}
                         fill
-                        className="object-cover transition-transform duration-500 group-hover:scale-105"
+                        className="object-cover object-top transition-transform duration-500 group-hover:scale-105"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-white/90 dark:from-zinc-950 via-transparent to-transparent" />
 
