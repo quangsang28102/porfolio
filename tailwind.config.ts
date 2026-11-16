@@ -58,15 +58,15 @@ const config: Config = {
           "50%": { opacity: "0.7", transform: "scale(1.08)" },
         },
         marquee: {
-          "0%": { transform: "translateX(0%)" },
-          "100%": { transform: "translateX(-50%)" },
+          "0%": { transform: "translate3d(0, 0, 0)" },
+          "100%": { transform: "translate3d(-100%, 0, 0)" },
         },
       },
       animation: {
         "fade-in-up": "fade-in-up 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards",
         shimmer: "shimmer 2s infinite",
         "pulse-glow": "pulse-glow 5s ease-in-out infinite",
-        marquee: "marquee 30s linear infinite",
+        marquee: "marquee 75s linear infinite",
       },
       fontFamily: {
         sans: ["var(--font-sans)", "Inter", "system-ui", "sans-serif"],
