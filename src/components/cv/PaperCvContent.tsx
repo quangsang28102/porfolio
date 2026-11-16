@@ -246,13 +246,13 @@ export function PaperCvContent() {
                       hpo-edu-v2.vercel.app ↗
                     </a>
                   </div>
-                  <span className="text-[10px] font-mono text-zinc-600 font-normal shrink-0">WordPress • PHP • HTML5/CSS3 • SEO &amp; QR</span>
+                  <span className="text-[10px] font-mono text-zinc-600 font-normal shrink-0">Design System v1 • WordPress • PHP • SEO &amp; QR</span>
                 </div>
                 <ul className="list-disc list-outside text-[10.5px] sm:text-[11px] text-zinc-800 ml-4 space-y-0.5 font-normal text-justify leading-snug">
                   <li>
                     {isEn
-                      ? "Converted static HTML sources into a customized WordPress administration theme, structuring clean template code for course and fee management."
-                      : "Chuyển đổi source HTML tĩnh sang Custom Theme WordPress, tối ưu code sạch và trang Admin giúp quản trị bài viết, học phí dễ dàng."}
+                      ? "Engineered Visual Identity & Design System v1 (Tokens, Palette, Components); converted static layouts into a custom WordPress theme for courses and fees."
+                      : "Xây dựng Visual Identity & Design System v1 (Design Tokens, Palette, Components); chuyển đổi sang Custom Theme WordPress quản lý học phí và bài viết."}
                   </li>
                   <li>
                     {isEn

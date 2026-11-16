@@ -7,7 +7,7 @@ import { useLanguage } from "@/context/LanguageContext";
 import { ArrowRight, FileText, Mail, Sparkles, Terminal } from "lucide-react";
 import { motion, type Variants } from "framer-motion";
 import { MagneticButton } from "@/components/ui/MagneticButton";
-import { GithubIcon, LinkedinIcon } from "@/components/ui/Icons";
+import { GithubIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export function Hero() {
   const { language, t } = useLanguage();
@@ -135,15 +135,16 @@ export function Hero() {
                 <span>quangsang28102</span>
               </a>
               <div className="flex items-center gap-2 text-zinc-600 dark:text-zinc-400">
-                {personal.social.linkedin && (
+                {personal.social.facebook && (
                   <a
-                    href={personal.social.linkedin}
+                    href={personal.social.facebook}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="p-1.5 rounded-lg hover:text-rose-600 dark:hover:text-rose-400 transition-colors"
-                    aria-label="LinkedIn"
+                    aria-label="Facebook Profile"
+                    title="Facebook: https://www.facebook.com/NGUYENDOQUANGSANG/"
                   >
-                    <LinkedinIcon className="w-4 h-4" />
+                    <FacebookIcon className="w-4 h-4" />
                   </a>
                 )}
                 {personal.email && (

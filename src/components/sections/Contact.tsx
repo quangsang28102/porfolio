@@ -7,7 +7,7 @@ import { Reveal } from "@/components/ui/Reveal";
 import { Toast } from "@/components/ui/Toast";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { Copy, Check, Send, MapPin } from "lucide-react";
-import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/Icons";
+import { GithubIcon, FacebookIcon } from "@/components/ui/Icons";
 
 export function Contact() {
   const { language, t } = useLanguage();
@@ -108,17 +108,7 @@ export function Contact() {
                       <GithubIcon className="w-4 h-4" />
                     </a>
                   )}
-                  {personal.social.linkedin && (
-                    <a
-                      href={personal.social.linkedin}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm"
-                      aria-label="LinkedIn"
-                    >
-                      <LinkedinIcon className="w-4 h-4" />
-                    </a>
-                  )}
+
                   {personal.social.facebook && (
                     <a
                       href={personal.social.facebook}

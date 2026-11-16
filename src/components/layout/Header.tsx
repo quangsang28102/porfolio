@@ -7,6 +7,7 @@ import { useTheme } from "@/context/ThemeContext";
 import { useLanguage } from "@/context/LanguageContext";
 import { Menu, X, FileText, Send, Sun, Moon, Palette } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 import { motion, AnimatePresence } from "framer-motion";
 
 export function Header() {
@@ -64,11 +65,9 @@ export function Header() {
         {/* Logo — Responsive, clean branding */}
         <a
           href="#"
-          className="group flex items-center gap-2 sm:gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight shrink-0"
+          className="group flex items-center gap-2.5 text-zinc-950 dark:text-white font-mono text-sm sm:text-base font-bold tracking-tight shrink-0"
         >
-          <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600 transition-all duration-300 shadow-sm shrink-0">
-            &lt;/&gt;
-          </span>
+          <BrandLogo size={32} />
           <span className="font-bold tracking-tight whitespace-nowrap group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
             {language === "vi" ? "Quang Sáng" : "Quang Sang"}
           </span>

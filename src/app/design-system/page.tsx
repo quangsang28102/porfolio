@@ -258,8 +258,8 @@ export default function DesignSystemPage() {
                 key={sec.id}
                 href={`#${sec.id}`}
                 className={`px-3.5 py-1.5 rounded-full text-xs font-mono font-medium transition-all ${activeSection === sec.id
-                    ? "bg-rose-600 text-white shadow-md shadow-rose-950/40 font-semibold"
-                    : "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700"
+                  ? "bg-rose-600 text-white shadow-md shadow-rose-950/40 font-semibold"
+                  : "bg-white dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700"
                   }`}
               >
                 {sec.label}
@@ -753,7 +753,7 @@ export default function DesignSystemPage() {
                 </a>
               </div>
               <h3 className="text-xl font-bold mb-2 group-hover:text-rose-500 transition-colors">
-                Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)
+                AVATAR COLLECTION (Three.js Low-Poly Stylized)
               </h3>
               <p className="text-xs sm:text-sm text-zinc-600 dark:text-zinc-400 leading-relaxed mb-6">
                 Khởi tạo mô hình 3D thủ tục bằng toán học &amp; BufferGeometry siêu nhẹ (&lt;250KB), xoay 360° và xuất file .GLB/.OBJ.

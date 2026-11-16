@@ -5,7 +5,8 @@ import Link from "next/link";
 import { getPortfolioData } from "@/data/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
 import { Mail, Heart, Palette, FileText } from "lucide-react";
-import { GithubIcon, LinkedinIcon, FacebookIcon } from "@/components/ui/Icons";
+import { GithubIcon, FacebookIcon } from "@/components/ui/Icons";
+import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Footer() {
   const { language, t } = useLanguage();
@@ -19,8 +20,10 @@ export function Footer() {
         {/* Left branding */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
           <div className="flex items-center gap-2">
-            <span className="text-rose-500 font-mono font-bold text-lg">&lt;/&gt;</span>
-            <span className="text-zinc-950 dark:text-white font-semibold">{personal.fullName}</span>
+            <BrandLogo size={28} />
+            <span className="text-zinc-950 dark:text-white font-semibold">
+              {language === "vi" ? "Quang Sáng" : "Quang Sang"}
+            </span>
           </div>
           <p className="text-xs text-zinc-500 font-mono">
             {personal.role} • Next.js, React &amp; Three.js
@@ -47,17 +50,7 @@ export function Footer() {
               <GithubIcon className="w-4 h-4" />
             </a>
           )}
-          {personal.social.linkedin && (
-            <a
-              href={personal.social.linkedin}
-              target="_blank"
-              rel="noopener noreferrer"
-              aria-label="LinkedIn"
-              className="p-2.5 rounded-xl bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-zinc-800 text-zinc-600 dark:text-zinc-400 hover:text-zinc-950 dark:hover:text-white hover:border-zinc-300 dark:hover:border-zinc-700 transition-colors shadow-sm"
-            >
-              <LinkedinIcon className="w-4 h-4" />
-            </a>
-          )}
+
           {personal.social.facebook && (
             <a
               href={personal.social.facebook}

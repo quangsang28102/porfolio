@@ -39,9 +39,7 @@ export const portfolioDataVi: PortfolioData = {
     cvPath: "/files/cv.pdf",
     social: {
       github: "https://github.com/quangsang28102",
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      website: "https://quangsang.dev",
+      facebook: "https://www.facebook.com/NGUYENDOQUANGSANG/",
     },
   },
   skills: [
@@ -162,25 +160,27 @@ export const portfolioDataVi: PortfolioData = {
       category: "Web",
       featured: false,
       summary:
-        "Cổng thông tin đào tạo lái xe chuyển đổi từ source HTML tĩnh sang theme WordPress quản trị, tích hợp module tra cứu QR và tối ưu hóa SEO.",
+        "Cổng thông tin đào tạo lái xe & Hệ thống nhận diện Visual Identity & Design System v1 hoàn chỉnh, chuyển đổi Custom Theme WordPress quản trị, tích hợp module tra cứu QR và tối ưu hóa SEO.",
       role: "Frontend & WordPress Theme Developer",
       problem:
-        "Cần xây dựng một hệ thống website thông tin đa trang, dễ dàng cho ban quản trị cập nhật học phí, tin tức và theo dõi học viên mà vẫn giữ tốc độ tải trang nhanh.",
+        "Cần xây dựng một hệ thống website thông tin đa trang, chuẩn hóa nhận diện thương hiệu với Design System chuyên nghiệp, giúp ban quản trị cập nhật học phí, tin tức và theo dõi học viên với tốc độ tải trang nhanh.",
       solution:
-        "Xây dựng layout web tĩnh chuẩn responsive, sau đó chuyển đổi sang Custom Theme WordPress, tối ưu hóa các hàm template và cơ sở dữ liệu; tích hợp module tra cứu mã QR trực tuyến.",
+        "Thiết kế và xây dựng trọn bộ Visual Identity & Design System v1 (Design Tokens, Typography, Palette, Component Library). Chuyển đổi mã nguồn tĩnh sang Custom Theme WordPress, tối ưu hóa các hàm template và cơ sở dữ liệu; tích hợp module tra cứu hồ sơ học viên qua mã QR trực tuyến.",
       features: [
+        "Xây dựng Visual Identity & Design System v1 hoàn chỉnh: chuẩn hóa Design Tokens, Palette, Typography và Component Library",
         "Chuyển đổi giao diện tĩnh sang Custom Theme WordPress dễ dàng quản lý bài viết và học phí",
         "Module tra cứu thông tin học viên & chứng chỉ nhanh chóng qua mã QR trực tuyến",
         "Cấu trúc trang tin tức, ôn tập 600 câu hỏi với điểm SEO và Core Web Vitals tối ưu",
         "Bảo trì định kỳ, nâng cấp bảo mật và sửa lỗi tương thích trình duyệt",
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
+      technologies: ["Design System (Tokens & Components)", "HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
       demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
-      results: "Phục vụ hàng nghìn lượt tra cứu học viên mỗi tháng với thời gian phản hồi trang dưới 1.2s.",
+      designSystemUrl: "/hiep_phat_design_system_v1.html",
+      results: "Chuẩn hóa hoàn toàn trải nghiệm thị giác thương hiệu Hiệp Phát và phục vụ hàng nghìn lượt tra cứu học viên mỗi tháng với thời gian phản hồi trang dưới 1.2s.",
     },
     {
       id: "proj-3",
@@ -210,7 +210,7 @@ export const portfolioDataVi: PortfolioData = {
     },
     {
       id: "proj-4",
-      title: "Mô hình 3D Chibi Girl — Cô Gái Chibi (Three.js Low-Poly Stylized)",
+      title: "AVATAR COLLECTION (Three.js Low-Poly Stylized)",
       category: "3D & WebGL",
       featured: false,
       inProgress: true,
@@ -328,9 +328,7 @@ export const portfolioDataEn: PortfolioData = {
     cvPath: "/files/cv.pdf",
     social: {
       github: "https://github.com/quangsang28102",
-      linkedin: "https://linkedin.com",
-      facebook: "https://facebook.com",
-      website: "https://quangsang.dev",
+      facebook: "https://www.facebook.com/NGUYENDOQUANGSANG/",
     },
   },
   skills: [
@@ -451,25 +449,27 @@ export const portfolioDataEn: PortfolioData = {
       category: "Web",
       featured: false,
       summary:
-        "Driver education portal converted from static HTML sources into a customized WordPress administration theme, featuring online QR lookup and SEO optimization.",
+        "Driver education portal & comprehensive Visual Identity & Design System v1, featuring custom WordPress administration theme, online QR verification, and SEO optimization.",
       role: "Frontend & WordPress Theme Developer",
       problem:
-        "Required a multi-page portal enabling easy administration of fees and articles while maintaining blazing-fast load speeds.",
+        "Required a multi-page portal with standardized brand design guidelines, enabling easy administration of fees and articles while maintaining blazing-fast load speeds.",
       solution:
-        "Built responsive static web layouts, converted them into a Custom WordPress Theme, optimized template functions, and built an online QR code verification portal.",
+        "Engineered the complete Visual Identity & Design System v1 (Tokens, Palette, Typography, Component Library). Built responsive web layouts and converted them into a Custom WordPress Theme with online QR code student credential verification.",
       features: [
+        "Engineered Visual Identity & Design System v1: standardized Design Tokens, Color Palette, Typography, and Component Library",
         "Converted static HTML to custom WordPress theme for easy content publishing",
-        "Instant online student credential and permit verification via QR codes",
+        "Instant online student credential and permit verification via dynamic QR codes",
         "Structured multi-page site for course fees and 600-question theory review with high Core Web Vitals",
         "Routine maintenance, security hardening, and browser compatibility patches",
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
+      technologies: ["Design System (Tokens & Components)", "HTML5", "CSS3", "JavaScript", "WordPress Custom Theme", "PHP", "Figma", "SEO"],
       images: [
         "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=1200&auto=format&fit=crop&q=80",
       ],
       demoUrl: "https://hpo-edu-v2.vercel.app/",
       githubUrl: "https://github.com/quangsang28102/HPO.EDU.V2",
-      results: "Serving thousands of student lookups monthly with average page response times under 1.2s.",
+      designSystemUrl: "/hiep_phat_design_system_v1.html",
+      results: "Fully standardized Hiep Phat brand visual identity and serving thousands of student lookups monthly with average response times under 1.2s.",
     },
     {
       id: "proj-3",

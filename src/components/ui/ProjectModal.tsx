@@ -4,7 +4,7 @@ import React, { useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Project } from "@/types/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
-import { X, ExternalLink, CheckCircle2, AlertCircle, Sparkles } from "lucide-react";
+import { X, ExternalLink, CheckCircle2, AlertCircle, Sparkles, Palette } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import Image from "next/image";
 
@@ -185,6 +185,17 @@ export function ProjectModal({ project, onClose }: ProjectModalProps) {
                 >
                   <ExternalLink className="w-4 h-4" />
                   <span>{t("proj.liveDemo")}</span>
+                </a>
+              )}
+              {project.designSystemUrl && (
+                <a
+                  href={project.designSystemUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-indigo-600 hover:bg-indigo-500 text-white text-sm font-semibold transition-all duration-200 shadow-lg shadow-indigo-950/30"
+                >
+                  <Palette className="w-4 h-4" />
+                  <span>Design System (v1)</span>
                 </a>
               )}
               {project.githubUrl && (

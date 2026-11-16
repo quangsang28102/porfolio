@@ -41,6 +41,7 @@ export interface Project {
   images?: string[];
   demoUrl?: string;
   githubUrl?: string;
+  designSystemUrl?: string;
   results?: string;
 }
 

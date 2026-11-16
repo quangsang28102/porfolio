@@ -7,7 +7,7 @@ import { Project } from "@/types/portfolio";
 import { Reveal } from "@/components/ui/Reveal";
 import { SpotlightCard } from "@/components/ui/SpotlightCard";
 import { ProjectModal } from "@/components/ui/ProjectModal";
-import { ArrowUpRight, ExternalLink } from "lucide-react";
+import { ArrowUpRight, ExternalLink, Palette } from "lucide-react";
 import { GithubIcon } from "@/components/ui/Icons";
 import Image from "next/image";
 
@@ -171,6 +171,19 @@ export function Projects() {
                         >
                           <ExternalLink className="w-3.5 h-3.5" />
                           <span>Live Demo</span>
+                        </a>
+                      )}
+                      {project.designSystemUrl && (
+                        <a
+                          href={project.designSystemUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-1.5 px-2.5 py-1.5 rounded-xl bg-indigo-600/10 dark:bg-indigo-500/15 hover:bg-indigo-600 dark:hover:bg-indigo-500 text-indigo-600 dark:text-indigo-400 hover:text-white border border-indigo-500/30 font-semibold transition-all shadow-sm"
+                          aria-label="Design System v1"
+                          title="Xem Visual Identity & Design System v1"
+                        >
+                          <Palette className="w-3.5 h-3.5" />
+                          <span>DS v1</span>
                         </a>
                       )}
                       {project.githubUrl && (
