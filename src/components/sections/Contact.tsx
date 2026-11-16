@@ -38,7 +38,7 @@ export function Contact() {
           <span className="text-xs font-mono font-semibold uppercase tracking-widest text-rose-600 dark:text-rose-500 mb-2 inline-block">
             {t("contact.badge")}
           </span>
-          <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-4">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-extrabold tracking-tight text-zinc-950 dark:text-white mb-4 text-balance max-w-3xl mx-auto">
             {t("contact.heading")}
           </h2>
           <p className="text-base sm:text-lg text-zinc-600 dark:text-zinc-400 max-w-xl mx-auto mb-10 leading-relaxed">

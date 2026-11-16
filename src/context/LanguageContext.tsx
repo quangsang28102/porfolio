@@ -47,7 +47,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Skills
     "skills.badge": "02 // HỆ SINH THÁI CÔNG NGHỆ",
-    "skills.heading": "Vũ khí công nghệ & Thư viện chuyên môn",
+    "skills.heading": "Công nghệ & Thư viện",
     "skills.sub": "Tập trung tối đa vào tính ổn định, hiệu năng và khả năng mở rộng của hệ thống.",
     "skills.all": "Tất cả",
 
@@ -82,7 +82,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact
     "contact.badge": "06 // LIÊN HỆ & HỢP TÁC",
-    "contact.heading": "Cùng nhau kiến tạo sản phẩm tiếp theo",
+    "contact.heading": "Cùng nhau kiến tạo sản phẩm tiếp\u00A0theo",
     "contact.sub": "Tôi luôn sẵn sàng đón nhận các cơ hội việc làm, dự án phát triển web toàn diện hoặc trao đổi kỹ thuật.",
     "contact.cardHeading": "Gửi lời chào hoặc yêu cầu tư vấn",
     "contact.cardSub": "Bạn có thể gửi thư trực tiếp qua hộp thư cá nhân hoặc sao chép nhanh địa chỉ email dưới đây:",
@@ -176,7 +176,7 @@ const translations: Record<Language, Record<string, string>> = {
 
     // Contact
     "contact.badge": "06 // GET IN TOUCH",
-    "contact.heading": "Let's Build the Next Big Thing Together",
+    "contact.heading": "Let's Build the Next Big Thing\u00A0Together",
     "contact.sub": "I am open to full-time engineering roles, freelance web applications, or technical collaborations.",
     "contact.cardHeading": "Drop a line or start a conversation",
     "contact.cardSub": "Reach out directly via email or quickly copy my address below:",
