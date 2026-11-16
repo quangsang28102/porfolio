@@ -6,7 +6,6 @@ import { getPortfolioData } from "@/data/portfolio";
 import { useLanguage } from "@/context/LanguageContext";
 import { Mail, Heart, Palette, FileText } from "lucide-react";
 import { GithubIcon, FacebookIcon } from "@/components/ui/Icons";
-import { BrandLogo } from "@/components/ui/BrandLogo";
 
 export function Footer() {
   const { language, t } = useLanguage();
@@ -20,7 +19,9 @@ export function Footer() {
         {/* Left branding */}
         <div className="flex flex-col items-center md:items-start text-center md:text-left gap-1">
           <div className="flex items-center gap-2">
-            <BrandLogo size={28} />
+            <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 font-mono text-xs font-bold shrink-0">
+              &lt;/&gt;
+            </span>
             <span className="text-zinc-950 dark:text-white font-semibold">
               {language === "vi" ? "Quang Sáng" : "Quang Sang"}
             </span>
