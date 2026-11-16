@@ -22,7 +22,7 @@ export function Footer() {
             <span className="flex items-center justify-center w-7 h-7 rounded-lg bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 font-mono text-xs font-bold shrink-0">
               &lt;/&gt;
             </span>
-            <span className="text-zinc-950 dark:text-white font-semibold">
+            <span suppressHydrationWarning className="text-zinc-950 dark:text-white font-semibold">
               {language === "vi" ? "Quang Sáng" : "Quang Sang"}
             </span>
           </div>

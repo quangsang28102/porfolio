@@ -69,7 +69,10 @@ export function Header() {
           <span className="flex items-center justify-center w-8 h-8 rounded-xl bg-rose-500/10 dark:bg-rose-600/20 text-rose-600 dark:text-rose-500 border border-rose-500/25 group-hover:bg-rose-600 group-hover:text-white group-hover:border-rose-600 transition-all duration-300 shadow-sm shrink-0">
             &lt;/&gt;
           </span>
-          <span className="font-bold tracking-tight whitespace-nowrap group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors">
+          <span
+            suppressHydrationWarning
+            className="font-bold tracking-tight whitespace-nowrap group-hover:text-rose-600 dark:group-hover:text-rose-400 transition-colors"
+          >
             {language === "vi" ? "Quang Sáng" : "Quang Sang"}
           </span>
         </a>
